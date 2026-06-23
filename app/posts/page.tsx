@@ -1,7 +1,6 @@
 import Layout from '@/components/layout/layout';
 import client from '@/tina/__generated__/client';
 import PostsClientPage from './client-page';
-import { Button } from 'zhui';
 
 export const revalidate = 300;
 
@@ -34,10 +33,6 @@ export default async function PostsPage() {
 
   return (
     <Layout rawPageData={allPosts.data}>
-      <div style={{ padding: '2rem' }}>
-        <Button>View Portfolio 作品集</Button>
-      </div>
-
       <PostsClientPage {...allPosts} />
     </Layout>
   );
