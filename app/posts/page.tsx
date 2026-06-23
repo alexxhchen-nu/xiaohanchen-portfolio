@@ -1,18 +1,20 @@
 import Layout from '@/components/layout/layout';
 import client from '@/tina/__generated__/client';
 import PostsClientPage from './client-page';
+import { Button } from 'zhui';
 
 export const revalidate = 300;
 
 export default async function PostsPage() {
   let posts = await client.queries.postConnection({
     sort: 'date',
-    last: 1
+    last: 1,
   });
+
   const allPosts = posts;
 
   if (!allPosts.data.postConnection.edges) {
-    return [];
+    return null;
   }
 
   while (posts.data?.postConnection.pageInfo.hasPreviousPage) {
@@ -25,11 +27,17 @@ export default async function PostsPage() {
       break;
     }
 
-    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges.reverse());
+    allPosts.data.postConnection.edges.push(
+      ...posts.data.postConnection.edges.reverse()
+    );
   }
 
   return (
     <Layout rawPageData={allPosts.data}>
+      <div style={{ padding: '2rem' }}>
+        <Button>View Portfolio 作品集</Button>
+      </div>
+
       <PostsClientPage {...allPosts} />
     </Layout>
   );
