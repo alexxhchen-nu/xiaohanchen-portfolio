@@ -11,5 +11,10 @@
   },
   "devDependencies": {
     "esbuild": "0.28.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
