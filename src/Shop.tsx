@@ -30,8 +30,8 @@ export default function Shop({ full, go }: { full?: boolean; go?: (v: View) => v
             <span>Automated Rubric Auditors</span>
           </div>
           <div className="sp-stat">
-            <strong>$99</strong>
-            <span>All-Access Pass (or Open Source)</span>
+            <strong>Open + Pro</strong>
+            <span>Free Foundations &amp; Modular Packs</span>
           </div>
         </div>
       </div>

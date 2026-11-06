@@ -13660,8 +13660,8 @@
             /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Automated Rubric Auditors" })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stat", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "$99" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "All-Access Pass (or Open Source)" })
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "Open + Pro" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Free Foundations & Modular Packs" })
           ] })
         ] })
       ] }),
