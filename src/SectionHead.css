@@ -1,0 +1,5 @@
+.sh { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 14px; margin-bottom: 18px; }
+.sh h2 { font-size: inherit; font-weight: 400; }
+.sh span { color: var(--blue); }
+.sh button { font-size: 12px; color: var(--mute); }
+.sh button:hover { color: var(--blue); }

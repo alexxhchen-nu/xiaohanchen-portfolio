@@ -1,0 +1,6 @@
+.in-chips { display: flex; flex-wrap: wrap; gap: 14px 12px; }
+.in-chips button { font-family: var(--mono); font-size: 13px; border: 1px solid var(--line); padding: 12px 14px; transition: border-color .15s, color .15s; }
+.in-chips button:hover { border-color: var(--blue); color: var(--blue); }
+.in-chips button.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+.in-note { margin-top: 28px; border-left: 2px solid var(--blue); padding-left: 16px; font-family: var(--mono); font-size: 12px; color: var(--mute); line-height: 1.6; max-width: 520px; }
+.in-k { color: var(--ink); font-size: 13px; margin-bottom: 6px; }

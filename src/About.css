@@ -1,0 +1,10 @@
+.ab { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); padding: 0 var(--pad); margin-top: clamp(56px, 8vw, 112px); }
+.ab > div { min-width: 0; }
+.ab-h { font-family: var(--mono); font-size: 14px; font-weight: 400; color: var(--blue); border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 18px; }
+.ab-l { margin-top: 36px; }
+.ab h3 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+.ab-m { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 8px; line-height: 1.6; }
+.ab ul { padding-left: 18px; margin: 16px 0 0; line-height: 1.6; font-size: 15px; font-weight: 300; }
+.ab li { margin-bottom: 8px; }
+.ab p { line-height: 1.6; }
+@media (max-width: 860px) { .ab { grid-template-columns: 1fr; } }

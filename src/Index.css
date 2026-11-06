@@ -1,0 +1,13 @@
+.idx { margin: 0 var(--pad); border-top: 1px solid var(--ink); }
+.idx-row { display: grid; grid-template-columns: 8% 1fr 1fr 40px; align-items: center; width: 100%; text-align: left; padding: clamp(18px, 2.4vw, 30px) 0; border-bottom: 1px solid var(--line); transition: padding-left .2s, color .2s; }
+.idx-row:hover, .idx-row:focus-visible { color: var(--blue); padding-left: 10px; }
+.idx-no { font-family: var(--mono); font-size: 14px; }
+.idx-title { font-size: clamp(28px, 3.6vw, 52px); font-weight: 400; letter-spacing: -0.02em; }
+.idx-desc { font-family: var(--mono); font-size: 13px; color: var(--mute); }
+.idx-arrow { justify-self: end; display: flex; }
+@media (max-width: 760px) {
+  .idx-row { grid-template-columns: 44px 1fr 28px; row-gap: 4px; }
+  .idx-desc { grid-column: 2; grid-row: 2; font-size: 12px; }
+  .idx-arrow { grid-column: 3; grid-row: 1 / span 2; }
+  .idx-title { font-size: 30px; }
+}

@@ -1,0 +1,7 @@
+.rw { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rw li { border-bottom: 1px solid var(--line); }
+.rw-i { position: relative; padding: 22px 0 20px; }
+.rw h3 { font-size: 18px; font-weight: 400; line-height: 1.35; }
+.rw p { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 8px; line-height: 1.6; }
+.rw-badge { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); padding: 2px 8px; color: var(--mute); }
+.rw-empty { font-family: var(--mono); font-size: 12px; color: var(--mute); padding: 20px 0; border-top: 1px solid var(--line); }

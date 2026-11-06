@@ -1,0 +1,4 @@
+.rd-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.rd-tabs button { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); padding: 8px 14px; }
+.rd-tabs button:hover { border-color: var(--blue); color: var(--blue); }
+.rd-tabs button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }

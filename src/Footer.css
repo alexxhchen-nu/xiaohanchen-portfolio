@@ -1,0 +1,11 @@
+.ft { margin: clamp(72px, 10vw, 140px) var(--pad) 0; padding: 28px 0 32px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; font-family: var(--mono); font-size: 12px; }
+.ft nav { display: flex; gap: clamp(14px, 2vw, 28px); flex-wrap: wrap; justify-content: center; }
+.ft nav button { color: var(--mute); }
+.ft nav button:hover { color: var(--blue); }
+.ft-contact { text-align: right; color: var(--mute); }
+.ft-contact a { color: var(--blue); }
+@media (max-width: 760px) {
+  .ft { grid-template-columns: 1fr; }
+  .ft nav { justify-content: flex-start; }
+  .ft-contact { text-align: left; }
+}

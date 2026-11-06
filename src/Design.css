@@ -1,0 +1,13 @@
+.ds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+.ds-grid.full { grid-template-columns: repeat(4, 1fr); }
+.ds-item { text-align: left; display: block; }
+.ds-img, .ds-big { display: flex; align-items: flex-end; width: 100%; border: 1px solid var(--line); padding: 14px; transition: border-color .2s; }
+.ds-img { aspect-ratio: 1.6 / 1; }
+.ds-big { aspect-ratio: 4 / 3; font-size: clamp(24px, 4vw, 40px); }
+.ds-img b, .ds-big b { font-weight: 500; letter-spacing: -0.02em; }
+.ds-item:hover .ds-img { border-color: var(--blue); color: var(--blue); }
+.ds-item span { display: block; font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 10px; }
+.ds-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-family: var(--mono); font-size: 12px; }
+.ds-nav button:hover { color: var(--blue); }
+.ds-cap { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 12px; line-height: 1.6; }
+@media (max-width: 900px) { .ds-grid.full { grid-template-columns: repeat(2, 1fr); } }
