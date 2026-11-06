@@ -1,0 +1,9 @@
+name = "xiaohanchen-portfolio"
+compatibility_date = "2026-11-01"
+
+[assets]
+directory = "./dist"
+
+[[routes]]
+pattern = "dev.xiaohanchen.cc"
+custom_domain = true
