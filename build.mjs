@@ -19,5 +19,5 @@ await build({
 fs.cpSync('assets', 'dist/assets', { recursive: true });
 fs.writeFileSync(
   'dist/index.html',
-  '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Xiaohan (Alex) Chen — Digital Humanities, CSS & AI Tools</title><link rel="stylesheet" href="./entry.css"></head><body><div id="root"></div><script src="./entry.js"></script></body></html>'
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Xiaohan (Alex) Chen — Data Journalist, Medill School of Journalism</title><link rel="stylesheet" href="./entry.css"></head><body><div id="root"></div><script src="./entry.js"></script></body></html>'
 );
