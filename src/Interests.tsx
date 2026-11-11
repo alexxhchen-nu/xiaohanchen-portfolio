@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './Interests.css';
 import SectionHead from './SectionHead';
-import { INTERESTS, View } from './data';
+import { View } from './data';
+import { INTERESTS } from './facts';
 
 export default function Interests({ full, go }: { full?: boolean; go?: (v: View) => void }) {
   const [sel, setSel] = useState<string | null>(null);
