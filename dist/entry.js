@@ -12770,7 +12770,6 @@
     { key: "interests", no: "06", title: "Interests", blurb: "Digital humanities, CSS, data journalism & fencing" },
     { key: "design", no: "07", title: "Design", blurb: "Interactive SVG, 3D modeling & visual systems" }
   ];
-  var PROFILE = "Senior journalism & economics student at Northwestern University working across full-stack digital humanities, computational social science, and data journalism. I deconstruct complex problems from first principles, compose modular AI and agentic infrastructure, and ship grounded, visually rigorous tools and interactive explainers.";
   var WORKING_ON = [
     {
       id: "w1",
@@ -12805,17 +12804,6 @@
       targetView: "shop"
     }
   ];
-  var EDUCATION = {
-    school: "Northwestern University, Medill School of Journalism \u2014 Evanston, Illinois",
-    degree: "Bachelor of Science in Journalism & Second Major in Economics | Expected June 2027 | GPA: 3.76/4.00",
-    bullets: [
-      "Specialization: Digital Investigative Journalism; Second Major: Economics (declared Fall 2025)",
-      "Relevant coursework: Data Journalism, News Research Methods, Data Visualization Storytelling, Investigative Reporting, Knight Lab Studio, Cultural Analytics, Media Law & Ethics, Microeconomics, Macroeconomics",
-      "Five-time Dean\u2019s List; Big Ten Academic All-American Scholar",
-      "Three-year NCAA Division I student-athlete (retired); member of Canada\u2019s national fencing team and multiple-time Canadian national champion",
-      "Undergraduate Peer Adviser and Learning (UPAL) mentor"
-    ]
-  };
   var LEADERSHIP = {
     title: "Vice President \u2014 Diaspora Writers Society",
     meta: "Evanston, Illinois | April 2025\u2013Present",
@@ -13081,13 +13069,6 @@
     { id: 3, kind: "Writing", badge: "Unpublished \xB7 Personal project document", title: "Quantized Strategy Planning for Women\u2019s Sabre Fencing", meta: "A structured framework for tagging fencing touches by action, distance, tempo, target, result, and score state; opponent-profiling, performance KPI, and pre-/post-bout review approaches." },
     { id: 4, kind: "Skills", title: "Research and reporting", meta: RESEARCH_SKILLS.join(", ") }
   ];
-  var INTERESTS = [
-    { name: "Full-Stack Digital Humanities", note: "Turning historical texts, archaeological excavation reports, and noisy archival scans into structured databases and 3D spatial models." },
-    { name: "Computational Social Science", note: "Auditing ML pipelines for circularity, modeling cross-platform framing divergence, and extracting social networks from public records." },
-    { name: "Data & Investigative Journalism", note: "Founded Data Journalism in Fencing (13,900+ reads, +280% growth); Medill specialization in Digital Investigative Journalism." },
-    { name: "Modular AI & Agentic Tools", note: "Building provenance-first workbenches, MCP servers, verifiable eval loops, and interactive explainers that give researchers full control." },
-    { name: "Fencing", note: "Three-year NCAA Division I student-athlete (retired); member of Canada\u2019s national fencing team and multiple-time Canadian national champion." }
-  ];
   var DESIGNS = ["Interactive Isometric SVG", "Three.js / WebGL 3D Modeling", "High-Contrast Editorial UI/UX", "Figma", "Gephi & Network Visualization", "Remotion & Programmatic Motion", "Adobe Premiere", "DaVinci Resolve"].map((label, id) => ({ id, label }));
 
   // src/Header.tsx
@@ -13110,6 +13091,27 @@
       ] }, s.key)) })
     ] });
   }
+
+  // src/facts.ts
+  var PROFILE = "Data journalist at Northwestern University\u2019s Medill School of Journalism (B.S. in Journalism, Data Journalism specialization; HCI certificate in progress). I reported and published nine stories during a Medill newsroom residency, eight bylined, and founded a data-journalism publication with 13,900+ reads. My work pairs original reporting with computation: auditing the data pipelines behind published claims, building interactive explainers, and shipping tools that keep every source traceable.";
+  var EDUCATION = {
+    school: "Northwestern University, Medill School of Journalism \u2014 Evanston, Illinois",
+    degree: "Bachelor of Science in Journalism \u2014 Specialization: Data Journalism \xB7 Certificate in Human\u2013Computer Interaction (in progress) | Expected June 2027 | GPA: 3.73/4.00",
+    bullets: [
+      "Specialization: Data Journalism; Certificate: Human\u2013Computer Interaction (in progress)",
+      "Relevant coursework: Data Journalism, News Research Methods, Data Visualization Storytelling, Investigative Reporting, Knight Lab Studio, Cultural Analytics, Media Law & Ethics, Microeconomics, Macroeconomics",
+      "Five-time Dean\u2019s List",
+      "Three-year NCAA Division I student-athlete (retired); member of Canada\u2019s national fencing team and multiple-time Canadian national champion",
+      "Undergraduate Peer Adviser and Learning (UPAL) mentor"
+    ]
+  };
+  var INTERESTS = [
+    { name: "Full-Stack Digital Humanities", note: "Turning historical texts, archaeological excavation reports, and noisy archival scans into structured databases and 3D spatial models." },
+    { name: "Computational Social Science", note: "Auditing ML pipelines for circularity, modeling cross-platform framing divergence, and extracting social networks from public records." },
+    { name: "Data & Investigative Journalism", note: "Founded Data Journalism in Fencing (13,900+ reads, +280% growth); nine published stories during a Medill newsroom residency, eight bylined." },
+    { name: "Modular AI & Agentic Tools", note: "Building provenance-first workbenches, MCP servers, verifiable eval loops, and interactive explainers that give researchers full control." },
+    { name: "Fencing", note: "Three-year NCAA Division I student-athlete (retired); member of Canada\u2019s national fencing team and multiple-time Canadian national champion." }
+  ];
 
   // src/Hero.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
@@ -13134,19 +13136,69 @@
     ] });
   }
 
-  // src/WorkingOn.tsx
+  // src/Reporting.tsx
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var REPORTING = [
+    {
+      id: "r1",
+      tag: "Newsroom \xB7 Medill Journalism Residency",
+      title: "TechNexus \u2014 Nine Published Stories, Eight Bylined",
+      detail: "Reported and published nine stories during a Medill journalism residency at TechNexus (March\u2013June 2026); eight carry my byline. Reporting combined original interviews with public-record and data work. Clips available on request.",
+      status: "Mar\u2013Jun 2026"
+    },
+    {
+      id: "r2",
+      tag: "Founder \xB7 Data Journalism",
+      title: "Data Journalism in Fencing \u2014 13,900+ Reads",
+      detail: "Founded a data-journalism publication covering competition performance and sport trends; built the datasets, charts, and analyses behind each piece, and ran distribution across five channels.",
+      status: "May 2025\u2013Present"
+    },
+    {
+      id: "r3",
+      tag: "Knight Lab at Northwestern",
+      title: "AI Content & Research Member",
+      detail: "Experiments in AI visual content and dataset optimization inside a six-person interdisciplinary team; turns technical processes into documented, reproducible notes.",
+      status: "May 2025\u2013Present"
+    },
+    {
+      id: "r4",
+      tag: "Medill Coursework",
+      title: "Data Journalism \xB7 Investigative Reporting \xB7 News Research Methods",
+      detail: "Reported work combining public records, original interviews, and analysis; coursework also covers data-visualization storytelling, cultural analytics, and media law and ethics.",
+      status: "In progress"
+    }
+  ];
+  function Reporting() {
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "rp", "aria-label": "Reporting and published work", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "rp-head", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-dot" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: "rp-title", children: "REPORTING & PUBLISHED WORK" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-note", children: "Medill School of Journalism \xB7 Evanston" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "rp-grid", children: REPORTING.map((item) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: "rp-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "rp-top", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-tag", children: item.tag }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-badge", children: item.status })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: item.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: item.detail })
+      ] }, item.id)) })
+    ] });
+  }
+
+  // src/WorkingOn.tsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   function WorkingOn({ go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "wo", "aria-label": "Currently Working On", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "wo-head", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "wo-dot" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: "wo-title", children: "NOW \xB7 ACTIVE RESEARCH & ENGINEERING LAB (NOV 2026)" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: "wo-orcid", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "wo", "aria-label": "Currently Working On", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "wo-head", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-dot" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { className: "wo-title", children: "NOW \xB7 ACTIVE RESEARCH & ENGINEERING LAB (NOV 2026)" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("span", { className: "wo-orcid", children: [
           "ORCID: ",
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "0009-0003-7124-5208" })
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "0009-0003-7124-5208" })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "wo-grid", children: WORKING_ON.map((item) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "wo-grid", children: WORKING_ON.map((item) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
         "div",
         {
           className: "wo-card",
@@ -13155,12 +13207,12 @@
           tabIndex: 0,
           onKeyDown: (e) => e.key === "Enter" && item.targetView && go(item.targetView),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "wo-top", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "wo-tag", children: item.tag }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "wo-badge", children: item.status })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "wo-top", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-tag", children: item.tag }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-badge", children: item.status })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: item.title }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: item.detail })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: item.title }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: item.detail })
           ]
         },
         item.id
@@ -13169,11 +13221,11 @@
   }
 
   // src/rikyu-icon.tsx
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   function Icon({ src, size = "1em", label, className, style }) {
     const mono = src.includes("tone=mono");
     const image = 'url("' + src + '")';
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
       "span",
       {
         "data-rk-icon": "",
@@ -13207,40 +13259,40 @@
   }
 
   // src/Index.tsx
-  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   function Index({ go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("nav", { className: "idx", "aria-label": "Sections", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("button", { className: "idx-row", onClick: () => go(s.key), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "idx-no", children: s.no }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "idx-title", children: s.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "idx-desc", children: s.blurb }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "idx-arrow", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Icon, { src: "./assets/icon-arrow.svg?tone=mono", size: 24 }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("nav", { className: "idx", "aria-label": "Sections", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("button", { className: "idx-row", onClick: () => go(s.key), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-no", children: s.no }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-title", children: s.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-desc", children: s.blurb }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-arrow", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Icon, { src: "./assets/icon-arrow.svg?tone=mono", size: 24 }) })
     ] }, s.key)) });
   }
 
   // src/About.tsx
-  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function About() {
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: "ab", id: "about", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "ab-h", children: "Education" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { children: EDUCATION.school }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "ab-m", children: EDUCATION.degree }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { children: EDUCATION.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: b }, b)) })
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "ab", id: "about", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: "Education" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: EDUCATION.school }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-m", children: EDUCATION.degree }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: EDUCATION.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "ab-h", children: "Additional Leadership" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { children: LEADERSHIP.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "ab-m", children: LEADERSHIP.meta }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { children: LEADERSHIP.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: b }, b)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "ab-h ab-l", children: "Languages" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: LANGUAGES })
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: "Additional Leadership" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: LEADERSHIP.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-m", children: LEADERSHIP.meta }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: LEADERSHIP.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h ab-l", children: "Languages" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: LANGUAGES })
       ] })
     ] });
   }
 
   // src/PsychtoolLab.tsx
   var import_react2 = __toESM(require_react());
-  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   var INITIAL_CASES = {
     "TRAIN-A": {
       label: "TRAIN-A \xB7 Synthetic Adolescent A (Multi-Informant Conflict & Injection Guard)",
@@ -13319,16 +13371,16 @@
       }
       setSelectedPid(pid);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "pt-lab", "aria-label": "Interactive Provenance Lab", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-header", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-kicker", children: "LIVE INTERACTIVE ARTIFACT #01 \xB7 PSYCHTOOL PROVENANCE WORKBENCH" }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "pt-title", children: "Source-Tethered Clinical & Social Science Background Synthesizer" }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "pt-desc", children: 'Why standard LLM summaries fail in clinical psychology & social science: a meta-analysis of 341 studies shows youth, caregiver, and teacher reports correlate only weakly-to-moderately. Standard summaries silently erase informant conflicts or conflate "not mentioned" with "negative." Click any draft sentence on the right to trace its exact source paragraph, or mutate a source to trigger stale-verification guards.' })
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "pt-lab", "aria-label": "Interactive Provenance Lab", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-header", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-kicker", children: "LIVE INTERACTIVE ARTIFACT #01 \xB7 PSYCHTOOL PROVENANCE WORKBENCH" }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "pt-title", children: "Source-Tethered Clinical & Social Science Background Synthesizer" }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "pt-desc", children: 'Why standard LLM summaries fail in clinical psychology & social science: a meta-analysis of 341 studies shows youth, caregiver, and teacher reports correlate only weakly-to-moderately. Standard summaries silently erase informant conflicts or conflate "not mentioned" with "negative." Click any draft sentence on the right to trace its exact source paragraph, or mutate a source to trigger stale-verification guards.' })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-controls", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-switch", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-controls", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-switch", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
               "button",
               {
                 className: activeCase === "TRAIN-A" ? "on" : "",
@@ -13339,7 +13391,7 @@
                 children: "Case: TRAIN-A (Multi-Informant)"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
               "button",
               {
                 className: activeCase === "TRAIN-B" ? "on" : "",
@@ -13351,19 +13403,19 @@
               }
             )
           ] }),
-          activeCase === "TRAIN-A" && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("button", { className: "pt-mutate", onClick: () => simulateSourceEdit("A-C1"), children: stalePids["A-C1"] ? "\u21BA Reset Source A-C1 to v1" : "\u26A1 Simulate Supervisor / Source Edit on [A-C1]" })
+          activeCase === "TRAIN-A" && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { className: "pt-mutate", onClick: () => simulateSourceEdit("A-C1"), children: stalePids["A-C1"] ? "\u21BA Reset Source A-C1 to v1" : "\u26A1 Simulate Supervisor / Source Edit on [A-C1]" })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-panes", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-pane", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-pane-head", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-panes", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-pane", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-pane-head", children: [
             "01 / RAW INFORMANT RECORDS (",
             activeCase,
             ")"
           ] }),
-          current.docs.map((doc) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-doc", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-doc-meta", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: doc.id }),
+          current.docs.map((doc) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-doc", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-doc-meta", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: doc.id }),
               " \xB7 ",
               doc.informant,
               " \xB7 ",
@@ -13375,20 +13427,20 @@
               const isSelected = selectedPid === p.id;
               const isInjection = p.id === "A-S3";
               const displayText = customTexts[p.id] || p.text;
-              return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
                 "div",
                 {
                   className: `pt-para ${isSelected ? "active" : ""} ${isInjection ? "injection" : ""}`,
                   onClick: () => setSelectedPid(p.id),
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "pt-pid", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { className: "pt-pid", children: [
                       "[",
                       p.id,
                       "]"
                     ] }),
                     " ",
                     displayText,
-                    isInjection && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-guard-tag", children: "\u{1F6E1}\uFE0F QUARANTINED AS DATA (NOT EXECUTED)" })
+                    isInjection && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-guard-tag", children: "\u{1F6E1}\uFE0F QUARANTINED AS DATA (NOT EXECUTED)" })
                   ]
                 },
                 p.id
@@ -13396,92 +13448,92 @@
             })
           ] }, doc.id))
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-pane", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-pane-head", children: "02 / EMPIRICAL DISCREPANCY & BOUNDARY LEDGER" }),
-          activeCase === "TRAIN-A" ? /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-ledger", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: `pt-card conflict ${stalePids["A-C1"] ? "stale" : ""}`, onClick: () => setSelectedPid("A-C1"), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-card-tag", children: "\u26A0\uFE0F CROSS-INFORMANT CONFLICT (PRESERVED)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h4", { children: "Onset Timing Discrepancy" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-pane", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-pane-head", children: "02 / EMPIRICAL DISCREPANCY & BOUNDARY LEDGER" }),
+          activeCase === "TRAIN-A" ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-ledger", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: `pt-card conflict ${stalePids["A-C1"] ? "stale" : ""}`, onClick: () => setSelectedPid("A-C1"), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-card-tag", children: "\u26A0\uFE0F CROSS-INFORMANT CONFLICT (PRESERVED)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h4", { children: "Onset Timing Discrepancy" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
                 "\u2022 ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "Youth [A-Y1]:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "Youth [A-Y1]:" }),
                 " Homework slowdown began after September school start.",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("br", {}),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("br", {}),
                 "\u2022 ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "Caregiver [A-C1]:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "Caregiver [A-C1]:" }),
                 " ",
                 stalePids["A-C1"] ? "Edited v2: mid-August." : "Slowdown began in July, not September."
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-rule", children: "Rule A1 (341-study meta-analysis): Never auto-average or pick one informant as ground truth." })
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-rule", children: "Rule A1 (341-study meta-analysis): Never auto-average or pick one informant as ground truth." })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-card guard", onClick: () => setSelectedPid("A-C2"), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-card-tag", children: "\u{1F6E1}\uFE0F THIRD-PERSON ATTRIBUTION GUARD (D5)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h4", { children: "Sibling Swim Team Mention" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[A-C2]" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-card guard", onClick: () => setSelectedPid("A-C2"), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-card-tag", children: "\u{1F6E1}\uFE0F THIRD-PERSON ATTRIBUTION GUARD (D5)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h4", { children: "Sibling Swim Team Mention" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[A-C2]" }),
                 " mentions the ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("em", { children: "older brother" }),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("em", { children: "older brother" }),
                 " joined the swim team. Blocked from attributing swim participation to TRAIN-A."
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-card missing", onClick: () => setSelectedPid("A-S2"), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-card-tag", children: "\u{1F50D} EXPLICIT UNKNOWN VS. NEGATIVE (D1/D2)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h4", { children: "Unprovided Clinical & Tutoring Fields" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-card missing", onClick: () => setSelectedPid("A-S2"), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-card-tag", children: "\u{1F50D} EXPLICIT UNKNOWN VS. NEGATIVE (D1/D2)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h4", { children: "Unprovided Clinical & Tutoring Fields" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
                 "\u2022 Exact homework duration: ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "Unrecorded [A-Y2]" }),
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("br", {}),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "Unrecorded [A-Y2]" }),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("br", {}),
                 "\u2022 After-school tutoring: ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "Not mentioned [A-S2]" }),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "Not mentioned [A-S2]" }),
                 ' (Cannot write "does not attend")',
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("br", {}),
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("br", {}),
                 "\u2022 Standardized test scores / DSM diagnosis: ",
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "None provided [A-S2]" })
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "None provided [A-S2]" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-card injection-card", onClick: () => setSelectedPid("A-S3"), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-card-tag", children: "\u{1F512} CASE ISOLATION & INJECTION IMMUNITY" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h4", { children: "Cross-Case Contamination Blocked" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[A-S3]" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-card injection-card", onClick: () => setSelectedPid("A-S3"), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-card-tag", children: "\u{1F512} CASE ISOLATION & INJECTION IMMUNITY" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h4", { children: "Cross-Case Contamination Blocked" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[A-S3]" }),
                 " contains an adversarial instruction to import TRAIN-B\u2019s swim team record. Treated strictly as inert quoted text."
               ] })
             ] })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-ledger", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-card guard", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-card-tag", children: "\u{1F512} STRICT WORKSPACE ISOLATION" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h4", { children: "TRAIN-B Context Active" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-ledger", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-card guard", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-card-tag", children: "\u{1F512} STRICT WORKSPACE ISOLATION" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h4", { children: "TRAIN-B Context Active" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
               "Swim team participation belongs exclusively to ",
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "TRAIN-B [B-Y1]" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "TRAIN-B [B-Y1]" }),
               ". Zero leakage into TRAIN-A\u2019s background draft."
             ] })
           ] }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-pane", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-pane-head", children: "03 / SOURCE-TETHERED DRAFT (CLICK SENTENCE TO TRACE)" }),
-          activeCase === "TRAIN-A" ? /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-draft", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-pane", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-pane-head", children: "03 / SOURCE-TETHERED DRAFT (CLICK SENTENCE TO TRACE)" }),
+          activeCase === "TRAIN-A" ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-draft", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
               "p",
               {
                 className: `pt-sent ${selectedPid === "A-Y1" || selectedPid === "A-Y2" ? "hi" : ""}`,
                 onClick: () => setSelectedPid("A-Y1"),
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[Self-Report]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[Self-Report]" }),
                   " According to the student\u2019s self-report during the practice interview (2026-10-12), homework completion time increased following the September school start, particularly in mathematics, though exact study duration was not logged and Science Club attendance remained punctual ",
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-cite", children: "[A-Y1, A-Y2 \xB7 v1 \u2713]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-cite", children: "[A-Y1, A-Y2 \xB7 v1 \u2713]" }),
                   "."
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
               "p",
               {
                 className: `pt-sent ${selectedPid === "A-C1" ? "hi" : ""} ${stalePids["A-C1"] ? "stale-sent" : ""}`,
                 onClick: () => setSelectedPid("A-C1"),
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[Informant Discrepancy]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[Informant Discrepancy]" }),
                   " In contrast, the caregiver reported during home observation (2026-10-13) that slower homework completion began in July rather than September ",
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "pt-cite", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { className: "pt-cite", children: [
                     "[A-C1 \xB7 ",
                     stalePids["A-C1"] ? "\u26A0\uFE0F STALE: Source updated to v2 \u2014 Re-verify required!" : "v1 \u2713",
                     "]"
@@ -13490,44 +13542,44 @@
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
               "p",
               {
                 className: `pt-sent ${selectedPid === "A-S1" || selectedPid === "A-C2" ? "hi" : ""}`,
                 onClick: () => setSelectedPid("A-S1"),
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[Setting Boundaries]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[Setting Boundaries]" }),
                   " Teacher records (2026-10-14) indicate all four September in-class exercises were submitted on time; the teacher did not observe home study ",
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-cite", children: "[A-S1 \xB7 v1 \u2713]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-cite", children: "[A-S1 \xB7 v1 \u2713]" }),
                   ", and the caregiver noted no direct observation of classroom performance ",
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-cite", children: "[A-C2 \xB7 v1 \u2713]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-cite", children: "[A-C2 \xB7 v1 \u2713]" }),
                   "."
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
               "p",
               {
                 className: `pt-sent ${selectedPid === "A-S2" ? "hi" : ""}`,
                 onClick: () => setSelectedPid("A-S2"),
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[Explicit Unknowns]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[Explicit Unknowns]" }),
                   " Available training records do not provide standardized test scores, diagnostic conclusions, normative comparisons, or information regarding after-school tutoring ",
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-cite", children: "[A-S2 \xB7 v1 \u2713]" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-cite", children: "[A-S2 \xB7 v1 \u2713]" }),
                   "."
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "pt-audit-bar", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "\u2713 Attribution Fidelity: 100%" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "\u2713 Conflict Preserved: Yes" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "\u2713 Cross-Case Bleed: 0%" }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: stalePids["A-C1"] ? "\u26A0\uFE0F 1 Claim Needs Re-Check" : "\u2713 Version Hash: Valid" })
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-audit-bar", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "\u2713 Attribution Fidelity: 100%" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "\u2713 Conflict Preserved: Yes" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "\u2713 Cross-Case Bleed: 0%" }),
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: stalePids["A-C1"] ? "\u26A0\uFE0F 1 Claim Needs Re-Check" : "\u2713 Version Hash: Valid" })
             ] })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "pt-draft", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { className: "pt-sent hi", onClick: () => setSelectedPid("B-Y1"), children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: "[TRAIN-B Self-Report]" }),
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "pt-draft", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { className: "pt-sent hi", onClick: () => setSelectedPid("B-Y1"), children: [
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "[TRAIN-B Self-Report]" }),
             " The student reported attending extracurricular swim team training three times per week and feeling busy after school following recent schedule adjustments ",
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "pt-cite", children: "[B-Y1 \xB7 v1 \u2713]" }),
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-cite", children: "[B-Y1 \xB7 v1 \u2713]" }),
             "."
           ] }) })
         ] })
@@ -13539,164 +13591,164 @@
   var import_react4 = __toESM(require_react());
 
   // src/SectionHead.tsx
-  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   function SectionHead({ k, go }) {
     const s = SECTIONS.find((x) => x.key === k);
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "sh", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("h2", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: s.no }),
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "sh", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("h2", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: s.no }),
         " / ",
         s.title
       ] }),
-      go && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("button", { onClick: () => go(k), children: "View all \u2192" })
+      go && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("button", { onClick: () => go(k), children: "View all \u2192" })
     ] });
   }
 
   // src/Modal.tsx
   var import_react3 = __toESM(require_react());
-  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   function Modal({ onClose, label, children }) {
     (0, import_react3.useEffect)(() => {
       const h = (e) => e.key === "Escape" && onClose();
       window.addEventListener("keydown", h);
       return () => window.removeEventListener("keydown", h);
     }, [onClose]);
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "md-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "md", role: "dialog", "aria-modal": "true", "aria-label": label, onClick: (e) => e.stopPropagation(), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("button", { className: "md-x", onClick: onClose, children: "Close [esc]" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "md-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "md", role: "dialog", "aria-modal": "true", "aria-label": label, onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("button", { className: "md-x", onClick: onClose, children: "Close [esc]" }),
       children
     ] }) });
   }
 
   // src/Projects.tsx
-  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   function Projects({ full, go }) {
     const [sel, setSel] = (0, import_react4.useState)(null);
     const list = full ? PROJECTS : PROJECTS.slice(0, 6);
     const p = sel === null ? null : PROJECTS[sel];
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "pj", id: "projects", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SectionHead, { k: "projects", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "pj-grid", children: list.map((x) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("button", { className: "pj-card", onClick: () => setSel(x.id), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "pj-tag", children: x.tag }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: x.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: x.meta }),
-        x.status && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "pj-st", children: x.status })
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "pj", id: "projects", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(SectionHead, { k: "projects", go }),
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "pj-grid", children: list.map((x) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("button", { className: "pj-card", onClick: () => setSel(x.id), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pj-tag", children: x.tag }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: x.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: x.meta }),
+        x.status && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pj-st", children: x.status })
       ] }, x.id)) }),
-      p && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(Modal, { label: p.title, onClose: () => setSel(null), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "pj-tag", children: p.tag }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { className: "pj-mt", children: p.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "pj-mp", children: p.meta }),
-        p.status && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "pj-st", children: p.status }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("ul", { className: "pj-ul", children: p.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("li", { children: b }, b)) }),
-        p.artifact && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: "pj-mp", children: [
+      p && /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(Modal, { label: p.title, onClose: () => setSel(null), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pj-tag", children: p.tag }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: "pj-mt", children: p.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "pj-mp", children: p.meta }),
+        p.status && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pj-st", children: p.status }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("ul", { className: "pj-ul", children: p.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("li", { children: b }, b)) }),
+        p.artifact && /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: "pj-mp", children: [
           "Project artifact: ",
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("em", { children: p.artifact })
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("em", { children: p.artifact })
         ] }),
-        p.link && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: "pj-mp", children: [
+        p.link && /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: "pj-mp", children: [
           "Link: ",
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: p.link, target: "_blank", rel: "noreferrer", style: { color: "var(--blue)" }, children: p.link })
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: p.link, target: "_blank", rel: "noreferrer", style: { color: "var(--blue)" }, children: p.link })
         ] })
       ] })
     ] });
   }
 
   // src/Publications.tsx
-  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   function Publications({ full, go }) {
     const list = full ? PUBLICATIONS : PUBLICATIONS.slice(0, 4);
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "pub", id: "publications", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(SectionHead, { k: "publications", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "pub-bar", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("span", { children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("section", { className: "pub", id: "publications", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(SectionHead, { k: "publications", go }),
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "pub-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("span", { children: [
           "ORCID iD: ",
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "https://orcid.org/0009-0003-7124-5208" })
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "https://orcid.org/0009-0003-7124-5208" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { children: "Focus: Computational Social Science \xB7 Network Science \xB7 Clinical NLP \xB7 Digital Humanities" })
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Focus: Computational Social Science \xB7 Network Science \xB7 Clinical NLP \xB7 Digital Humanities" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "pub-list", children: list.map((p) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("article", { className: "pub-item", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "pub-meta", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pub-venue", children: p.venue }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pub-status", children: p.status })
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "pub-list", children: list.map((p) => /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("article", { className: "pub-item", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "pub-meta", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "pub-venue", children: p.venue }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "pub-status", children: p.status })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: "pub-title", children: p.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: "pub-authors", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h3", { className: "pub-title", children: p.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: "pub-authors", children: [
           p.authors,
           " \xB7 ",
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("span", { className: "mono", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("span", { className: "mono", children: [
             "ORCID: ",
             p.orcid
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "pub-summary", children: p.summary }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "pub-foot", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "pub-tags", children: p.artifacts.map((a) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "pub-tag", children: a }, a)) }),
-          p.link && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: p.link, target: "_blank", rel: "noreferrer", className: "pub-link", children: "Inspect Record / Live Endpoint \u2192" })
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "pub-summary", children: p.summary }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "pub-foot", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "pub-tags", children: p.artifacts.map((a) => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "pub-tag", children: a }, a)) }),
+          p.link && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: p.link, target: "_blank", rel: "noreferrer", className: "pub-link", children: "Inspect Record / Live Endpoint \u2192" })
         ] })
       ] }, p.id)) })
     ] });
   }
 
   // src/Shop.tsx
-  var import_jsx_runtime12 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime13 = __toESM(require_jsx_runtime());
   function Shop({ full, go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("section", { className: "sp", id: "shop", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(SectionHead, { k: "shop", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-hero", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-hero-left", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "sp-kicker", children: "UNVIBE YOUR RESEARCH & WORKFLOW \xB7 FREE TO EXPLORE" }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h3", { className: "sp-headline", children: "Agent skills, provenance studios, and interactive explainers\u2014ready to drop into your research or product." }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "sp-sub", children: "Open-source foundations paired with turnkey studio templates, evaluation suites, and distilled agent playbooks. Built from real digital humanities, clinical NLP, and computational social science pipelines." })
+    return /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("section", { className: "sp", id: "shop", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(SectionHead, { k: "shop", go }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-hero", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-hero-left", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "sp-kicker", children: "UNVIBE YOUR RESEARCH & WORKFLOW \xB7 FREE TO EXPLORE" }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: "sp-headline", children: "Agent skills, provenance studios, and interactive explainers\u2014ready to drop into your research or product." }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "sp-sub", children: "Open-source foundations paired with turnkey studio templates, evaluation suites, and distilled agent playbooks. Built from real digital humanities, clinical NLP, and computational social science pipelines." })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stats", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stat", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "6+" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Shipped Skill & Studio Packs" })
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-stats", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("strong", { children: "6+" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { children: "Shipped Skill & Studio Packs" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stat", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "1,145" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Builder Posts Distilled" })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("strong", { children: "1,145" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { children: "Builder Posts Distilled" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stat", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "100-pt" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Automated Rubric Auditors" })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("strong", { children: "100-pt" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { children: "Automated Rubric Auditors" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-stat", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "Open + Pro" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Free Foundations & Modular Packs" })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("strong", { children: "Open + Pro" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { children: "Free Foundations & Modular Packs" })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "sp-grid", children: SHOP_PACKS.map((pack) => /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("article", { className: "sp-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-card-top", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sp-no", children: pack.no }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sp-badge", children: pack.badge })
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: "sp-grid", children: SHOP_PACKS.map((pack) => /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("article", { className: "sp-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-card-top", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "sp-no", children: pack.no }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "sp-badge", children: pack.badge })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h4", { className: "sp-title", children: pack.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "sp-desc", children: pack.subtitle }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("dl", { className: "sp-specs", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { children: "Contents" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { children: pack.contents })
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h4", { className: "sp-title", children: pack.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "sp-desc", children: pack.subtitle }),
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("dl", { className: "sp-specs", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dt", { children: "Contents" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dd", { children: pack.contents })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { children: "Includes" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { children: pack.includes })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dt", { children: "Includes" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dd", { children: pack.includes })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { children: "Formats" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { children: pack.formats })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dt", { children: "Formats" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dd", { children: pack.formats })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { children: "Good for" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { children: pack.goodFor })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dt", { children: "Good for" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dd", { children: pack.goodFor })
           ] }),
-          pack.builtOn && /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { children: "Built on" }),
-            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { children: pack.builtOn })
+          pack.builtOn && /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dt", { children: "Built on" }),
+            /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("dd", { children: pack.builtOn })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sp-foot", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sp-price", children: pack.price }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: pack.link, target: "_blank", rel: "noreferrer", className: "sp-btn", children: pack.cta })
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "sp-foot", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "sp-price", children: pack.price }),
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("a", { href: pack.link, target: "_blank", rel: "noreferrer", className: "sp-btn", children: pack.cta })
         ] })
       ] }, pack.id)) })
     ] });
@@ -13706,91 +13758,91 @@
   var import_react5 = __toESM(require_react());
 
   // src/Rows.tsx
-  var import_jsx_runtime13 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime14 = __toESM(require_jsx_runtime());
   function Rows({ rows, empty }) {
-    if (!rows.length) return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: "rw-empty", children: empty || "Nothing here yet." });
-    return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("ul", { className: "rw", children: rows.map((r) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: "rw-i", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { children: r.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { children: r.meta }),
-      r.badge && /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("span", { className: "rw-badge", children: r.badge })
+    if (!rows.length) return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { className: "rw-empty", children: empty || "Nothing here yet." });
+    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("ul", { className: "rw", children: rows.map((r) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("div", { className: "rw-i", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("h3", { children: r.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { children: r.meta }),
+      r.badge && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { className: "rw-badge", children: r.badge })
     ] }) }, r.id)) });
   }
 
   // src/Code.tsx
-  var import_jsx_runtime14 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime15 = __toESM(require_jsx_runtime());
   function Code({ full, go }) {
     const [q, setQ] = (0, import_react5.useState)("");
     const k = q.trim().toLowerCase();
     const rows = CODE_ITEMS.filter((r) => (r.name + " " + r.meta + " " + r.badge).toLowerCase().includes(k)).map((r) => ({ id: r.id, title: r.name, meta: r.meta, badge: r.badge }));
     const skills = DEV_SKILLS.filter((s) => s.toLowerCase().includes(k));
-    return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("section", { id: "code", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(SectionHead, { k: "code", go }),
-      full && /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("label", { className: "cd-search", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { children: "$ grep" }),
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("input", { value: q, onChange: (e) => setQ(e.target.value), placeholder: "search skills and projects", "aria-label": "Search code" })
+    return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("section", { id: "code", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(SectionHead, { k: "code", go }),
+      full && /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("label", { className: "cd-search", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { children: "$ grep" }),
+        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("input", { value: q, onChange: (e) => setQ(e.target.value), placeholder: "search skills and projects", "aria-label": "Search code" })
       ] }),
-      skills.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { className: "cd-skills", children: skills.map((s) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("span", { children: s }, s)) }),
-      rows.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Rows, { rows }),
-      !rows.length && !skills.length && /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Rows, { rows: [], empty: `No match for "${q}".` })
+      skills.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "cd-skills", children: skills.map((s) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { children: s }, s)) }),
+      rows.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Rows, { rows }),
+      !rows.length && !skills.length && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Rows, { rows: [], empty: `No match for "${q}".` })
     ] });
   }
 
   // src/Reading.tsx
   var import_react6 = __toESM(require_react());
-  var import_jsx_runtime15 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime16 = __toESM(require_jsx_runtime());
   var TABS = ["All", "Writing", "Synthesis", "Skills"];
   function Reading({ full, go }) {
     const [tab, setTab] = (0, import_react6.useState)("All");
     const base = full ? READING : READING.slice(0, 2);
     const rows = base.filter((r) => tab === "All" || r.kind === tab).map((r) => ({ id: r.id, title: r.title, meta: r.meta, badge: r.badge || (full ? r.kind : void 0) }));
-    return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("section", { id: "reading", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(SectionHead, { k: "reading", go }),
-      full && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "rd-tabs", role: "tablist", children: TABS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("button", { role: "tab", "aria-selected": tab === t, className: tab === t ? "on" : "", onClick: () => setTab(t), children: t }, t)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Rows, { rows, empty: "Nothing in this category." })
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { id: "reading", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(SectionHead, { k: "reading", go }),
+      full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "rd-tabs", role: "tablist", children: TABS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { role: "tab", "aria-selected": tab === t, className: tab === t ? "on" : "", onClick: () => setTab(t), children: t }, t)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Rows, { rows, empty: "Nothing in this category." })
     ] });
   }
 
   // src/Interests.tsx
   var import_react7 = __toESM(require_react());
-  var import_jsx_runtime16 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime17 = __toESM(require_jsx_runtime());
   function Interests({ full, go }) {
     const [sel, setSel] = (0, import_react7.useState)(null);
     const cur = INTERESTS.find((i) => i.name === sel);
-    return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { id: "interests", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(SectionHead, { k: "interests", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "in-chips", children: INTERESTS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { "aria-pressed": sel === t.name, className: sel === t.name ? "on" : "", onClick: () => setSel(sel === t.name ? null : t.name), children: t.name }, t.name)) }),
-      cur && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "in-note", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "in-k", children: cur.name }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: cur.note })
+    return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { id: "interests", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(SectionHead, { k: "interests", go }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "in-chips", children: INTERESTS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { "aria-pressed": sel === t.name, className: sel === t.name ? "on" : "", onClick: () => setSel(sel === t.name ? null : t.name), children: t.name }, t.name)) }),
+      cur && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "in-note", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: "in-k", children: cur.name }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: cur.note })
       ] })
     ] });
   }
 
   // src/Design.tsx
   var import_react8 = __toESM(require_react());
-  var import_jsx_runtime17 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime18 = __toESM(require_jsx_runtime());
   function Design({ full, go }) {
     const [sel, setSel] = (0, import_react8.useState)(null);
     const list = full ? DESIGNS : DESIGNS.slice(0, 4);
     const step = (d) => setSel((s) => s === null ? s : (s + d + DESIGNS.length) % DESIGNS.length);
-    return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { id: "design", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(SectionHead, { k: "design", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "ds-grid" + (full ? " full" : ""), children: list.map((d) => /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { className: "ds-item", onClick: () => setSel(d.id), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "ds-img", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("b", { children: d.label }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: "Design and media" })
+    return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { id: "design", children: [
+      !full && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(SectionHead, { k: "design", go }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "ds-grid" + (full ? " full" : ""), children: list.map((d) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { className: "ds-item", onClick: () => setSel(d.id), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "ds-img", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("b", { children: d.label }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "Design and media" })
       ] }, d.id)) }),
-      sel !== null && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(Modal, { label: DESIGNS[sel].label, onClose: () => setSel(null), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "ds-big", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("b", { children: DESIGNS[sel].label }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "ds-nav", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { onClick: () => step(-1), children: "\u2190 Prev" }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { children: [
+      sel !== null && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(Modal, { label: DESIGNS[sel].label, onClose: () => setSel(null), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "ds-big", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("b", { children: DESIGNS[sel].label }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "ds-nav", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { onClick: () => step(-1), children: "\u2190 Prev" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
             String(sel + 1).padStart(2, "0"),
             " / ",
             String(DESIGNS.length).padStart(2, "0")
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { onClick: () => step(1), children: "Next \u2192" })
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { onClick: () => step(1), children: "Next \u2192" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { className: "ds-cap", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { className: "ds-cap", children: [
           "Design and media: ",
           DESIGNS.map((d) => d.label).join(", ")
         ] })
@@ -13799,46 +13851,46 @@
   }
 
   // src/Footer.tsx
-  var import_jsx_runtime18 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime19 = __toESM(require_jsx_runtime());
   function Footer({ go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("footer", { className: "ft", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "Xiaohan (Alex) Chen" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("nav", { "aria-label": "Footer", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { onClick: () => go(s.key), children: s.title }, s.key)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: "ft-contact", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "mailto:alexchen2027@u.northwestern.edu", children: "Email" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("footer", { className: "ft", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { children: "Xiaohan (Alex) Chen" }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("nav", { "aria-label": "Footer", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { onClick: () => go(s.key), children: s.title }, s.key)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("span", { className: "ft-contact", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { href: "mailto:alexchen2027@u.northwestern.edu", children: "Email" }),
         " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "https://www.linkedin.com/in/xiaohan-chen-530631293/", target: "_blank", rel: "noreferrer", children: "LinkedIn" }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { href: "https://www.linkedin.com/in/xiaohan-chen-530631293/", target: "_blank", rel: "noreferrer", children: "LinkedIn" }),
         " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "https://github.com/alexxhchen-nu", target: "_blank", rel: "noreferrer", children: "GitHub" }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { href: "https://github.com/alexxhchen-nu", target: "_blank", rel: "noreferrer", children: "GitHub" }),
         " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "ORCID" })
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "ORCID" })
       ] })
     ] });
   }
 
   // src/App.tsx
-  var import_jsx_runtime19 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime20 = __toESM(require_jsx_runtime());
   function Page({ k }) {
     const s = SECTIONS.find((x) => x.key === k);
-    return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("main", { className: "page", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("p", { className: "page-no", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("main", { className: "page", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("p", { className: "page-no", children: [
         s.no,
         " / ",
         s.title
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h1", { className: "page-title", children: s.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "page-blurb", children: s.blurb }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "page-body", children: [
-        k === "projects" && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(PsychtoolLab, {}),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { style: { marginTop: "48px" }, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Projects, { full: true }) })
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h1", { className: "page-title", children: s.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "page-blurb", children: s.blurb }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "page-body", children: [
+        k === "projects" && /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { style: { marginTop: "48px" }, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Projects, { full: true }) })
         ] }),
-        k === "publications" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Publications, { full: true }),
-        k === "shop" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Shop, { full: true }),
-        k === "code" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Code, { full: true }),
-        k === "reading" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Reading, { full: true }),
-        k === "interests" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Interests, { full: true }),
-        k === "design" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Design, { full: true })
+        k === "publications" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Publications, { full: true }),
+        k === "shop" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Shop, { full: true }),
+        k === "code" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Code, { full: true }),
+        k === "reading" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reading, { full: true }),
+        k === "interests" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Interests, { full: true }),
+        k === "design" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Design, { full: true })
       ] })
     ] });
   }
@@ -13851,33 +13903,34 @@
     (0, import_react9.useEffect)(() => {
       window.scrollTo(0, 0);
     }, [view]);
-    return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "app", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Header, { view, go }),
-      view === "home" ? /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("main", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Hero, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(WorkingOn, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Index, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(PsychtoolLab, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Publications, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Shop, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Projects, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(About, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "grid-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Code, { go }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Reading, { go })
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "app", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Header, { view, go }),
+      view === "home" ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("main", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Hero, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reporting, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(WorkingOn, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Index, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Publications, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Shop, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Projects, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(About, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Code, { go }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reading, { go })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "grid-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Interests, { go }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Design, { go })
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Interests, { go }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Design, { go })
         ] })
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Page, { k: view }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Footer, { go })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Page, { k: view }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Footer, { go })
     ] });
   }
 
   // entry.tsx
-  var import_jsx_runtime20 = __toESM(require_jsx_runtime());
-  (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime20.jsx)(App, {}));
+  var import_jsx_runtime21 = __toESM(require_jsx_runtime());
+  (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime21.jsx)(App, {}));
 })();
 /*! Bundled license information:
 
