@@ -1,5 +1,5 @@
 import './Hero.css';
-import { PROFILE } from './data';
+import { PROFILE } from './facts';
 
 export default function Hero() {
   return (
