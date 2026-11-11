@@ -1,5 +1,6 @@
 import './About.css';
-import { EDUCATION, LEADERSHIP, LANGUAGES } from './data';
+import { EDUCATION } from './facts';
+import { LEADERSHIP, LANGUAGES } from './data';
 
 export default function About() {
   return (
