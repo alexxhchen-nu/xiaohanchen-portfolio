@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Hero from './Hero';
+import Reporting from './Reporting';
 import WorkingOn from './WorkingOn';
 import Index from './Index';
 import About from './About';
@@ -59,6 +60,7 @@ export default function App() {
       {view === 'home' ? (
         <main>
           <Hero />
+          <Reporting />
           <WorkingOn go={go} />
           <Index go={go} />
           <PsychtoolLab />
