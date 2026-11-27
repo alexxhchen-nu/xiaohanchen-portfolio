@@ -87,10 +87,10 @@ export default function PsychtoolLab() {
   };
 
   return (
-    <section className="pt-lab" aria-label="Interactive Provenance Lab">
+    <section className="pt-lab" id="psychtool-workbench" aria-label="Interactive Provenance Lab">
       <div className="pt-header">
         <div>
-          <span className="pt-kicker">LIVE INTERACTIVE ARTIFACT #01 · PSYCHTOOL PROVENANCE WORKBENCH</span>
+          <span className="pt-kicker">02 / LIVE INTERACTIVE ARTIFACT · PSYCHTOOL PROVENANCE WORKBENCH</span>
           <h2 className="pt-title">Source-Tethered Clinical &amp; Social Science Background Synthesizer</h2>
           <p className="pt-desc">
             Why standard LLM summaries fail in clinical psychology &amp; social science: a meta-analysis of 341 studies shows youth, caregiver, and teacher reports correlate only weakly-to-moderately. Standard summaries silently erase informant conflicts or conflate "not mentioned" with "negative." Click any draft sentence on the right to trace its exact source paragraph, or mutate a source to trigger stale-verification guards.

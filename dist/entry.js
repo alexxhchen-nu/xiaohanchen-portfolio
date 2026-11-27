@@ -12755,10 +12755,1678 @@
   var import_client = __toESM(require_client());
 
   // src/App.tsx
-  var import_react9 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // src/Header.tsx
+  var import_react2 = __toESM(require_react());
+
+  // src/i18n.ts
   var import_react = __toESM(require_react());
+  var LangContext = (0, import_react.createContext)({
+    lang: "en",
+    setLang: () => {
+    },
+    lens: "default",
+    setLens: () => {
+    }
+  });
+  function useLang() {
+    return (0, import_react.useContext)(LangContext);
+  }
+  function t(bi, lang) {
+    return bi[lang];
+  }
+  var HERO_COPY = {
+    eyebrow: {
+      en: "MEDILL DATA JOURNALISM \u201927 \xB7 HCI CERTIFICATE \xB7 NORTHWESTERN UNIVERSITY",
+      zh: "\u897F\u5317\u5927\u5B66 Medill \u6570\u636E\u65B0\u95FB \u201927 \xB7 \u4EBA\u673A\u4EA4\u4E92\uFF08HCI\uFF09\u8BC1\u4E66 \xB7 \u4F0A\u5229\u8BFA\u4F0A\u5DDE\u57C3\u6587\u65AF\u987F"
+    },
+    bio: {
+      en: "Data journalist & computational builder at Northwestern University (B.S. in Journalism, Data Journalism specialization; HCI certificate in progress; GPA 3.73). Former 3-year NCAA D1 student-athlete & Canadian national sabre fencing team member (multi-time national champion). I build provenance-first AI workbenches, automated archival & social-data pipelines, and leakage-audited research systems where every claim traces back to verifiable evidence.",
+      zh: "\u897F\u5317\u5927\u5B66 Medill \u65B0\u95FB\u5B66\u9662\u6570\u636E\u65B0\u95FB\u4E13\u4E1A\u672C\u79D1\u751F\uFF08\u4E3B\u4FEE\u6570\u636E\u65B0\u95FB\uFF0C\u4FEE\u8BFB HCI \u4EBA\u673A\u4EA4\u4E92\u8BC1\u4E66\uFF0CGPA 3.73\uFF09\uFF0C\u524D NCAA D1 \u6821\u961F\u4E09\u5E74\u6210\u5458\u3001\u52A0\u62FF\u5927\u56FD\u5BB6\u4F69\u5251\u961F\u961F\u5458\u53CA\u591A\u5C4A\u5168\u52A0\u51A0\u519B\u3002\u4E13\u6CE8\u4E8E\u6784\u5EFA\u6EAF\u6E90\u4F18\u5148\uFF08Provenance-First\uFF09\u7684 AI \u5DE5\u4F5C\u53F0\u3001\u81EA\u52A8\u5316\u6863\u6848\u4E0E\u793E\u5A92\u6570\u636E\u7BA1\u7EBF\uFF0C\u4EE5\u53CA\u7ECF\u8FC7\u4E25\u683C\u6570\u636E\u6CC4\u9732\u5BA1\u8BA1\u7684\u8BA1\u7B97\u793E\u4F1A\u79D1\u5B66\u7CFB\u7EDF\u3002"
+    },
+    targetRolesLabel: {
+      en: "TARGET ROLES:",
+      zh: "\u76EE\u6807\u65B9\u5411\uFF1A"
+    },
+    targetRoles: {
+      en: "AI Product & Agent Engineering \xB7 Data / Computational Journalism \xB7 Computational Social Science & NLP Research \xB7 Full-Stack Research Engineering",
+      zh: "AI \u4EA7\u54C1\u4E0E\u667A\u80FD\u4F53\u5DE5\u7A0B \xB7 \u6570\u636E\u4E0E\u8BA1\u7B97\u65B0\u95FB \xB7 \u8BA1\u7B97\u793E\u4F1A\u79D1\u5B66\u4E0E NLP \u7814\u7A76 \xB7 \u5168\u6808\u79D1\u7814\u5DE5\u7A0B"
+    },
+    lensHeading: {
+      en: "TARGET ROLE LENS \u2014 CLICK TO RE-RANK CASE STUDIES BELOW",
+      zh: "\u5C97\u4F4D\u89C6\u89D2\u5207\u6362 \u2014 \u70B9\u51FB\u6309\u76EE\u6807\u65B9\u5411\u91CD\u6392\u4E0B\u65B9 6 \u7BC7\u6838\u5FC3\u6848\u4F8B"
+    }
+  };
+  var PERSONAL_LINKS = [
+    { label: "Email", url: "mailto:alexchen2027@u.northwestern.edu" },
+    { label: "GitHub", url: "https://github.com/alexxhchen-nu" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/xiaohan-chen-530631293/" },
+    { label: "ORCID", url: "https://orcid.org/0009-0003-7124-5208" },
+    { label: "Zenodo Preprint", url: "https://doi.org/10.5281/zenodo.23962378" },
+    { label: "Dev Blog", url: "https://dev.xiaohanchen.cc" }
+  ];
+  var ROLE_LENSES = [
+    {
+      id: "default",
+      label: { en: "Default Overview", zh: "\u9ED8\u8BA4\u7EFC\u5408\u89C6\u56FE" },
+      hint: {
+        en: "Balanced sequence across voice/agent systems, network pipelines, and audited NLP.",
+        zh: "\u5747\u8861\u5C55\u793A\u8BED\u97F3\u667A\u80FD\u4F53\u3001\u6863\u6848\u7F51\u7EDC\u7BA1\u7EBF\u4E0E\u4E34\u5E8A/\u6CC4\u6F0F\u5BA1\u8BA1\u4EE3\u8868\u4F5C\u3002"
+      },
+      order: ["speakeasy", "legal-archive", "untangle", "comap-pipeline", "psychtool", "trauma-audit"]
+    },
+    {
+      id: "ai-eng",
+      label: { en: "AI & Agent Engineering", zh: "AI \u4E0E\u667A\u80FD\u4F53\u5DE5\u7A0B" },
+      hint: {
+        en: "Prioritizes real-time LiveKit state machines, provenance guardrails, and MCP/CLI/3D toolchains.",
+        zh: "\u4F18\u5148\u5C55\u793A LiveKit \u5B9E\u65F6\u72B6\u6001\u673A\u3001Psychtool \u6EAF\u6E90\u62A4\u680F\u4E0E MCP/CLI/3D \u5168\u6808\u5DE5\u5177\u94FE\u3002"
+      },
+      order: ["psychtool", "speakeasy", "untangle", "comap-pipeline", "trauma-audit", "legal-archive"]
+    },
+    {
+      id: "data-journ",
+      label: { en: "Data & Investigative Journalism", zh: "\u6570\u636E\u4E0E\u8C03\u67E5\u65B0\u95FB" },
+      hint: {
+        en: "Leads with DOJ public-record network audits, cross-platform video pipelines, and empirical verification.",
+        zh: "\u4F18\u5148\u5C55\u793A\u53F8\u6CD5\u90E8\u516C\u5F00\u6863\u6848\u7F51\u7EDC\u5BA1\u8BA1\u3001\u8DE8\u5E73\u53F0\u77ED\u89C6\u9891\u91C7\u96C6\u7BA1\u7EBF\u4E0E\u5B9E\u8BC1\u6838\u67E5\u3002"
+      },
+      order: ["legal-archive", "comap-pipeline", "trauma-audit", "untangle", "speakeasy", "psychtool"]
+    },
+    {
+      id: "css-research",
+      label: { en: "CSS / NLP / HCI Research", zh: "\u8BA1\u7B97\u793E\u79D1 / NLP / HCI \u79D1\u7814" },
+      hint: {
+        en: "Highlights leakage-audited RoBERTa evaluations, SNAM network error propagation, and multi-informant HCI.",
+        zh: "\u4F18\u5148\u5C55\u793A 5 \u6298\u7EC4\u9694\u79BB\u6CC4\u6F0F\u5BA1\u8BA1\u3001SNAM \u7F51\u7EDC\u8BEF\u5DEE\u4F20\u64AD\u9884\u5370\u672C\u4E0E\u591A\u4FE1\u606F\u6E90\u4E34\u5E8A\u5199\u4F5C\u5DE5\u4F5C\u53F0\u3002"
+      },
+      order: ["trauma-audit", "legal-archive", "psychtool", "untangle", "comap-pipeline", "speakeasy"]
+    }
+  ];
+  var DOMAIN_FILTERS = [
+    { id: "all", label: { en: "All Featured", zh: "\u5168\u90E8\u6838\u5FC3\u6848\u4F8B" }, count: 6 },
+    { id: "ai-agents", label: { en: "AI & Agent Tooling", zh: "AI \u4E0E\u667A\u80FD\u4F53\u5DE5\u5177" }, count: 2 },
+    { id: "pipelines-networks", label: { en: "Pipelines & Networks", zh: "\u6570\u636E\u7BA1\u7EBF\u4E0E\u7F51\u7EDC" }, count: 2 },
+    { id: "clinical-evals", label: { en: "Clinical & Leakage Evals", zh: "\u4E34\u5E8A\u6EAF\u6E90\u4E0E\u6CC4\u6F0F\u5BA1\u8BA1" }, count: 2 }
+  ];
+  var CASE_STUDIES = [
+    {
+      id: "speakeasy",
+      no: "CS-01",
+      domain: "ai-agents",
+      tag: {
+        en: "Voice AI \xB7 LiveKit WebRTC \xB7 Bilingual Interview Agent",
+        zh: "\u5B9E\u65F6\u8BED\u97F3\u667A\u80FD\u4F53 \xB7 LiveKit WebRTC \xB7 \u4E2D\u82F1\u53CC\u8BED\u8BBF\u8C08\u5DE5\u4F5C\u53F0"
+      },
+      status: { en: "Shipped Prototype", zh: "\u53EF\u8FD0\u884C\u539F\u578B\u5DF2\u5F00\u6E90" },
+      title: {
+        en: "SpeakEasy \u2014 Real-Time Bilingual AI Qualitative Interview Studio",
+        zh: "SpeakEasy \u2014 \u5B9E\u65F6\u4E2D\u82F1\u53CC\u8BED AI \u5B9A\u6027\u8BBF\u8C08\u4E0E\u7ED3\u6784\u5316\u6D1E\u5BDF\u5DE5\u4F5C\u53F0"
+      },
+      subtitle: {
+        en: "Zero-raw-audio-retention browser voice interviewer with explicit listening \u2192 thinking \u2192 speaking turn state machine and SQLite field extraction.",
+        zh: "\u96F6\u539F\u59CB\u5F55\u97F3\u7559\u5B58\u7684\u6D4F\u89C8\u5668\u5B9E\u65F6\u8BED\u97F3\u8BBF\u8C08\u7CFB\u7EDF\uFF1A\u663E\u5F0F\u76D1\u542C/\u601D\u8003/\u53D1\u8A00\u72B6\u6001\u673A\u4E0E SQLite \u7ED3\u6784\u5316\u5B57\u6BB5\u843D\u5E93\u3002"
+      },
+      problem: {
+        en: "Qualitative and market researchers spend hours conducting repetitive intake interviews, yet off-the-shelf voice bots hallucinate follow-ups, leak API secrets to the browser, or store sensitive raw audio without granular consent.",
+        zh: "\u5B9A\u6027\u4E0E\u5E02\u573A\u7814\u7A76\u4EBA\u5458\u5728\u91CD\u590D\u6027\u8BBF\u8C08\u4E0A\u8017\u65F6\u5DE8\u5927\uFF0C\u800C\u5E38\u89C1\u8BED\u97F3\u673A\u5668\u4EBA\u5BB9\u6613\u8DD1\u9898\u8FFD\u95EE\u3001\u5728\u524D\u7AEF\u66B4\u9732\u5BC6\u94A5\uFF0C\u6216\u672A\u7ECF\u7EC6\u7C92\u5EA6\u6388\u6743\u7559\u5B58\u654F\u611F\u539F\u59CB\u97F3\u9891\u3002"
+      },
+      architecture: {
+        en: "Built a FastAPI + LiveKit Cloud WebRTC architecture where short-lived participant tokens dispatch a Python voice worker holding an isolated RESEARCH_DATA_SECRET. Session recording is disabled at the room level; only confirmed structured answers persist to local SQLite with resumable interview tokens.",
+        zh: "\u91C7\u7528 FastAPI + LiveKit WebRTC \u67B6\u6784\uFF1A\u524D\u7AEF\u4EC5\u83B7\u53D6\u77ED\u671F\u623F\u95F4\u4EE4\u724C\uFF0C\u7531\u72EC\u7ACB Python \u8BED\u97F3 Worker \u6301\u6709 RESEARCH_DATA_SECRET \u5199\u5E93\uFF1B\u623F\u95F4\u7EA7\u7981\u7528\u539F\u59CB\u5F55\u97F3\uFF0C\u4EC5\u5C06\u786E\u8BA4\u540E\u7684\u7ED3\u6784\u5316\u5B57\u6BB5\u5199\u5165\u672C\u5730 SQLite\uFF0C\u5E76\u652F\u6301\u4E2D\u65AD\u7EED\u8BBF\u4E0E\u4E00\u952E\u5BFC\u51FA CSV/JSON\u3002"
+      },
+      outcome: {
+        en: "Connects research-goal setup, dynamic bilingual interview moderation, live speaker-labeled captions, and structured CSV/JSON synthesis in a single reproducible local session.",
+        zh: "\u5728\u5355\u6B21\u4F1A\u8BDD\u5185\u6253\u901A\u201C\u7814\u7A76\u76EE\u6807\u5B9A\u4E49 \u2192 \u8BBF\u8C08\u63D0\u7EB2\u751F\u6210 \u2192 \u4E2D\u82F1\u5B9E\u65F6\u8BED\u97F3\u8FFD\u95EE \u2192 \u7ED3\u6784\u5316\u6D1E\u5BDF\u62A5\u544A\u4E0E CSV/JSON \u5BFC\u51FA\u201D\u5168\u6D41\u7A0B\u3002"
+      },
+      bullets: [
+        {
+          en: "Explicit 3-state turn controller (listening \u2192 thinking \u2192 speaking) with real-time Interviewer / Participant transcription.",
+          zh: "\u663E\u5F0F\u4E09\u6001\u8F6E\u6B21\u72B6\u6001\u673A\uFF08Listening \u2192 Thinking \u2192 Speaking\uFF09\uFF0C\u914D\u5B9E\u65F6\u89D2\u8272\u6807\u6CE8\u5B57\u5E55\u6D41\u3002"
+        },
+        {
+          en: "Strict secret isolation: browser receives scoped room token only; worker writes structured fields via server-only secret.",
+          zh: "\u4E25\u683C\u5BC6\u94A5\u9694\u79BB\uFF1A\u6D4F\u89C8\u5668\u4EC5\u6301\u53D7\u9650\u623F\u95F4 Token\uFF0C\u4EC5\u540E\u7AEF Worker \u5177\u5907\u7ED3\u6784\u5316\u7B54\u6848\u5199\u5165\u6743\u9650\u3002"
+        },
+        {
+          en: "Privacy-by-default: raw audio recording disabled; supports resumable session IDs and instant JSON/CSV export.",
+          zh: "\u9ED8\u8BA4\u9690\u79C1\u4FDD\u62A4\uFF1A\u5173\u95ED\u539F\u59CB\u97F3\u9891\u5F55\u5236\uFF0C\u652F\u6301\u4F1A\u8BDD\u65AD\u70B9\u6062\u590D\u4E0E\u5355\u573A JSON/CSV \u5BFC\u51FA\u3002"
+        }
+      ],
+      metrics: [
+        { value: "3-State", label: { en: "Turn State Machine", zh: "\u5B9E\u65F6\u8F6E\u6B21\u72B6\u6001\u673A" } },
+        { value: "0 Bytes", label: { en: "Raw Audio Stored", zh: "\u539F\u59CB\u97F3\u9891\u96F6\u7559\u5B58" } },
+        { value: "EN / ZH", label: { en: "Bilingual Voice", zh: "\u4E2D\u82F1\u53CC\u8BED\u5B9E\u65F6\u8BED\u97F3" } }
+      ],
+      stack: ["Python", "LiveKit WebRTC", "FastAPI", "SQLite", "TypeScript"],
+      links: [
+        { label: { en: "GitHub Repo", zh: "GitHub \u4ED3\u5E93" }, url: "https://github.com/alexxhchen-nu/livekit-market-research-agent" }
+      ]
+    },
+    {
+      id: "legal-archive",
+      no: "CS-02",
+      domain: "pipelines-networks",
+      tag: {
+        en: "Network Science \xB7 SNAM Preprint \xB7 Zenodo DOI",
+        zh: "\u793E\u4F1A\u7F51\u7EDC\u79D1\u5B66 \xB7 SNAM \u9884\u5370\u672C \xB7 Zenodo DOI"
+      },
+      status: { en: "Preprint \xB7 DOI 10.5281/zenodo.23962378", zh: "\u9884\u5370\u672C\u5DF2\u53D1\u5E03 \xB7 Zenodo DOI" },
+      title: {
+        en: "Public Legal Archive Network Extraction & Topological Error Audit",
+        zh: "\u516C\u5171\u53F8\u6CD5\u6863\u6848\u793E\u4F1A\u7F51\u7EDC\u62BD\u53D6\u4E0E\u62D3\u6251\u8BEF\u5DEE\u4F20\u64AD\u5BA1\u8BA1"
+      },
+      subtitle: {
+        en: "End-to-end PDF-to-graph pipeline over public DOJ releases (505 nodes, 434 edges), measuring how NER/entity-resolution noise distorts PageRank and modularity.",
+        zh: "\u57FA\u4E8E\u7F8E\u56FD\u53F8\u6CD5\u90E8\u516C\u5F00\u6863\u6848\uFF08505 \u8282\u70B9\u3001434 \u6761\u8FB9\uFF09\u6784\u5EFA PDF\u2192\u56FE\u8C31\u7BA1\u7EBF\uFF0C\u91CF\u5316\u5B9E\u4F53\u6D88\u6B67\u8BEF\u5DEE\u5BF9 PageRank \u4E0E\u6A21\u5757\u5EA6\u793E\u533A\u7ED3\u6784\u7684\u626D\u66F2\u3002"
+      },
+      problem: {
+        en: 'Computational social scientists routinely evaluate text-to-graph extractors using span-level F1, overlooking how minor OCR noise, date-string false positives, or alias splits ("Ray" vs. "Ray Ormond") corrupt downstream centrality claims.',
+        zh: "\u8BA1\u7B97\u793E\u79D1\u7814\u7A76\u5E38\u4EC5\u7528\u7247\u6BB5\u7EA7 F1 \u8BC4\u4F30\u6587\u672C\u8F6C\u56FE\u8C31\u6A21\u578B\uFF0C\u5FFD\u89C6\u4E86\u65E5\u671F\u8BEF\u8BC6\u4E3A\u4EBA\u7269\u8282\u70B9\u6216\u540C\u540D\u5F02\u5199\u5206\u88C2\uFF08\u5982\u201CRay\u201D\u4E0E\u201CRay Ormond\u201D\uFF09\u5BF9\u4E0B\u6E38\u4E2D\u5FC3\u6027\u7ED3\u8BBA\u7684\u7CFB\u7EDF\u6027\u8BEF\u5BFC\u3002"
+      },
+      architecture: {
+        en: "Constructed an automated document acquisition, OCR cleanup, entity-relation extraction, and alias-reconciliation audit pipeline in Python + NetworkX/Gephi, paired with a methodological preprint registered on Zenodo and ORCID.",
+        zh: "\u4F7F\u7528 Python + NetworkX/Gephi \u6784\u5EFA\u81EA\u52A8\u5316\u53F8\u6CD5\u6587\u4E66\u6293\u53D6\u3001PDF \u89E3\u6790\u3001\u5B9E\u4F53\u5173\u7CFB\u62BD\u53D6\u4E0E\u522B\u540D\u6D88\u6B67\u5BA1\u8BA1\u7BA1\u7EBF\uFF0C\u914D\u5957\u65B9\u6CD5\u8BBA\u8BBA\u6587\u5DF2\u6CE8\u518C Zenodo DOI \u4E0E ORCID\u3002"
+      },
+      outcome: {
+        en: "Cataloged concrete extraction failure modes across 505 nodes, 434 edges, and 65 modularity communities, demonstrating why network-level perturbation metrics must accompany span-level F1.",
+        zh: "\u5728 505 \u4E2A\u8282\u70B9\u3001434 \u6761\u8FB9\u4E0E 65 \u4E2A\u6A21\u5757\u5EA6\u793E\u533A\u4E0A\u5B9E\u8BC1\u63ED\u793A\u5B9E\u4F53\u5206\u88C2\u4E0E\u4F2A\u8282\u70B9\u5982\u4F55\u6539\u53D8\u6838\u5FC3\u8282\u70B9\u6392\u5E8F\uFF0C\u63D0\u51FA\u7F51\u7EDC\u7EA7\u6270\u52A8\u8BC4\u4F30\u6846\u67B6\u3002"
+      },
+      bullets: [
+        {
+          en: "Audited 505 nodes and 434 edges extracted from docket-scale public Department of Justice archival PDFs.",
+          zh: "\u5BF9\u53F8\u6CD5\u90E8\u516C\u5F00\u5377\u5B97\u62BD\u53D6\u51FA\u7684 505 \u4E2A\u8282\u70B9\u4E0E 434 \u6761\u901A\u4FE1\u5173\u7CFB\u8FB9\u8FDB\u884C\u5168\u94FE\u8DEF\u5BA1\u8BA1\u3002"
+        },
+        {
+          en: "Quantified PageRank rank-order shifts and modularity fragmentation (65 \u2192 consolidated clusters) after alias resolution.",
+          zh: "\u91CF\u5316\u5BF9\u6BD4\u53BB\u566A\u4E0E\u5B9E\u4F53\u5408\u5E76\u524D\u540E PageRank \u6392\u540D\u6F02\u79FB\u53CA\u6A21\u5757\u5EA6\u793E\u533A\u788E\u7247\u5316\u7A0B\u5EA6\u3002"
+        },
+        {
+          en: "Published open methodological preprint (DOI: 10.5281/zenodo.23962378) targeting Social Network Analysis and Mining (SNAM).",
+          zh: "\u53D1\u8868\u5F00\u653E\u9884\u5370\u672C\uFF08DOI: 10.5281/zenodo.23962378\uFF09\uFF0C\u76EE\u6807\u671F\u520A Social Network Analysis and Mining\u3002"
+        }
+      ],
+      metrics: [
+        { value: "505 / 434", label: { en: "Nodes / Edges Audited", zh: "\u5BA1\u8BA1\u8282\u70B9 / \u8FB9\u6570" } },
+        { value: "65", label: { en: "Raw Modularity Clusters", zh: "\u539F\u59CB\u6A21\u5757\u5EA6\u7C07\u6570" } },
+        { value: "Zenodo DOI", label: { en: "10.5281/zenodo.23962378", zh: "\u516C\u5F00\u9884\u5370\u672C DOI" } }
+      ],
+      stack: ["Python", "NetworkX", "Gephi", "PDF OCR / NER", "LaTeX"],
+      links: [
+        { label: { en: "Zenodo Preprint (DOI)", zh: "Zenodo \u9884\u5370\u672C (DOI)" }, url: "https://doi.org/10.5281/zenodo.23962378" },
+        { label: { en: "ORCID Record", zh: "ORCID \u5B66\u672F\u8BB0\u5F55" }, url: "https://orcid.org/0009-0003-7124-5208" }
+      ]
+    },
+    {
+      id: "untangle",
+      no: "CS-03",
+      domain: "ai-agents",
+      tag: {
+        en: "Digital Humanities \xB7 CLI + MCP + Obsidian + 3D/GIS",
+        zh: "\u6570\u5B57\u4EBA\u6587\u5168\u6808 \xB7 CLI + MCP + Obsidian + \u4E09\u7EF4\u4E0E GIS"
+      },
+      status: { en: "Shipped \xB7 Multi-Surface Toolkit", zh: "\u5DF2\u5F00\u6E90 \xB7 \u591A\u7AEF\u5DE5\u5177\u94FE" },
+      title: {
+        en: "Untangle & Archaeo-Tomb-Parser \u2014 Excavation Reports to Verified 3D & GIS",
+        zh: "Untangle & Archaeo-Tomb-Parser \u2014 \u8003\u53E4\u53D1\u6398\u62A5\u544A\u7ED3\u6784\u5316\u6838\u9A8C\u4E0E\u4E09\u7EF4\u91CD\u5EFA"
+      },
+      subtitle: {
+        en: "Transforms noisy Chinese excavation PDFs via MinerU into source-checked JSON/CSV tables, GIS site maps, and rotatable 3D tomb morphology models.",
+        zh: "\u901A\u8FC7 MinerU \u5C06\u4E2D\u6587\u7530\u91CE\u8003\u53E4\u62A5\u544A\uFF08\u542B\u4F4E\u6E05\u626B\u63CF\u4EF6\uFF09\u8F6C\u5316\u4E3A\u9010\u6BB5\u5BF9\u7167\u6838\u9A8C\u7684 JSON/CSV \u5893\u846C\u8868\u3001GIS \u9057\u5740\u56FE\u4E0E\u53EF\u65CB\u8F6C 3D \u6A21\u578B\u3002"
+      },
+      problem: {
+        en: "Archaeological dimensions and grave-goods inventories are locked inside dense Chinese monographs and degraded PDF scans; generic LLM extraction silently blurs recorded measurements with geometric guesses.",
+        zh: "\u5927\u91CF\u4E2D\u56FD\u8003\u53E4\u5893\u846C\u5C3A\u5BF8\u4E0E\u968F\u846C\u54C1\u6570\u636E\u6DF1\u57CB\u5728\u6392\u7248\u590D\u6742\u7684\u53D1\u6398\u62A5\u544A\u548C\u4F4E\u8D28\u91CF\u626B\u63CF PDF \u4E2D\uFF1B\u901A\u7528\u5927\u6A21\u578B\u62BD\u53D6\u6781\u6613\u6DF7\u6DC6\u201C\u539F\u6587\u5B9E\u6D4B\u503C\u201D\u4E0E\u201C\u6A21\u578B\u63A8\u65AD\u503C\u201D\u3002"
+      },
+      architecture: {
+        en: "Unified Next.js 16 + FastAPI workbench (Untangle) paired with modular CLI, Model Context Protocol (MCP) server, and Obsidian plugin surfaces (archaeo-tomb-parser), strictly tagging each field as Explicit, Inferred, or Unextracted.",
+        zh: "\u6784\u5EFA Next.js 16 + FastAPI \u5168\u6808\u5DE5\u4F5C\u53F0\uFF08Untangle\uFF09\uFF0C\u5E76\u540C\u6B65\u5C01\u88C5 Python CLI\u3001MCP Server \u4E0E Obsidian \u63D2\u4EF6\u4E09\u7AEF\u5165\u53E3\uFF0C\u5BF9\u6BCF\u4E2A\u5B57\u6BB5\u4E25\u683C\u533A\u5206\u201C\u539F\u6587\u6709 / \u63A8\u65AD\u5F85\u6838 / \u672A\u62BD\u53D6\u201D\u3002"
+      },
+      outcome: {
+        en: "Enables humanities scholars without coding backgrounds to parse reports side-by-side against source paragraphs and export GLB 3D tomb models and multi-site GIS maps in one workflow.",
+        zh: "\u8BA9\u65E0\u7F16\u7A0B\u80CC\u666F\u7684\u8003\u53E4\u4E0E\u4EBA\u6587\u5B66\u8005\u4E5F\u80FD\u8FB9\u5BF9\u7167\u539F\u6587\u8FB9\u6838\u9A8C\u6570\u636E\uFF0C\u4E00\u952E\u751F\u6210\u53EF\u5BFC\u51FA GLB \u7684\u4E09\u7EF4\u5893\u846C\u6A21\u578B\u4E0E\u591A\u9057\u5740 GIS \u5730\u56FE\u3002"
+      },
+      bullets: [
+        {
+          en: "Side-by-side DynamicParser linking every extracted tomb dimension (length, width, depth, orientation) to source text.",
+          zh: "\u539F\u6587\u4E0E\u7ED3\u6784\u5316\u5893\u846C\u8868\u9010\u6BB5\u53CC\u5411\u8054\u52A8\uFF0C\u5893\u53E3\u957F\u5BBD\u6DF1\u3001\u5893\u5411\u4E0E\u968F\u846C\u5668\u7269\u4E00\u76EE\u4E86\u7136\u3002"
+        },
+        {
+          en: "Ships across 4 surfaces: Web Studio (/Library, /DynamicParser, /GIS, /Modelling), CLI, MCP Server, and Obsidian Plugin.",
+          zh: "\u63D0\u4F9B\u56DB\u7AEF\u5F62\u6001\uFF1AWeb \u56DB\u5408\u4E00\u5DE5\u4F5C\u53F0\u3001\u547D\u4EE4\u884C CLI\u3001AI \u667A\u80FD\u4F53 MCP Server \u4E0E Obsidian \u63D2\u4EF6\u3002"
+        },
+        {
+          en: "Zero copyright leakage: open-source repos ship clean schema code and synthetic demos with copyrighted scans stripped.",
+          zh: "\u4E25\u683C\u7248\u6743\u5408\u89C4\uFF1A\u516C\u5F00\u4ED3\u5E93\u5265\u79BB\u53D7\u7248\u6743\u4FDD\u62A4\u7684\u7530\u91CE\u626B\u63CF\u56FE\u4E0E\u539F\u4E66\u5168\u6587\uFF0C\u4EC5\u4EA4\u4ED8\u7EAF\u51C0\u89E3\u6790\u67B6\u6784\u4E0E\u5408\u6210\u793A\u4F8B\u3002"
+        }
+      ],
+      metrics: [
+        { value: "4 Surfaces", label: { en: "Web \xB7 CLI \xB7 MCP \xB7 Obsidian", zh: "\u56DB\u7AEF\u65E0\u7F1D\u8C03\u7528" } },
+        { value: "3-Tier", label: { en: "Provenance Field Tags", zh: "\u4E09\u7EA7\u5B57\u6BB5\u6EAF\u6E90\u6807\u6CE8" } },
+        { value: "3D + GIS", label: { en: "GLB & Spatial Output", zh: "\u4E09\u7EF4 GLB \u4E0E\u7A7A\u95F4\u6210\u56FE" } }
+      ],
+      stack: ["Next.js 16", "FastAPI", "Python 3.12", "MinerU OCR", "Three.js / GLB", "MCP"],
+      links: [
+        { label: { en: "Untangle Repo", zh: "Untangle \u4E3B\u4ED3\u5E93" }, url: "https://github.com/alexxhchen-nu/untangle" },
+        { label: { en: "Archaeo-Tomb-Parser", zh: "Archaeo-Tomb-Parser \u4ED3\u5E93" }, url: "https://github.com/alexxhchen-nu/archaeo-tomb-parser" }
+      ]
+    },
+    {
+      id: "comap-pipeline",
+      no: "CS-04",
+      domain: "pipelines-networks",
+      tag: {
+        en: "Data Engineering \xB7 Edge Streaming \xB7 Cloudflare R2 & Cron",
+        zh: "\u5927\u89C4\u6A21\u6570\u636E\u5DE5\u7A0B \xB7 \u8FB9\u7F18\u6D41\u5F0F\u91C7\u96C6 \xB7 Cloudflare R2 \u5B9A\u65F6\u7BA1\u7EBF"
+      },
+      status: { en: "Production Pipeline \xB7 10K Videos/Day", zh: "\u751F\u4EA7\u7EA7\u7BA1\u7EBF \xB7 \u65E5\u5747\u4E07\u7EA7\u89C6\u9891\u80FD\u529B" },
+      title: {
+        en: "Headless Short-Video & Hotlist Archival Pipeline (Douyin / Channels)",
+        zh: "\u65E0\u5934\u77ED\u89C6\u9891\u70ED\u699C\u6D41\u5F0F\u5F52\u6863\u4E0E\u8DE8\u5E73\u53F0\u5185\u5BB9\u8BA1\u7B97\u7BA1\u7EBF"
+      },
+      subtitle: {
+        en: "Zero-local-storage daily collection streaming up to 10,000 trending videos/day (50 keywords \xD7 200 videos) directly from CDN through Cloudflare Workers into R2, plus 3,000-video comparative coding.",
+        zh: "\u96F6\u672C\u5730\u5B58\u50A8\u5360\u7528\u7684\u81EA\u52A8\u5316\u91C7\u96C6\u7BA1\u7EBF\uFF1A\u652F\u6301 50 \u5173\u952E\u8BCD \xD7 200 \u6761\u89C6\u9891\u901A\u8FC7 Cloudflare Workers \u76F4\u4F20 R2\uFF0C\u5E76\u652F\u6491 3,000 \u6761\u5FAE\u4FE1\u89C6\u9891\u53F7\u4E0E\u6296\u97F3\u8DE8\u5E73\u53F0\u5B9E\u8BC1\u7F16\u7801\u3002"
+      },
+      problem: {
+        en: "Short-video platforms rotate trending rankings hourly and throttle naive scrapers, while downloading hundreds of gigabytes locally exhausts lab disk space and breaks reproducibility.",
+        zh: "\u77ED\u89C6\u9891\u70ED\u699C\u6309\u5C0F\u65F6\u5267\u70C8\u8F6E\u52A8\u4E14\u53CD\u722C\u4E25\u683C\uFF0C\u4F20\u7EDF\u672C\u5730\u4E0B\u8F7D\u52A8\u8F84\u5360\u7528\u6570\u767E GB \u78C1\u76D8\u4E0E\u5E26\u5BBD\uFF0C\u96BE\u4EE5\u652F\u6491\u957F\u5468\u671F\u7EB5\u5411\u8BA1\u7B97\u4F20\u64AD\u5B66\u89C2\u6D4B\u3002"
+      },
+      architecture: {
+        en: "Engineered a Playwright headless orchestrator with O(1) startup R2 key deduplication and 20-way concurrent Cloudflare Edge Worker streaming straight to R2 buckets, paired with scheduled archival and transcript/visual-pace analysis.",
+        zh: "\u91C7\u7528 Playwright \u65E0\u5934\u7F16\u6392\u5668\u914D\u5408\u542F\u52A8\u671F O(1) \u5185\u5B58\u7EA7 R2 \u952E\u53BB\u91CD\uFF0C\u7531 20 \u8DEF\u5E76\u53D1 Cloudflare Edge Worker \u5C06\u89C6\u9891\u6D41\u4ECE\u6E90 CDN \u76F4\u4F20 R2 \u5BF9\u8C61\u5B58\u50A8\uFF0C\u5B9E\u73B0\u96F6\u672C\u5730\u843D\u76D8\u4E0E\u65AD\u70B9\u7EED\u4F20\u3002"
+      },
+      outcome: {
+        en: "Sustains automated longitudinal capture with full CSV manifests and powered a 3,000-video comparative study across WeChat Channels and Douyin examining pacing, transcripts, and engagement.",
+        zh: "\u7A33\u5B9A\u8F93\u51FA\u7ED3\u6784\u5316 CSV \u5143\u6570\u636E\u6E05\u5355\uFF0C\u5E76\u652F\u6491\u5B8C\u6210\u8986\u76D6 3,000 \u6761\u89C6\u9891\u7684\u5FAE\u4FE1\u89C6\u9891\u53F7 vs. \u6296\u97F3\u53D9\u4E8B\u8282\u594F\u3001\u5B57\u5E55\u8BDD\u9898\u4E0E\u4E92\u52A8\u8868\u73B0\u5BF9\u6BD4\u7814\u7A76\u3002"
+      },
+      bullets: [
+        {
+          en: "20 concurrent Cloudflare Worker streams achieve zero local storage footprint (~100 GB/day capacity directly to R2).",
+          zh: "20 \u8DEF Cloudflare Worker \u8FB9\u7F18\u5E76\u53D1\u76F4\u4F20 R2\uFF0C\u672C\u5730\u78C1\u76D8\u4E0E\u4E0B\u884C\u5E26\u5BBD\u5360\u7528\u8D8B\u8FD1\u4E8E\u96F6\u3002"
+        },
+        {
+          en: "O(1) in-memory deduplication against existing R2 keys ensures idempotent, resumable scheduled runs.",
+          zh: "\u542F\u52A8\u65F6\u5355\u6B21\u5217\u4E3E R2 \u952E\u5B8C\u6210 O(1) \u5185\u5B58\u53BB\u91CD\uFF0C\u652F\u6301\u5B9A\u65F6\u91CD\u8DD1\u4E0E\u81EA\u52A8\u8DF3\u8FC7\u5DF2\u5F52\u6863\u89C6\u9891\u3002"
+        },
+        {
+          en: "Paired with a 3,000-video multimodal coding workflow analyzing editing pace, visual tone, and topic distributions.",
+          zh: "\u914D\u5957 3,000 \u6761\u8DE8\u5E73\u53F0\u77ED\u89C6\u9891\u62BD\u6837\u3001\u5B57\u5E55\u63D0\u53D6\u3001\u526A\u8F91\u8282\u594F\u7F16\u7801\u4E0E\u4E92\u52A8\u56DE\u5F52\u5206\u6790\u5DE5\u4F5C\u6D41\u3002"
+        }
+      ],
+      metrics: [
+        { value: "50 \xD7 200", label: { en: "Keywords \xD7 Videos / Run", zh: "\u5173\u952E\u8BCD \xD7 \u5355\u8F6E\u4E0A\u9650" } },
+        { value: "20\xD7 Edge", label: { en: "Concurrent R2 Streams", zh: "\u5E76\u53D1\u8FB9\u7F18\u76F4\u4F20\u6D41" } },
+        { value: "3,000", label: { en: "Videos Coded (Comparative)", zh: "\u8DE8\u5E73\u53F0\u7CBE\u7F16\u6837\u672C\u91CF" } }
+      ],
+      stack: ["Python", "Playwright", "Cloudflare Workers & R2", "SQLite", "DuckDB"],
+      links: [
+        { label: { en: "Douyin Pipeline Repo", zh: "\u7BA1\u7EBF\u5F00\u6E90\u4ED3\u5E93" }, url: "https://github.com/alexxhchen-nu/douyin-hotlist-pipeline" }
+      ]
+    },
+    {
+      id: "psychtool",
+      no: "CS-05",
+      domain: "clinical-evals",
+      tag: {
+        en: "Clinical NLP \xB7 Provenance HCI \xB7 Local-First Safety Baseline",
+        zh: "\u4E34\u5E8A NLP \xB7 \u53E5\u7EA7\u8BC1\u636E\u6EAF\u6E90 \xB7 \u672C\u5730\u4F18\u5148\u9690\u79C1\u62A4\u680F"
+      },
+      status: { en: "Interactive Lab Below \u2193 \xB7 Repo Public", zh: "\u4E0B\u65B9\u5185\u5D4C\u5B9E\u65F6\u5DE5\u4F5C\u53F0 \u2193 \xB7 \u5DF2\u5F00\u6E90" },
+      title: {
+        en: "psychtool \u2014 Source-Traceable Clinical Background Writing Workspace",
+        zh: "psychtool \u2014 \u53E5\u7EA7\u6EAF\u6E90\u4E0E\u591A\u4FE1\u606F\u6E90\u51B2\u7A81\u4FDD\u7559\u7684\u4E34\u5E8A\u80CC\u666F\u5199\u4F5C\u5DE5\u4F5C\u53F0"
+      },
+      subtitle: {
+        en: "Grounded in a 9-study empirical synthesis (341-study meta-analysis): enforces SQLite cross-case foreign-key isolation, atomic edit invalidation cascades, and zero diagnostic fabrication.",
+        zh: "\u57FA\u4E8E 9 \u9879\u5B9E\u8BC1\u7814\u7A76\u7CBE\u8BFB\uFF08\u542B 341 \u9879\u7814\u7A76\u5143\u5206\u6790\uFF09\u8BBE\u8BA1\uFF1A\u4EE5 SQLite \u590D\u5408\u5916\u952E\u963B\u65AD\u4E32\u6848\u3001\u539F\u5B50\u7EA7\u66F4\u6B63\u5931\u6548\u8FDE\u9501\u4E0E\u672C\u5730\u5B89\u5168\u81EA\u68C0\uFF0C\u675C\u7EDD AI \u62B9\u5E73\u5BB6\u5C5E/\u6559\u5E08\u5206\u6B67\u6216\u7F16\u9020\u8BCA\u65AD\u3002"
+      },
+      problem: {
+        en: 'Youth, caregiver, and teacher informants correlate only weakly-to-moderately in clinical assessments. Standard LLM summarizers flatten these discrepancies, bleed sibling history into the client, or rewrite "not mentioned" into "negative."',
+        zh: "\u9752\u5C11\u5E74\u81EA\u8FF0\u3001\u7167\u62A4\u8005\u4E0E\u6559\u5E08\u62A5\u544A\u5728\u4E34\u5E8A\u8BC4\u4F30\u4E2D\u5F80\u5F80\u4EC5\u5448\u4F4E\u5230\u4E2D\u7B49\u76F8\u5173\uFF1B\u901A\u7528\u5927\u6A21\u578B\u6458\u8981\u4F1A\u81EA\u52A8\u62B9\u5E73\u65F6\u95F4\u7EBF\u5206\u6B67\u3001\u628A\u5144\u5F1F\u59D0\u59B9\u75C5\u53F2\u5F20\u51A0\u674E\u6234\u7ED9\u53D7\u8BC4\u8005\uFF0C\u6216\u628A\u201C\u672A\u63D0\u53CA\u201D\u7BE1\u6539\u4E3A\u201C\u9634\u6027\u201D\u3002"
+      },
+      architecture: {
+        en: "3-pane FastAPI + React/SQLite architecture (Sections | Draft | Source Cards) governed by 23 Architecture Decision Records (ADRs): loopback-only binding, session token + CSP headers, cloud-sync folder refusal, hash-chained audit_log, and transactional stale-claim cascades.",
+        zh: "\u91C7\u7528 FastAPI + React + \u5355\u5E93 SQLite \u4E09\u680F\u5DE5\u4F5C\u53F0\uFF08\u7AE0\u8282\uFF5C\u8349\u7A3F\uFF5C\u6765\u6E90\u5361\uFF09\uFF0C\u6C89\u6DC0 23 \u4EFD\u67B6\u6784\u51B3\u7B56\u8BB0\u5F55\uFF08ADR\uFF09\uFF1A\u4EC5\u7ED1\u5B9A Loopback\u3001\u4F1A\u8BDD\u7EA7 Token \u4E0E\u4E25\u683C CSP\u3001\u62D2\u7EDD\u4E91\u540C\u6B65\u76EE\u5F55\u3001\u54C8\u5E0C\u94FE\u5BA1\u8BA1\u65E5\u5FD7\uFF0C\u4EE5\u53CA\u5355\u4E8B\u52A1\u5185\u201C\u6539\u6E90\u5373\u964D\u7EA7\u5F85\u6838\u201D\u8FDE\u9501\u3002"
+      },
+      outcome: {
+        en: 'Every factual draft sentence links to active same-case evidence; diagnostic sections remain strictly human-authored ("This is not a diagnosis. The diagnosis is yours."). Try the live synthetic workbench in Section 02 below.',
+        zh: "\u8349\u7A3F\u4E2D\u6BCF\u53E5\u4E8B\u5B9E\u9648\u8FF0\u5747\u7ED1\u5B9A\u540C\u6848\u6709\u6548\u8BC1\u636E\uFF0C\u65E0\u51FA\u5904\u7684\u53E5\u5B50\u81EA\u52A8\u6807\u4E3A Unverified\uFF0C\u8BCA\u65AD\u4E0E\u5EFA\u8BAE\u7AE0\u8282\u5F3A\u5236\u4EC5\u7531\u4E34\u5E8A\u4EBA\u5458\u64B0\u5199\u3002\u53EF\u76F4\u63A5\u4F53\u9A8C\u4E0B\u65B9 02 \u533A\u5B9E\u65F6\u4EA4\u4E92\u5DE5\u4F5C\u53F0\u3002"
+      },
+      bullets: [
+        {
+          en: "Database-level cross-case isolation via composite foreign keys (claim_evidence schema v7) blocking prompt-injection bleed.",
+          zh: "\u6570\u636E\u5E93\u5C42\u590D\u5408\u5916\u952E\uFF08claim_evidence v7\uFF09\u4ECE\u7ED3\u6784\u4E0A\u963B\u65AD\u8DE8\u4E2A\u6848\u5F15\u7528\u4E0E\u63D0\u793A\u8BCD\u6CE8\u5165\u4E32\u6848\u3002"
+        },
+        {
+          en: "Atomic invalidation cascade (ADR 0018): editing a source classification resets dependent claims/paragraphs to Needs review in one SQLite transaction.",
+          zh: "\u539F\u5B50\u7EA7\u66F4\u6B63\u8FDE\u9501\uFF08ADR 0018\uFF09\uFF1A\u4E0A\u6E38\u8BC1\u636E\u5206\u7C7B\u53D8\u66F4\u65F6\uFF0C\u540C\u4E00\u4E8B\u52A1\u5185\u81EA\u52A8\u5C06\u4E0B\u6E38\u9648\u8FF0\u4E0E\u5DF2\u6279\u6BB5\u843D\u9000\u56DE Needs review\u3002"
+        },
+        {
+          en: "Local security baseline (ADR 0011): loopback-only server, cloud-folder block, X-Psychtool-Token auth, and Playwright E2E security suite.",
+          zh: "\u672C\u5730\u5B89\u5168\u57FA\u7EBF\uFF08ADR 0011\uFF09\uFF1A\u4EC5\u672C\u5730\u56DE\u73AF\u76D1\u542C\u3001\u62E6\u622A\u4E91\u76D8\u540C\u6B65\u76EE\u5F55\u3001\u5168\u63A5\u53E3\u4EE4\u724C\u6821\u9A8C\u53CA Playwright \u5B89\u5168\u7AEF\u5230\u7AEF\u6D4B\u8BD5\u3002"
+        }
+      ],
+      metrics: [
+        { value: "23 ADRs", label: { en: "Safety & UX Decisions", zh: "\u67B6\u6784\u4E0E\u5B89\u5168\u51B3\u7B56\u8BB0\u5F55" } },
+        { value: "9 Studies", label: { en: "Empirical Synthesis Base", zh: "\u7CBE\u8BFB\u5B9E\u8BC1\u6587\u732E\u57FA\u5EA7" } },
+        { value: "100%", label: { en: "Same-Case FK Isolation", zh: "\u540C\u6848\u5916\u952E\u9694\u79BB\u7387" } }
+      ],
+      stack: ["Python", "FastAPI", "SQLite (Schema v7)", "React / TypeScript", "Playwright E2E"],
+      links: [
+        { label: { en: "GitHub Repo (psychtool)", zh: "GitHub \u4ED3\u5E93 (psychtool)" }, url: "https://github.com/alexxhchen-nu/psychtool" },
+        { label: { en: "Jump to Live Workbench \u2193", zh: "\u8DF3\u8F6C\u4E0B\u65B9\u5B9E\u65F6\u5DE5\u4F5C\u53F0 \u2193" }, url: "#psychtool-workbench" }
+      ]
+    },
+    {
+      id: "trauma-audit",
+      no: "CS-06",
+      domain: "clinical-evals",
+      tag: {
+        en: "ML Leakage Audit \xB7 CCR Research Note \xB7 Modal GPU API",
+        zh: "\u673A\u5668\u5B66\u4E60\u6CC4\u6F0F\u5BA1\u8BA1 \xB7 CCR \u6295\u7A3F\u624B\u7A3F \xB7 Modal \u4E91\u7AEF\u63A8\u7406 API"
+      },
+      status: { en: "CCR Manuscript Ready \xB7 Modal API Live", zh: "CCR \u624B\u7A3F\u5C31\u7EEA \xB7 Modal \u63A5\u53E3\u5728\u7EBF" },
+      title: {
+        en: "Intergenerational Trauma Corpus Leakage Audit & Honest RoBERTa Benchmark",
+        zh: "\u8DE8\u4EE3\u9645\u521B\u4F24\u591A\u6E90\u8BED\u6599\u6570\u636E\u6CC4\u9732\u5BA1\u8BA1\u4E0E\u65E0\u504F RoBERTa \u8BC4\u6D4B\u57FA\u51C6"
+      },
+      subtitle: {
+        en: "Audited 4,094 narratives across 8 public mental-health corpora, proving circular keyword labels and source metadata inflated accuracy from 0.321 (source-grouped) to 0.795.",
+        zh: "\u5BF9 8 \u4E2A\u516C\u5F00\u5FC3\u7406\u5065\u5EB7\u8BED\u6599\u5E93\u7684 4,094 \u6761\u53D9\u4E8B\u5F00\u5C55\u5168\u94FE\u8DEF\u5BA1\u8BA1\uFF0C\u63ED\u793A\u542F\u53D1\u5F0F\u5173\u952E\u8BCD\u6807\u7B7E\u4E0E\u6765\u6E90\u5143\u6570\u636E\u5982\u4F55\u5C06\u771F\u5B9E\u8DE8\u6E90\u51C6\u786E\u7387\uFF080.321\uFF09\u865A\u9AD8\u653E\u5927\u81F3 0.795\u3002"
+      },
+      problem: {
+        en: "Repurposed mental-health NLP datasets frequently combine multiple Reddit/clinical sources with keyword-assisted silver labels, creating invisible shortcuts where models memorize subreddit provenance instead of psychological constructs.",
+        zh: "\u62FC\u5408\u591A\u6E90\u516C\u5171\u5FC3\u7406\u8BED\u6599\u65F6\uFF0C\u542F\u53D1\u5F0F\u5173\u952E\u8BCD\u6253\u6807\u4E0E\u6570\u636E\u6E90\u5143\u7279\u5F81\u6781\u6613\u5F62\u6210\u5FAA\u73AF\u6377\u5F84\uFF0C\u4F7F\u6DF1\u5EA6\u5B66\u4E60\u6A21\u578B\u8BB0\u4F4F\u201C\u8BED\u6599\u51FA\u5904\u201D\u800C\u975E\u771F\u5B9E\u7684\u5FC3\u7406\u521B\u4F24\u8BED\u4E49\u3002"
+      },
+      architecture: {
+        en: "Built a reproducible ablation & split-protocol suite (random split vs. 5-fold stratified vs. strict source-grouped split; text-only RoBERTa-large vs. metadata-only logistic regression) and deployed the honest checkpoint on Modal serverless GPUs.",
+        zh: "\u6784\u5EFA\u53EF\u590D\u73B0\u6D88\u878D\u4E0E\u5207\u5206\u5BA1\u8BA1\u5957\u4EF6\uFF08\u968F\u673A\u5207\u5206 vs. \u5206\u5C42 5 \u6298 vs. \u4E25\u683C\u6309\u8BED\u6599\u6765\u6E90\u5206\u7EC4\u5207\u5206\uFF1B\u7EAF\u6587\u672C RoBERTa-large vs. \u4EC5\u5143\u6570\u636E\u903B\u8F91\u56DE\u5F52\uFF09\uFF0C\u5E76\u5C06\u53BB\u504F\u6A21\u578B\u90E8\u7F72\u4E8E Modal Serverless GPU\u3002"
+      },
+      outcome: {
+        en: "Demonstrated metadata-only models (0.795) beat text RoBERTa-large (0.704) under naive splits before collapsing to 0.321 under source-grouped evaluation; packaged into an OJS-ready Computational Communication Research (CCR) Research Note.",
+        zh: "\u5B9E\u8BC1\u8BC1\u660E\u5728\u5E38\u89C4\u968F\u673A\u5207\u5206\u4E0B\u201C\u4EC5\u9760\u5143\u6570\u636E\u903B\u8F91\u56DE\u5F52\uFF080.795\uFF09\u201D\u5373\u53EF\u51FB\u8D25\u5FAE\u8C03 RoBERTa-large\uFF080.704\uFF09\uFF0C\u800C\u5728\u4E25\u683C\u8DE8\u6E90\u5207\u5206\u4E0B\u56DE\u843D\u81F3 0.321\uFF1B\u6210\u679C\u5DF2\u5C01\u88C5\u4E3A CCR \u671F\u520A\u6295\u7A3F\u624B\u7A3F\u4E0E\u5728\u7EBF\u63A8\u7406\u63A5\u53E3\u3002"
+      },
+      bullets: [
+        {
+          en: "Exposed circular label-derived metadata confounds across 4,094 narratives spanning 8 public corpora.",
+          zh: "\u5728\u6A2A\u8DE8 8 \u4E2A\u516C\u5F00\u8BED\u6599\u5E93\u7684 4,094 \u6761\u6587\u672C\u4E2D\u5B9A\u4F4D\u5FAA\u73AF\u6807\u7B7E\u4E0E\u6765\u6E90\u6DF7\u6DC6\u7279\u5F81\u3002"
+        },
+        {
+          en: "Quantified the 47.4-point accuracy mirage (0.795 metadata shortcut vs. 0.321 honest source-grouped generalization).",
+          zh: "\u91CF\u5316\u63ED\u793A\u9AD8\u8FBE 47.4 \u4E2A\u767E\u5206\u70B9\u7684\u201C\u51C6\u786E\u7387\u6D77\u5E02\u8703\u697C\u201D\uFF080.795 \u5143\u6570\u636E\u6377\u5F84 vs. 0.321 \u4E25\u683C\u8DE8\u6E90\u6CDB\u5316\uFF09\u3002"
+        },
+        {
+          en: "Shipped live Modal serverless endpoint (/health, /model-info, /predict) and 5 diagnostic publication figures.",
+          zh: "\u4E0A\u7EBF Modal \u65E0\u670D\u52A1\u5668\u63A8\u7406\u7AEF\u70B9\uFF08/health\u3001/model-info\u3001/predict\uFF09\u53CA 5 \u5E45\u51FA\u7248\u7EA7\u8BCA\u65AD\u56FE\u8868\u3002"
+        }
+      ],
+      metrics: [
+        { value: "4,094", label: { en: "Narratives Across 8 Corpora", zh: "\u8DE8 8 \u5E93\u5BA1\u8BA1\u6837\u672C\u6570" } },
+        { value: "0.795 \u2192 0.321", label: { en: "Shortcut vs. Grouped Acc", zh: "\u6377\u5F84\u865A\u9AD8 vs. \u8DE8\u6E90\u771F\u5B9E\u51C6\u786E\u7387" } },
+        { value: "Modal GPU", label: { en: "Live Audited Endpoint", zh: "\u5728\u7EBF\u53BB\u504F\u63A8\u7406\u63A5\u53E3" } }
+      ],
+      stack: ["PyTorch", "RoBERTa-large", "Scikit-Learn", "Modal Serverless", "R / ggplot2"],
+      links: [
+        { label: { en: "Live Modal API Info", zh: "\u5728\u7EBF Modal \u63A5\u53E3\u72B6\u6001" }, url: "https://alexxhchen-nu--project4-multimodal-api.us-east.modal.run/model-info" },
+        { label: { en: "ORCID Author Profile", zh: "ORCID \u4F5C\u8005\u4E3B\u9875" }, url: "https://orcid.org/0009-0003-7124-5208" }
+      ]
+    }
+  ];
+  var SMALLER_CARDS = [
+    {
+      id: "fencing-dj",
+      tag: { en: "Founder \xB7 Niche Data Publication", zh: "\u521B\u59CB\u4EBA \xB7 \u5782\u76F4\u4F53\u80B2\u6570\u636E\u65B0\u95FB" },
+      status: { en: "13,900+ Reads \xB7 +280% Growth", zh: "13,900+ \u9605\u8BFB \xB7 \u4E24\u5468\u589E\u7C89 +280%" },
+      title: {
+        en: "Data Journalism in Fencing",
+        zh: "Data Journalism in Fencing\uFF08\u51FB\u5251\u6570\u636E\u65B0\u95FB\u4E13\u680F\uFF09"
+      },
+      summary: {
+        en: "Founded an independent data-journalism publication analyzing international sabre/fencing bout telemetry, touch-tempo distributions, and Olympic/NCAA qualification trends across 5 channels.",
+        zh: "\u521B\u7ACB\u4E13\u6CE8\u4E8E\u51FB\u5251\u8D5B\u4E8B\u8868\u73B0\u4E0E\u6280\u6218\u672F\u91CF\u5316\u5206\u6790\u7684\u6570\u636E\u65B0\u95FB\u4E13\u680F\uFF0C\u81EA\u5EFA\u56DE\u5408\u7EA7\u6570\u636E\u96C6\u4E0E\u53EF\u89C6\u5316\u56FE\u8868\uFF0C\u8DE8 5 \u5927\u5185\u5BB9\u5E73\u53F0\u5206\u53D1\u5E76\u83B7 13,900+ \u9605\u8BFB\u3002"
+      },
+      problem: {
+        en: "Competitive fencing analytics rarely move beyond final bout scores, leaving tempo shifts, score-state risk profiles, and referee/pistoning patterns invisible to athletes and fans.",
+        zh: "\u4F20\u7EDF\u51FB\u5251\u62A5\u9053\u5927\u591A\u505C\u7559\u5728\u7EC8\u76D8\u6BD4\u5206\uFF0C\u7F3A\u4E4F\u5BF9\u4EA4\u950B\u8282\u594F\u3001\u5173\u952E\u5206\u98CE\u9669\u51B3\u7B56\u4E0E\u56FD\u9645\u88C1\u5224\u5224\u7F5A\u8D8B\u52BF\u7684\u9897\u7C92\u5EA6\u6570\u636E\u62C6\u89E3\u3002"
+      },
+      approach: {
+        en: "Combined domain expertise as a former Canadian national sabre team member and 3-year Northwestern NCAA D1 athlete with custom bout-tagging schemas (action, distance, tempo, score state) and multi-platform visual storytelling.",
+        zh: "\u7ED3\u5408\u81EA\u8EAB\u524D\u52A0\u62FF\u5927\u56FD\u5BB6\u4F69\u5251\u961F\u961F\u5458\u4E0E\u897F\u5317\u5927\u5B66 NCAA D1 \u4E09\u5E74\u6821\u961F\u7ECF\u5386\uFF0C\u8BBE\u8BA1\u56DE\u5408\u6807\u6CE8\u6846\u67B6\uFF08\u52A8\u4F5C\u3001\u8DDD\u79BB\u3001\u8282\u594F\u3001\u6BD4\u5206\u72B6\u6001\uFF09\uFF0C\u5E76\u4EE5\u6570\u636E\u53D9\u4E8B\u5728 Substack\u3001X\u3001Instagram\u3001Threads \u4E0E Bluesky \u540C\u6B65\u5206\u53D1\u3002"
+      },
+      impact: {
+        en: "Surpassed 13,900+ cumulative reads and achieved +280% follower growth within a two-week cross-channel distribution experiment.",
+        zh: "\u7D2F\u8BA1\u7A81\u7834 13,900+ \u6B21\u6DF1\u5EA6\u9605\u8BFB\uFF0C\u5E76\u5728\u4E3A\u671F\u4E24\u5468\u7684\u591A\u5E73\u53F0\u5206\u53D1\u4E0E\u7248\u5F0F\u5B9E\u9A8C\u4E2D\u5B9E\u73B0\u5173\u6CE8\u8005 +280% \u589E\u957F\u3002"
+      },
+      metrics: [
+        { value: "13,900+", label: { en: "Cumulative Reads", zh: "\u7D2F\u8BA1\u9605\u8BFB\u91CF" } },
+        { value: "+280%", label: { en: "2-Week Audience Growth", zh: "\u4E24\u5468\u53D7\u4F17\u589E\u957F\u7387" } },
+        { value: "5 Channels", label: { en: "Substack \xB7 IG \xB7 X \xB7 Threads \xB7 Bsky", zh: "\u4E94\u7AEF\u540C\u6B65\u5206\u53D1\u77E9\u9635" } }
+      ],
+      links: [
+        { label: { en: "Request Data Clips via Email", zh: "\u90AE\u4EF6\u7D22\u53D6\u6570\u636E\u62A5\u9053\u6837\u7A3F" }, url: "mailto:alexchen2027@u.northwestern.edu?subject=Fencing%20Data%20Journalism%20Clips" }
+      ]
+    },
+    {
+      id: "technexus",
+      tag: { en: "Medill Newsroom Residency \xB7 Mar\u2013Jun 2026", zh: "Medill \u9A7B\u7AD9\u65B0\u95FB\u5B9E\u8DF5 \xB7 2026 \u5E74 3\u20136 \u6708" },
+      status: { en: "9 Published \xB7 8 Bylined", zh: "\u53D1\u8868 9 \u7BC7 \xB7 \u72EC\u7ACB/\u7F72\u540D 8 \u7BC7" },
+      title: {
+        en: "TechNexus Venture Collaborative \u2014 Venture & Tech Beat Reporting",
+        zh: "TechNexus Venture Collaborative \u2014 \u521B\u6295\u4E0E\u79D1\u6280\u751F\u6001\u6DF1\u5EA6\u62A5\u9053"
+      },
+      summary: {
+        en: "Reported and published 9 stories (8 bylined) during a full-time Medill journalism residency in Chicago, pairing original founder/investor interviews with SEC filings and venture dataset verification.",
+        zh: "\u5728\u829D\u52A0\u54E5 TechNexus \u5B8C\u6210\u5168\u804C Medill \u9A7B\u7AD9\u8BB0\u8005\u4EFB\u671F\uFF0C\u91C7\u5199\u53D1\u8868 9 \u7BC7\u62A5\u9053\uFF088 \u7BC7\u7F72\u540D\uFF09\uFF0C\u5C06\u521B\u4E1A\u8005/\u6295\u8D44\u4EBA\u4E00\u624B\u8BBF\u8C08\u4E0E\u516C\u5F00\u76D1\u7BA1\u6587\u4EF6\u53CA\u521B\u6295\u6570\u636E\u6838\u67E5\u76F8\u7ED3\u5408\u3002"
+      },
+      problem: {
+        en: "Venture-ecosystem coverage often echoes press-release talking points without cross-checking capital deployment, corporate-startup partnership mechanics, or public filings.",
+        zh: "\u521B\u6295\u751F\u6001\u62A5\u9053\u5BB9\u6613\u6D41\u4E8E\u516C\u5173\u901A\u7A3F\u590D\u8FF0\uFF0C\u7F3A\u5C11\u5BF9\u8D44\u672C\u914D\u7F6E\u7ED3\u6784\u3001\u5927\u4F01\u4E1A\u534F\u540C\u673A\u5236\u4E0E\u516C\u5F00\u7533\u62A5\u8BB0\u5F55\u7684\u4EA4\u53C9\u6838\u5B9E\u3002"
+      },
+      approach: {
+        en: "Built beat trackers over portfolio cohorts, conducted on-the-record executive interviews, and fact-checked every quantitative claim against primary filings and pitch records under newsroom deadlines.",
+        zh: "\u5EFA\u7ACB\u8D5B\u9053\u4E0E\u88AB\u6295\u7EC4\u5408\u6570\u636E\u5E93\uFF0C\u5F00\u5C55\u9AD8\u7BA1\u4E0E\u521B\u59CB\u4EBA\u5B9E\u540D\u8BBF\u8C08\uFF0C\u5E76\u5728\u622A\u7A3F\u5468\u671F\u5185\u9010\u6761\u6838\u9A8C\u5168\u90E8\u8D22\u52A1\u4E0E\u4E1A\u52A1\u589E\u957F\u53E3\u5F84\u3002"
+      },
+      impact: {
+        en: "Delivered 9 published pieces (8 carrying solo/lead byline) across venture strategy, industrial tech, and founder case analyses.",
+        zh: "\u56F4\u7ED5\u4F01\u4E1A\u521B\u6295\u534F\u540C\u3001\u786C\u79D1\u6280\u5546\u4E1A\u5316\u4E0E\u521B\u59CB\u4EBA\u51B3\u7B56\u5171\u53D1\u8868 9 \u7BC7\u6B63\u5F0F\u7A3F\u4EF6\uFF0C\u5176\u4E2D 8 \u7BC7\u5E26\u4E2A\u4EBA\u7F72\u540D\u3002"
+      },
+      metrics: [
+        { value: "9", label: { en: "Published Stories", zh: "\u6B63\u5F0F\u53D1\u8868\u7A3F\u4EF6" } },
+        { value: "8", label: { en: "Bylined Articles", zh: "\u4E2A\u4EBA\u7F72\u540D\u6587\u7AE0" } },
+        { value: "10 Weeks", label: { en: "Chicago Newsroom Residency", zh: "\u829D\u52A0\u54E5\u5168\u804C\u9A7B\u7AD9\u5468\u671F" } }
+      ],
+      links: [
+        { label: { en: "Request Bylined Clips", zh: "\u7D22\u53D6\u7F72\u540D\u62A5\u9053\u5408\u96C6" }, url: "mailto:alexchen2027@u.northwestern.edu?subject=TechNexus%20Bylined%20Clips" }
+      ]
+    },
+    {
+      id: "tang-poetry",
+      tag: { en: "Cultural Analytics \xB7 Spatial Humanities", zh: "\u6587\u5316\u5206\u6790 \xB7 \u53E4\u5178\u6587\u5B66\u7A7A\u95F4\u8BA1\u7B97" },
+      status: { en: "13 Historical Nodes \xB7 Interactive Map", zh: "13 \u5904\u5386\u53F2\u5730\u7406\u8282\u70B9 \xB7 \u60C5\u611F\u7A7A\u95F4\u6620\u5C04" },
+      title: {
+        en: "Chinese Classical Poetry Sentiment & Historical Geography Map",
+        zh: "\u53E4\u5178\u5510\u8BD7\u5730\u7406\u7A7A\u95F4\u4E0E\u610F\u8C61\u60C5\u611F\u56FE\u8C31\uFF08Chinese Poetry Sentiment Map\uFF09"
+      },
+      summary: {
+        en: "Mapped classical Chinese poetic sentiment, frontier/exile motifs, and historical place names onto interactive coordinates across 13 canonical Tang-Song literary sites.",
+        zh: "\u5C06\u53E4\u5178\u8BD7\u8BCD\u4E2D\u7684\u610F\u8C61\u3001\u8D2C\u8C2A/\u8FB9\u585E\u4E3B\u9898\u4E0E\u60C5\u611F\u6781\u6027\u6620\u5C04\u81F3\u957F\u5B89\u3001\u6D1B\u9633\u3001\u91D1\u9675\u3001\u6210\u90FD\u3001\u9633\u5173\u7B49 13 \u4E2A\u6838\u5FC3\u5386\u53F2\u5730\u7406\u5750\u6807\uFF0C\u5448\u73B0\u7A7A\u95F4\u6587\u5B66\u60C5\u611F\u5206\u5E03\u3002"
+      },
+      problem: {
+        en: "Classical Chinese toponyms shift across dynasties and carry dense affective conventions (e.g., frontier parting at Yangguan vs. imperial nostalgia at Jinling) that flat text search misses.",
+        zh: "\u4E2D\u56FD\u53E4\u5178\u6587\u5B66\u5730\u540D\u5386\u4EE3\u6CBF\u9769\u590D\u6742\uFF0C\u4E14\u9AD8\u5EA6\u51DD\u7ED3\u7279\u5B9A\u7A7A\u95F4\u60C5\u611F\u8303\u5F0F\uFF08\u5982\u9633\u5173\u9001\u522B\u3001\u91D1\u9675\u6000\u53E4\u3001\u5DF4\u8700\u7F81\u65C5\uFF09\uFF0C\u7EAF\u6587\u672C\u68C0\u7D22\u96BE\u4EE5\u76F4\u89C2\u5448\u73B0\u5730\u7406\u4E0E\u60C5\u611F\u7684\u8026\u5408\u7ED3\u6784\u3002"
+      },
+      approach: {
+        en: "Reconciled historical toponyms to modern GIS coordinates, scored classical imagery valence (nostalgia, frontier desolation, conviviality, nature serenity), and built an interactive spatial explorer.",
+        zh: "\u5BF9\u9F50\u53E4\u4ECA\u5386\u53F2\u5730\u540D\u4E0E\u7ECF\u7EAC\u5EA6\u5750\u6807\uFF0C\u7ED3\u5408\u53E4\u5178\u610F\u8C61\u8BCD\u5178\u91CF\u5316\u4F5C\u54C1\u60C5\u611F\u7EF4\u5EA6\uFF08\u6000\u53E4\u3001\u8FB9\u585E\u82CD\u51C9\u3001\u5BB4\u996E\u65F7\u8FBE\u3001\u5C71\u6C34\u6F84\u660E\uFF09\uFF0C\u6784\u5EFA\u53EF\u4EA4\u4E92\u5386\u53F2\u5730\u7406\u63A2\u7D22\u5FAE\u89C6\u56FE\u3002"
+      },
+      impact: {
+        en: "Demonstrates full-stack cultural analytics bridging classical sinology, historical GIS disambiguation, and editorial data visualization.",
+        zh: "\u8FDE\u63A5\u53E4\u5178\u6587\u732E\u5B66\u3001\u5386\u53F2\u5730\u7406\u6D88\u6B67\u4E0E\u53D9\u4E8B\u6027\u6570\u636E\u53EF\u89C6\u5316\uFF0C\u5C55\u73B0\u8DE8\u8BED\u79CD\u6570\u5B57\u4EBA\u6587\u8BA1\u7B97\u80FD\u529B\u3002"
+      },
+      metrics: [
+        { value: "13 Sites", label: { en: "Canonical Literary Toponyms", zh: "\u6838\u5FC3\u53E4\u5178\u6587\u5B66\u5730\u6807" } },
+        { value: "4 Axes", label: { en: "Affective Motif Dimensions", zh: "\u56DB\u7EF4\u53E4\u5178\u610F\u8C61\u60C5\u611F\u8F74" } },
+        { value: "GIS + NLP", label: { en: "Historical Toponym Alignment", zh: "\u53E4\u4ECA\u5730\u540D\u7A7A\u95F4\u5BF9\u9F50" } }
+      ],
+      links: [
+        { label: { en: "GitHub Profile", zh: "GitHub \u4E3B\u9875" }, url: "https://github.com/alexxhchen-nu" }
+      ]
+    }
+  ];
+  var EXPERIENCE_ONE_LINERS = [
+    {
+      id: "comap",
+      org: { en: "COMAP Lab \xB7 Northwestern University", zh: "\u897F\u5317\u5927\u5B66 COMAP \u5B9E\u9A8C\u5BA4\uFF08COMAP Lab\uFF09" },
+      role: { en: "Research Assistant", zh: "\u79D1\u7814\u52A9\u7406\uFF08Research Assistant\uFF09" },
+      period: { en: "Oct 2026\u2013Present", zh: "2026 \u5E74 10 \u6708\u81F3\u4ECA" },
+      line: {
+        en: "Builds automated cross-platform social-media data collection pipelines and computational framing/network workflows for faculty-led communication research.",
+        zh: "\u8D1F\u8D23\u6784\u5EFA\u8DE8\u5E73\u53F0\u793E\u4EA4\u5A92\u4F53\u81EA\u52A8\u5316\u6570\u636E\u91C7\u96C6\u7BA1\u7EBF\u4E0E\u8BA1\u7B97\u6846\u67B6/\u7F51\u7EDC\u5206\u6790\u5DE5\u4F5C\u6D41\uFF0C\u652F\u6491\u4F20\u64AD\u5B66\u8BFE\u9898\u7EC4\u5B9E\u8BC1\u7814\u7A76\u3002"
+      }
+    },
+    {
+      id: "roland-berger",
+      org: { en: "Roland Berger", zh: "\u7F57\u5170\u8D1D\u683C\u7BA1\u7406\u54A8\u8BE2\uFF08Roland Berger\uFF09" },
+      role: { en: "Consulting Intern (PTA)", zh: "\u7BA1\u7406\u54A8\u8BE2\u5B9E\u4E60\u751F\uFF08PTA\uFF09" },
+      period: { en: "Prior Internship", zh: "\u54A8\u8BE2\u5B9E\u4E60\u7ECF\u5386" },
+      line: {
+        en: "Supported quantitative market sizing, competitive benchmarking, and structured desk research under strict client confidentiality.",
+        zh: "\u5728\u4E25\u683C\u9075\u5B88\u5BA2\u6237\u4FDD\u5BC6\u89C4\u8303\uFF08NDA\uFF09\u524D\u63D0\u4E0B\uFF0C\u652F\u6301\u884C\u4E1A\u5E02\u573A\u89C4\u6A21\u6D4B\u7B97\u3001\u7ADE\u4E89\u683C\u5C40\u5BF9\u6807\u4E0E\u7ED3\u6784\u5316\u6848\u5934\u7814\u7A76\u3002"
+      }
+    },
+    {
+      id: "burson",
+      org: { en: "Burson (BCW / Hill & Knowlton)", zh: "\u535A\u96C5\u516C\u5173\uFF08Burson\uFF09" },
+      role: { en: "Strategic Communications Intern", zh: "\u6218\u7565\u4F20\u64AD\u4E0E\u58F0\u8A89\u6D1E\u5BDF\u5B9E\u4E60\u751F" },
+      period: { en: "Prior Internship", zh: "\u4F20\u64AD\u5B9E\u4E60\u7ECF\u5386" },
+      line: {
+        en: "Conducted bilingual media monitoring, sentiment synthesis, and executive briefing preparation for multinational accounts (confidentiality-compliant summary).",
+        zh: "\u4E3A\u8DE8\u56FD\u4F01\u4E1A\u5BA2\u6237\u63D0\u4F9B\u4E2D\u82F1\u53CC\u8BED\u8206\u60C5\u76D1\u6D4B\u3001\u58F0\u8A89\u6D1E\u5BDF\u5206\u6790\u4E0E\u9AD8\u7BA1\u7B80\u62A5\u64B0\u5199\uFF08\u6309\u4FDD\u5BC6\u5408\u89C4\u4EC5\u5C55\u793A\u804C\u80FD\u6982\u8FF0\uFF09\u3002"
+      }
+    },
+    {
+      id: "knight-lab",
+      org: { en: "Knight Lab at Northwestern University", zh: "\u897F\u5317\u5927\u5B66\u9A91\u58EB\u5B9E\u9A8C\u5BA4\uFF08Knight Lab\uFF09" },
+      role: { en: "AI Content & Research Member", zh: "AI \u5185\u5BB9\u4E0E\u7814\u7A76\u6210\u5458" },
+      period: { en: "May 2025\u2013Present", zh: "2025 \u5E74 5 \u6708\u81F3\u4ECA" },
+      line: {
+        en: "Collaborates in a six-person interdisciplinary studio on generative visual workflows, LoRA dataset optimization, and reproducible editorial tooling notes.",
+        zh: "\u5728\u516D\u4EBA\u8DE8\u5B66\u79D1\u56E2\u961F\u4E2D\u5F00\u5C55\u751F\u6210\u5F0F\u89C6\u89C9\u5B9E\u9A8C\u3001LoRA \u6570\u636E\u96C6\u4F18\u5316\uFF0C\u5E76\u5C06\u6280\u672F\u5B9E\u9A8C\u6C89\u6DC0\u4E3A\u53EF\u590D\u73B0\u7684\u65B0\u95FB\u5DE5\u5177\u6587\u6863\u3002"
+      }
+    }
+  ];
+  var SKILL_CATEGORIES = [
+    {
+      id: "ai-agents",
+      title: { en: "01 / AI, NLP & Agentic Infrastructure", zh: "01 / AI\u3001NLP \u4E0E\u667A\u80FD\u4F53\u57FA\u7840\u8BBE\u65BD" },
+      items: [
+        "PyTorch & HuggingFace (RoBERTa / BERTopic)",
+        "Model Context Protocol (MCP) Servers",
+        "LiveKit Real-Time Voice Agents",
+        "Provenance & Anti-Hallucination Guardrails",
+        "ML Leakage Auditing & Group-Split Evals",
+        "Agent Skills Architecture (Claude / Codex)"
+      ]
+    },
+    {
+      id: "fullstack-data",
+      title: { en: "02 / Full-Stack & Data Engineering", zh: "02 / \u5168\u6808\u5DE5\u7A0B\u4E0E\u6570\u636E\u7BA1\u7EBF" },
+      items: [
+        "Python 3.12 (FastAPI, uv, Playwright)",
+        "TypeScript, React 19, Next.js 16",
+        "SQLite (Transactional Schemas), DuckDB, SQL",
+        "Cloudflare Workers, R2 Edge Streaming & Cron",
+        "Modal Serverless GPU Deployment",
+        "MinerU PDF/OCR Layout Extraction"
+      ]
+    },
+    {
+      id: "css-journalism",
+      title: { en: "03 / Data Journalism & Computational Social Science", zh: "03 / \u6570\u636E\u65B0\u95FB\u4E0E\u8BA1\u7B97\u793E\u4F1A\u79D1\u5B66" },
+      items: [
+        "Social Network Analysis (NetworkX, Gephi)",
+        "Entity Resolution & Public-Record Auditing",
+        "Investigative Interviewing & SEC/FOIA Verification",
+        "Empirical Literature Synthesis & Meta-Analytic Matrices",
+        "Cross-Platform Content & Framing Analysis",
+        "R (ggplot2) & Reproducible LaTeX / Zenodo Archiving"
+      ]
+    },
+    {
+      id: "spatial-design",
+      title: { en: "04 / Spatial, 3D & Editorial Visualization", zh: "04 / \u7A7A\u95F4\u8BA1\u7B97\u3001\u4E09\u7EF4\u5EFA\u6A21\u4E0E\u53D9\u4E8B\u8BBE\u8BA1" },
+      items: [
+        "Three.js / WebGL & GLB 3D Morphology",
+        "Historical GIS & Spatial Mapping",
+        "Interactive Editorial SVG Systems",
+        "Obsidian Plugin Development",
+        "Figma, Remotion, Premiere & DaVinci Resolve",
+        "Bilingual Storytelling (English & Chinese Native)"
+      ]
+    }
+  ];
+  function formatCaseStudyMarkdown(cs, lang) {
+    const lines = [
+      `# ${cs.no}: ${t(cs.title, lang)}`,
+      `**Tag**: ${t(cs.tag, lang)} | **Status**: ${t(cs.status, lang)}`,
+      "",
+      `> ${t(cs.subtitle, lang)}`,
+      "",
+      `## ${lang === "en" ? "Problem" : "\u6838\u5FC3\u75DB\u70B9"}`,
+      t(cs.problem, lang),
+      "",
+      `## ${lang === "en" ? "Architecture & Method" : "\u7CFB\u7EDF\u67B6\u6784\u4E0E\u65B9\u6CD5"}`,
+      t(cs.architecture, lang),
+      "",
+      `## ${lang === "en" ? "Outcome & Verification" : "\u5B9E\u8BC1\u4EA7\u51FA\u4E0E\u6838\u9A8C"}`,
+      t(cs.outcome, lang),
+      "",
+      `## ${lang === "en" ? "Key Highlights" : "\u5173\u952E\u4EAE\u70B9"}`,
+      ...cs.bullets.map((b) => `- ${t(b, lang)}`),
+      "",
+      `## ${lang === "en" ? "Metrics" : "\u6838\u5FC3\u6307\u6807"}`,
+      ...cs.metrics.map((m) => `- **${m.value}**: ${t(m.label, lang)}`),
+      "",
+      `**Stack**: ${cs.stack.join(", ")}`,
+      ...cs.links.map((l) => `- [${t(l.label, lang)}](${l.url})`)
+    ];
+    return lines.join("\n");
+  }
+  function formatSmallerCardMarkdown(card, lang) {
+    const lines = [
+      `# ${t(card.title, lang)}`,
+      `**${t(card.tag, lang)}** \u2014 ${t(card.status, lang)}`,
+      "",
+      t(card.summary, lang),
+      "",
+      `- **${lang === "en" ? "Context" : "\u80CC\u666F\u95EE\u9898"}**: ${t(card.problem, lang)}`,
+      `- **${lang === "en" ? "Approach" : "\u65B9\u6CD5\u6267\u884C"}**: ${t(card.approach, lang)}`,
+      `- **${lang === "en" ? "Impact" : "\u9A8C\u8BC1\u7ED3\u679C"}**: ${t(card.impact, lang)}`,
+      "",
+      ...card.metrics.map((m) => `- **${m.value}**: ${t(m.label, lang)}`)
+    ];
+    return lines.join("\n");
+  }
+
+  // src/Header.tsx
+  var import_jsx_runtime = __toESM(require_jsx_runtime());
+  var NAV_ITEMS = [
+    {
+      id: "cases",
+      no: "01",
+      label: { en: "Case Studies", zh: "\u6838\u5FC3\u6848\u4F8B" },
+      anchor: "case-studies"
+    },
+    {
+      id: "lab",
+      no: "02",
+      label: { en: "Live Lab", zh: "\u5B9E\u65F6\u5DE5\u4F5C\u53F0" },
+      anchor: "psychtool-workbench"
+    },
+    {
+      id: "pubs",
+      no: "03",
+      label: { en: "Publications", zh: "\u5B66\u672F\u53D1\u8868" },
+      anchor: "publications",
+      targetView: "publications"
+    },
+    {
+      id: "code",
+      no: "04",
+      label: { en: "Code & Tools", zh: "\u4EE3\u7801\u4E0E\u5DE5\u5177\u5305" },
+      anchor: "code-tools",
+      targetView: "shop"
+    },
+    {
+      id: "exp",
+      no: "05",
+      label: { en: "Experience & Skills", zh: "\u7ECF\u5386\u4E0E\u6280\u80FD" },
+      anchor: "about"
+    }
+  ];
+  function Header({ view, go }) {
+    const { lang, setLang } = useLang();
+    const [open, setOpen] = (0, import_react2.useState)(false);
+    const navigateItem = (item) => {
+      setOpen(false);
+      if (view !== "home") {
+        go("home");
+        if (item.anchor) {
+          setTimeout(() => {
+            document.getElementById(item.anchor)?.scrollIntoView({ behavior: "smooth" });
+          }, 60);
+        }
+        return;
+      }
+      if (item.anchor) {
+        const el = document.getElementById(item.anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }
+      if (item.targetView) {
+        go(item.targetView);
+      }
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", { className: "hd", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hd-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hd-left", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            "button",
+            {
+              type: "button",
+              className: "hd-logo",
+              onClick: () => {
+                setOpen(false);
+                go("home");
+              },
+              "aria-label": "Home",
+              children: "XC"
+            }
+          ),
+          view !== "home" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            "button",
+            {
+              type: "button",
+              className: "hd-back",
+              onClick: () => {
+                setOpen(false);
+                go("home");
+              },
+              children: lang === "en" ? "\u2190 Overview" : "\u2190 \u8FD4\u56DE\u603B\u89C8"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: "hd-nav", "aria-label": "Primary", children: NAV_ITEMS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { type: "button", onClick: () => navigateItem(item), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "hd-no", children: item.no }),
+          " ",
+          t(item.label, lang)
+        ] }, item.id)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hd-right", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hd-lang", role: "group", "aria-label": "Language switcher", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              "button",
+              {
+                type: "button",
+                className: lang === "en" ? "on" : "",
+                onClick: () => setLang("en"),
+                children: "EN"
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              "button",
+              {
+                type: "button",
+                className: lang === "zh" ? "on" : "",
+                onClick: () => setLang("zh"),
+                children: "\u4E2D"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            "button",
+            {
+              type: "button",
+              className: "hd-toggle",
+              "aria-expanded": open,
+              onClick: () => setOpen(!open),
+              children: open ? lang === "en" ? "Close" : "\u6536\u8D77" : lang === "en" ? "Menu" : "\u83DC\u5355"
+            }
+          )
+        ] })
+      ] }),
+      open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: "hd-drawer", "aria-label": "Mobile", children: NAV_ITEMS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { type: "button", onClick: () => navigateItem(item), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: item.no }),
+        t(item.label, lang)
+      ] }, item.id)) })
+    ] });
+  }
+
+  // src/Hero.tsx
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  function Hero() {
+    const { lang, lens, setLens } = useLang();
+    const pickLens = (id) => {
+      setLens(id);
+      document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" });
+    };
+    const jump = (anchor) => {
+      document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "hero", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-top", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "hero-eyebrow", children: t(HERO_COPY.eyebrow, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("h1", { className: "hero-name", children: [
+            "Xiaohan ",
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "(Alex)" }),
+            " Chen"
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "hero-links", "aria-label": "Profile links", children: PERSONAL_LINKS.map((l) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+          "a",
+          {
+            href: l.url,
+            target: l.url.startsWith("mailto:") ? void 0 : "_blank",
+            rel: l.url.startsWith("mailto:") ? void 0 : "noreferrer",
+            children: [
+              l.label,
+              " \u2197"
+            ]
+          },
+          l.label
+        )) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "hero-bio", children: t(HERO_COPY.bio, lang) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-roles", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: t(HERO_COPY.targetRolesLabel, lang) }),
+        " ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: t(HERO_COPY.targetRoles, lang) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-actions-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-lens", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "hero-lens-label", children: t(HERO_COPY.lensHeading, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "hero-lens-btns", role: "group", "aria-label": "Target role lens", children: ROLE_LENSES.map((r) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "button",
+            {
+              type: "button",
+              className: `hero-lens-btn ${lens === r.id ? "on" : ""}`,
+              onClick: () => pickLens(r.id),
+              children: t(r.label, lang)
+            },
+            r.id
+          )) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-quick", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", className: "hq-primary", onClick: () => jump("case-studies"), children: lang === "en" ? "01 Featured Cases \u2193" : "01 \u6D4F\u89C8\u6838\u5FC3\u6848\u4F8B \u2193" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", onClick: () => jump("psychtool-workbench"), children: lang === "en" ? "02 Try Psychtool Lab" : "02 \u4F53\u9A8C\u6EAF\u6E90\u5DE5\u4F5C\u53F0" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", onClick: () => jump("publications"), children: lang === "en" ? "03 Preprints & DOI" : "03 \u9884\u5370\u672C\u4E0E\u8BBA\u6587" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "mailto:alexchen2027@u.northwestern.edu", className: "hq-link", children: lang === "en" ? "Email / Request CV \u2192" : "\u90AE\u4EF6\u8054\u7CFB / \u7D22\u53D6\u7B80\u5386 \u2192" })
+        ] })
+      ] })
+    ] });
+  }
+
+  // src/FeaturedCaseStudies.tsx
+  var import_react3 = __toESM(require_react());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  function SpeakEasyMiniDemo() {
+    const { lang } = useLang();
+    const [turn, setTurn] = (0, import_react3.useState)("listening");
+    const states = {
+      listening: {
+        speaker: lang === "en" ? "You (Participant)" : "\u53D7\u8BBF\u8005\uFF08\u5B9E\u65F6\u8BED\u97F3\uFF09",
+        transcript: lang === "en" ? "\u201CWe switched workflows twice because weekly team notes kept losing original interview quotes.\u201D" : "\u201C\u6211\u4EEC\u6362\u8FC7\u4E24\u6B21\u5DE5\u5177\uFF0C\u56E0\u4E3A\u6BCF\u5468\u4F8B\u4F1A\u7EAA\u8981\u8001\u662F\u628A\u53D7\u8BBF\u8005\u539F\u8BDD\u5F04\u4E22\u3002\u201D",
+        field: 'pain_point: "quote_loss_in_synthesis" (pending)'
+      },
+      thinking: {
+        speaker: lang === "en" ? "Worker (Isolated Secret)" : "\u540E\u7AEF Worker\uFF08\u9694\u79BB\u5BC6\u94A5\uFF09",
+        transcript: lang === "en" ? "Extracting confirmed field \u2192 SQLite research.db \xB7 Raw audio recording: DISABLED" : "\u6B63\u5728\u63D0\u53D6\u786E\u8BA4\u5B57\u6BB5\u5199\u5165\u672C\u5730 SQLite \xB7 \u539F\u59CB\u97F3\u9891\u5F55\u5236\uFF1A\u5DF2\u7981\u7528",
+        field: "POST /api/answers [200 OK \xB7 0B audio]"
+      },
+      speaking: {
+        speaker: lang === "en" ? "Interviewer Agent" : "AI \u8BBF\u8C08\u4E3B\u6301",
+        transcript: lang === "en" ? "\u201CGot it \u2014 when quotes went missing, how did your team verify claims before publishing?\u201D" : "\u201C\u660E\u767D\u4E86\u2014\u2014\u5F53\u539F\u8BDD\u4E22\u5931\u65F6\uFF0C\u4F60\u4EEC\u56E2\u961F\u53D1\u7A3F\u524D\u5982\u4F55\u6838\u5BF9\u4E8B\u5B9E\u51FA\u5904\uFF1F\u201D",
+        field: "follow_up_probe #02 \xB7 resumable_token=active"
+      }
+    };
+    const cur = states[turn];
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "LIVEKIT TURN STATE" : "LIVEKIT \u8F6E\u6B21\u72B6\u6001\u673A" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-seg", role: "group", "aria-label": "Turn state", children: ["listening", "thinking", "speaking"].map((s) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          "button",
+          {
+            type: "button",
+            className: turn === s ? "on" : "",
+            onClick: () => setTurn(s),
+            children: s
+          },
+          s
+        )) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-body", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-kv", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-k", children: cur.speaker }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-pill", children: lang === "en" ? "REC OFF" : "\u96F6\u5F55\u97F3" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "fcs-demo-quote", children: cur.transcript }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: cur.field })
+      ] })
+    ] });
+  }
+  function LegalArchiveMiniDemo() {
+    const { lang } = useLang();
+    const [mode, setMode] = (0, import_react3.useState)("raw");
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "DOJ GRAPH TOPOLOGY" : "\u53F8\u6CD5\u6863\u6848\u56FE\u8C31\u6D88\u6B67\u5BF9\u6BD4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-seg", role: "group", "aria-label": "Graph audit mode", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: mode === "raw" ? "on" : "", onClick: () => setMode("raw"), children: lang === "en" ? "Raw NER" : "\u539F\u59CB\u62BD\u53D6" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: mode === "audited" ? "on" : "",
+              onClick: () => setMode("audited"),
+              children: lang === "en" ? "Alias-Audited" : "\u5B9E\u4F53\u6D88\u6B67\u540E"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-demo-body", children: mode === "raw" ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "505 nodes \xB7 434 edges" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-warn", children: lang === "en" ? "Alias Split + Date Nodes" : "\u542B\u540C\u540D\u5206\u88C2\u4E0E\u65E5\u671F\u4F2A\u8282\u70B9" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: '["Ray"] \u2500\u2500?\u2500\u2500 ["Ray Ormond"] \xB7 ["Oct 12, 2005"] \u2192 false actor \xB7 65 clusters' })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "Reconciled Actor Graph" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-ok", children: lang === "en" ? "PageRank Stabilized" : "PageRank \u4E2D\u5FC3\u6027\u6821\u51C6" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: 'merge("Ray", "Ray Ormond") \xB7 prune(date_tokens) \u2192 \u0394PageRank & modularity audited' })
+      ] }) })
+    ] });
+  }
+  function UntangleMiniDemo() {
+    const { lang } = useLang();
+    const [surface, setSurface] = (0, import_react3.useState)("parser");
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "TOMB M1 PIPELINE" : "M1 \u5893\u846C\u591A\u7AEF\u7BA1\u7EBF" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-seg", role: "group", "aria-label": "Untangle surface", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: surface === "parser" ? "on" : "",
+              onClick: () => setSurface("parser"),
+              children: "Parser"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: surface === "mcp" ? "on" : "",
+              onClick: () => setSurface("mcp"),
+              children: "CLI / MCP"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: surface === "3d" ? "on" : "",
+              onClick: () => setSurface("3d"),
+              children: "3D / GIS"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-body", children: [
+        surface === "parser" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "M1 \xB7 \u571F\u5751\u7AD6\u7A74\u5893 (N\u2013S)" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-ok", children: lang === "en" ? "Explicit Source" : "\u539F\u6587\u5B9E\u6D4B\u6838\u5BF9" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "L: 2.5m [\u539F\u6587\u6709] \xB7 W: 1.2m [\u539F\u6587\u6709] \xB7 D: 3.0m [\u539F\u6587\u6709] \xB7 \u968F\u846C: \u9676\u7F50\xD71, \u94DC\u5251\xD71" })
+        ] }),
+        surface === "mcp" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "archaeo-tomb-parser" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-pill", children: "MCP + Obsidian" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "POST /dynamic-parser/parse \u2192 schema_valid: true \xB7 inferred_fields: flagged" })
+        ] }),
+        surface === "3d" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "Spatial & Morphology" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-ok", children: "GLB + Multi-Site GIS" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "shaft_mesh(2.5\xD71.2\xD73.0m) \u2192 rotatable WebGL chamber + /GIS coordinate layer" })
+        ] })
+      ] })
+    ] });
+  }
+  function ComapMiniDemo() {
+    const { lang } = useLang();
+    const [stage, setStage] = (0, import_react3.useState)("edge");
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "ZERO-DISK STREAM" : "\u96F6\u843D\u76D8\u8FB9\u7F18\u6D41\u7BA1\u7EBF" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-seg", role: "group", "aria-label": "Pipeline stage", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: stage === "cron" ? "on" : "", onClick: () => setStage("cron"), children: "Dedup" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: stage === "edge" ? "on" : "", onClick: () => setStage("edge"), children: "20\xD7 Edge" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: stage === "coded" ? "on" : "",
+              onClick: () => setStage("coded"),
+              children: "3K Study"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-body", children: [
+        stage === "cron" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "50 keywords \xD7 200 videos" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-pill", children: "O(1) R2 Lookup" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "r2.list_keys() \u2192 skip_archived=true \xB7 local_disk_used: 0.0 MB" })
+        ] }),
+        stage === "edge" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "CDN \u2192 CF Worker \u2192 R2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-ok", children: "~100 GB/day cap" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "workers=20 concurrent \xB7 stream_pipe(douyin_cdn, r2_bucket) \u2192 manifest.csv" })
+        ] }),
+        stage === "coded" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "Douyin vs. WeChat Channels" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-pill", children: "n = 3,000 videos" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "features: [cut_pace_sec, transcript_topics, visual_tone] \u2192 engagement_model" })
+        ] })
+      ] })
+    ] });
+  }
+  function PsychtoolMiniDemo() {
+    const { lang } = useLang();
+    const [edited, setEdited] = (0, import_react3.useState)(false);
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "ADR 0018 CASCADE GATE" : "ADR 0018 \u4E8B\u52A1\u7EA7\u5931\u6548\u62A4\u680F" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-seg", role: "group", "aria-label": "Source state", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: !edited ? "on" : "", onClick: () => setEdited(false), children: lang === "en" ? "v1 Verified" : "v1 \u5DF2\u6838\u9A8C" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: edited ? "on" : "", onClick: () => setEdited(true), children: lang === "en" ? "Mutate Source" : "\u4FEE\u6539\u4E0A\u6E38\u8BC1\u636E" })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-demo-body", children: !edited ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "case_a001 \xB7 Loopback Only" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-ok", children: "FK Isolated \xB7 Verified" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "Youth [Sep onset] \u2260 Caregiver [Jul onset] \u2192 both preserved \xB7 0 diagnosis generated" })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-stat-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "Caregiver v1 \u2192 v2 (Mid-Aug)" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-warn", children: "1 Paragraph \u2192 Needs review" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: "BEGIN TX: claim\u2192pending \xB7 draft\u2192Needs review \xB7 unsent_egress\u2192void \xB7 audit_log++" })
+      ] }) })
+    ] });
+  }
+  function TraumaAuditMiniDemo() {
+    const { lang } = useLang();
+    const [split, setSplit] = (0, import_react3.useState)("grouped");
+    const bars = {
+      meta: {
+        acc: "0.795",
+        pct: 80,
+        warn: true,
+        note: lang === "en" ? "Metadata-only LogReg beats text model via circular source shortcuts!" : "\u4EC5\u9760\u5143\u6570\u636E\u903B\u8F91\u56DE\u5F52\u53CD\u8D85\u6587\u672C\u5927\u6A21\u578B\u2014\u2014\u66B4\u9732\u5FAA\u73AF\u6765\u6E90\u6377\u5F84\uFF01"
+      },
+      random: {
+        acc: "0.704",
+        pct: 70,
+        warn: true,
+        note: lang === "en" ? "Naive 5-fold RoBERTa-large: memorizes corpus provenance + silver keywords." : "\u5E38\u89C4\u968F\u673A 5 \u6298 RoBERTa-large\uFF1A\u6DF7\u5165\u540C\u6E90\u8BED\u6599\u8BB0\u5FC6\u4E0E\u542F\u53D1\u5F0F\u5173\u952E\u8BCD\u6CC4\u6F0F\u3002"
+      },
+      grouped: {
+        acc: "0.321",
+        pct: 32,
+        warn: false,
+        note: lang === "en" ? "Honest source-grouped split across 8 corpora (n = 4,094) \xB7 Live on Modal." : "\u8DE8 8 \u8BED\u6599\u5E93\u4E25\u683C\u6309\u6E90\u5206\u7EC4\u8BC4\u6D4B\uFF08n = 4,094\uFF09\u771F\u5B9E\u6CDB\u5316\u57FA\u7EBF \xB7 \u5DF2\u90E8\u7F72 Modal\u3002"
+      }
+    };
+    const cur = bars[split];
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo", onClick: (e) => e.stopPropagation(), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-bar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-demo-label", children: lang === "en" ? "SPLIT LEAKAGE AUDIT" : "\u5207\u5206\u534F\u8BAE\u6CC4\u6F0F\u5BA1\u8BA1" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-seg", role: "group", "aria-label": "Evaluation split", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: split === "meta" ? "on" : "", onClick: () => setSplit("meta"), children: "Meta-Only" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: split === "random" ? "on" : "",
+              onClick: () => setSplit("random"),
+              children: "5-Fold Naive"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "button",
+            {
+              type: "button",
+              className: split === "grouped" ? "on" : "",
+              onClick: () => setSplit("grouped"),
+              children: "Source-Grouped"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-demo-body", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-meter-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-meter-val", children: cur.acc }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-meter-track", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "div",
+            {
+              className: `fcs-meter-fill ${cur.warn ? "is-warn" : "is-honest"}`,
+              style: { width: `${cur.pct}%` }
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-code", children: cur.note })
+      ] })
+    ] });
+  }
+  function renderMiniDemo(id) {
+    switch (id) {
+      case "speakeasy":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(SpeakEasyMiniDemo, {});
+      case "legal-archive":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(LegalArchiveMiniDemo, {});
+      case "untangle":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(UntangleMiniDemo, {});
+      case "comap-pipeline":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ComapMiniDemo, {});
+      case "psychtool":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(PsychtoolMiniDemo, {});
+      case "trauma-audit":
+        return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TraumaAuditMiniDemo, {});
+    }
+  }
+  function CaseStudyReaderModal({
+    cs,
+    list,
+    onSelect,
+    onClose
+  }) {
+    const { lang } = useLang();
+    const [copied, setCopied] = (0, import_react3.useState)(false);
+    const idx = list.findIndex((x) => x.id === cs.id);
+    const prev = list[(idx - 1 + list.length) % list.length];
+    const next = list[(idx + 1) % list.length];
+    (0, import_react3.useEffect)(() => {
+      const onKey = (e) => {
+        if (e.key === "Escape") onClose();
+        if (e.key === "ArrowLeft") onSelect(prev.id);
+        if (e.key === "ArrowRight") onSelect(next.id);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [onClose, onSelect, prev.id, next.id]);
+    const handleCopy = async () => {
+      const md = formatCaseStudyMarkdown(cs, lang);
+      try {
+        await navigator.clipboard.writeText(md);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1800);
+      } catch {
+        setCopied(false);
+      }
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-modal-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+      "div",
+      {
+        className: "fcs-modal",
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": t(cs.title, lang),
+        onClick: (e) => e.stopPropagation(),
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-top", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-nav", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { type: "button", onClick: () => onSelect(prev.id), children: [
+                "\u2190 ",
+                lang === "en" ? "Prev" : "\u4E0A\u4E00\u7BC7",
+                " (",
+                prev.no,
+                ")"
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: "fcs-modal-pos", children: [
+                idx + 1,
+                " / ",
+                list.length
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { type: "button", onClick: () => onSelect(next.id), children: [
+                lang === "en" ? "Next" : "\u4E0B\u4E00\u7BC7",
+                " (",
+                next.no,
+                ") \u2192"
+              ] })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-actions", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: "fcs-copy-btn", onClick: handleCopy, children: copied ? lang === "en" ? "\u2713 Copied Markdown" : "\u2713 \u5DF2\u590D\u5236 Markdown" : lang === "en" ? "Copy Markdown" : "\u590D\u5236 Markdown" }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: "fcs-close-btn", onClick: onClose, children: lang === "en" ? "Close [ESC]" : "\u5173\u95ED [ESC]" })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-head", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-kicker", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: cs.no }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "\xB7" }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: t(cs.tag, lang) }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-modal-status", children: t(cs.status, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: t(cs.title, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "fcs-modal-sub", children: t(cs.subtitle, lang) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-modal-metrics", children: cs.metrics.map((m) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-metric-box", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: m.value }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: t(m.label, lang) })
+          ] }, m.value)) }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-modal-demo", children: renderMiniDemo(cs.id) }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-grid", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: lang === "en" ? "01 / Problem & Failure Mode" : "01 / \u6838\u5FC3\u75DB\u70B9\u4E0E\u5931\u6548\u6A21\u5F0F" }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: t(cs.problem, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: lang === "en" ? "02 / System Architecture" : "02 / \u7CFB\u7EDF\u67B6\u6784\u4E0E\u5B9E\u73B0" }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: t(cs.architecture, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: lang === "en" ? "03 / Verified Outcome" : "03 / \u5B9E\u8BC1\u4EA7\u51FA\u4E0E\u9A8C\u8BC1" }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: t(cs.outcome, lang) })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-bullets", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: lang === "en" ? "Technical & Methodological Highlights" : "\u5173\u952E\u5DE5\u7A0B\u4E0E\u65B9\u6CD5\u8BBA\u7EC6\u8282" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("ul", { children: cs.bullets.map((b, i) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("li", { children: t(b, lang) }, i)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-modal-foot", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-stack-list", children: cs.stack.map((s) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-stack-chip", children: s }, s)) }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-link-list", children: cs.links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+              "a",
+              {
+                href: l.url,
+                target: l.url.startsWith("#") ? void 0 : "_blank",
+                rel: l.url.startsWith("#") ? void 0 : "noreferrer",
+                onClick: () => {
+                  if (l.url.startsWith("#")) onClose();
+                },
+                children: [
+                  t(l.label, lang),
+                  " \u2192"
+                ]
+              },
+              l.url
+            )) })
+          ] })
+        ]
+      }
+    ) });
+  }
+  function FeaturedCaseStudies() {
+    const { lang, lens } = useLang();
+    const [domain, setDomain] = (0, import_react3.useState)("all");
+    const [activeId, setActiveId] = (0, import_react3.useState)(null);
+    const activeLens = ROLE_LENSES.find((r) => r.id === lens) ?? ROLE_LENSES[0];
+    const ordered = (0, import_react3.useMemo)(() => {
+      const rank = new Map(activeLens.order.map((id, idx) => [id, idx]));
+      const sorted = [...CASE_STUDIES].sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99));
+      if (domain === "all") return sorted;
+      return sorted.filter((c) => c.domain === domain);
+    }, [activeLens, domain]);
+    const activeCase = activeId ? CASE_STUDIES.find((c) => c.id === activeId) ?? null : null;
+    const handleMouseMove = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+      e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "fcs", id: "case-studies", "aria-label": "Featured Case Studies", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-head", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-head-left", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-no", children: "01 / FEATURED PROJECTS" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: "fcs-title", children: lang === "en" ? "Interactive Case Studies" : "\u6838\u5FC3\u4EA4\u4E92\u9879\u76EE\u6848\u4F8B" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-lens-banner", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-lens-dot" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { children: [
+            lang === "en" ? "Lens:" : "\u5F53\u524D\u6392\u5E8F\u89C6\u89D2\uFF1A",
+            " ",
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: t(activeLens.label, lang) }),
+            " \u2014 ",
+            t(activeLens.hint, lang)
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-filters", role: "tablist", "aria-label": "Filter case studies by domain", children: DOMAIN_FILTERS.map((f) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+        "button",
+        {
+          type: "button",
+          role: "tab",
+          "aria-selected": domain === f.id,
+          className: `fcs-filter-btn ${domain === f.id ? "on" : ""}`,
+          onClick: () => setDomain(f.id),
+          children: [
+            t(f.label, lang),
+            " ",
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { children: [
+              "(",
+              f.count,
+              ")"
+            ] })
+          ]
+        },
+        f.id
+      )) }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-grid", children: ordered.map((cs, index) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+        "article",
+        {
+          className: "fcs-card",
+          onMouseMove: handleMouseMove,
+          onClick: () => setActiveId(cs.id),
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-spotlight", "aria-hidden": "true" }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-card-top", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: "fcs-card-rank", children: [
+                "#",
+                String(index + 1).padStart(2, "0"),
+                " \xB7 ",
+                cs.no
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "fcs-card-status", children: t(cs.status, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "fcs-card-tag", children: t(cs.tag, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "fcs-card-title", children: t(cs.title, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "fcs-card-sub", children: t(cs.subtitle, lang) }),
+            renderMiniDemo(cs.id),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-card-metrics", children: cs.metrics.map((m) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-card-metric", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: m.value }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: t(m.label, lang) })
+            ] }, m.value)) }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "fcs-card-foot", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "fcs-card-stack", children: cs.stack.slice(0, 4).map((s) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: s }, s)) }),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                "button",
+                {
+                  type: "button",
+                  className: "fcs-open-btn",
+                  onClick: (e) => {
+                    e.stopPropagation();
+                    setActiveId(cs.id);
+                  },
+                  children: lang === "en" ? "Open Case Study \u2192" : "\u5C55\u5F00\u5B8C\u6574\u6848\u4F8B \u2192"
+                }
+              )
+            ] })
+          ]
+        },
+        cs.id
+      )) }),
+      activeCase && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        CaseStudyReaderModal,
+        {
+          cs: activeCase,
+          list: ordered,
+          onSelect: (id) => setActiveId(id),
+          onClose: () => setActiveId(null)
+        }
+      )
+    ] });
+  }
+
+  // src/Reporting.tsx
+  var import_react4 = __toESM(require_react());
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  function FencingChannelWidget() {
+    const { lang } = useLang();
+    const channels = [
+      { name: "Substack (Longform + Charts)", share: 42, reads: "5,840+" },
+      { name: "X / Twitter (Thread Breakdowns)", share: 26, reads: "3,610+" },
+      { name: "Instagram (Visual Bout Cards)", share: 16, reads: "2,220+" },
+      { name: "Threads & Bluesky (Cross-Post)", share: 16, reads: "2,230+" }
+    ];
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-widget", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-widget-title", children: lang === "en" ? "5-CHANNEL DISTRIBUTION & +280% 2-WEEK FOLLOWER SURGE" : "\u4E94\u7AEF\u5185\u5BB9\u5206\u53D1\u5360\u6BD4\u4E0E\u4E24\u5468 +280% \u53D7\u4F17\u589E\u957F\u7ED3\u6784" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-bars", children: channels.map((c) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-bar-row", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-bar-meta", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: c.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "mono", children: c.reads })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-bar-track", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-bar-fill", style: { width: `${c.share * 2}%` } }) })
+      ] }, c.name)) })
+    ] });
+  }
+  function TechNexusClipsWidget() {
+    const { lang } = useLang();
+    const clips = [
+      {
+        no: "BEAT 01",
+        title: lang === "en" ? "Corporate-Venture Co-Investment Mechanics & Strategic Capital Deployment" : "\u4F01\u4E1A\u98CE\u9669\u6295\u8D44\uFF08CVC\uFF09\u8054\u5408\u6295\u8D44\u673A\u5236\u4E0E\u6218\u7565\u8D44\u672C\u914D\u7F6E\u6838\u67E5",
+        method: lang === "en" ? "Executive interviews + SEC / pitch records" : "\u9AD8\u7BA1\u5B9E\u540D\u4E13\u8BBF + \u76D1\u7BA1\u7533\u62A5\u6570\u636E\u4EA4\u53C9\u6838\u9A8C"
+      },
+      {
+        no: "BEAT 02",
+        title: lang === "en" ? "Audio, Industrial & Applied AI Portfolio Founder Deep Dives" : "\u97F3\u9891\u786C\u4EF6\u3001\u5DE5\u4E1A\u79D1\u6280\u4E0E\u5E94\u7528\u578B AI \u88AB\u6295\u4F01\u4E1A\u6DF1\u5EA6\u5256\u6790",
+        method: lang === "en" ? "Cohort database tracking + primary reporting" : "\u88AB\u6295\u7EC4\u5408\u6570\u636E\u5E93\u8FFD\u8E2A + \u4E00\u624B\u7530\u91CE\u91C7\u8BBF"
+      },
+      {
+        no: "BEAT 03",
+        title: lang === "en" ? "Midwest Venture Ecosystem & Cross-Stage Deal Flow Synthesis" : "\u7F8E\u56FD\u4E2D\u897F\u90E8\u521B\u6295\u751F\u6001\u4E0E\u8DE8\u8F6E\u6B21\u4EA4\u6613\u8D8B\u52BF\u7EFC\u8FF0",
+        method: lang === "en" ? "8 bylined stories out of 9 published residency pieces" : "\u9A7B\u7AD9\u671F\u95F4\u53D1\u8868 9 \u7BC7\u6B63\u5F0F\u62A5\u9053\uFF088 \u7BC7\u4E2A\u4EBA\u7F72\u540D\uFF09"
+      }
+    ];
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-widget", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-widget-title", children: lang === "en" ? "REPRESENTATIVE REPORTING BEATS (9 PUBLISHED \xB7 8 BYLINED)" : "\u9A7B\u7AD9\u62A5\u9053\u6838\u5FC3\u9009\u9898\u77E9\u9635\uFF08\u53D1\u8868 9 \u7BC7 \xB7 \u7F72\u540D 8 \u7BC7\uFF09" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-clips", children: clips.map((c) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-clip-item", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-clip-no", children: c.no }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: c.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: c.method })
+        ] })
+      ] }, c.no)) })
+    ] });
+  }
+  var TANG_SITES = [
+    { id: "yumenguan", en: "Yumen Pass", zh: "\u7389\u95E8\u5173", x: 14, y: 20, dx: 2.6, dy: 0.8, motif: { en: "Borderland garrison & spring wind", zh: "\u6625\u98CE\u7389\u95E8 \xB7 \u620D\u8FB9\u5B64\u57CE" } },
+    { id: "yangguan", en: "Yangguan Pass", zh: "\u9633\u5173\uFF08\u6566\u714C\u897F\uFF09", x: 18, y: 31, dx: 2.6, dy: 1, motif: { en: "Western frontier farewell", zh: "\u897F\u51FA\u9633\u5173 \xB7 \u8FB9\u585E\u6298\u67F3" } },
+    { id: "liangzhou", en: "Liangzhou (Wuwei)", zh: "\u51C9\u5DDE\uFF08\u6B66\u5A01\uFF09", x: 32, y: 34, dx: 2.6, dy: 1, motif: { en: "Jade-cup wine & pipa martial tone", zh: "\u8461\u8404\u7F8E\u9152 \xB7 \u51C9\u5DDE\u8FB9\u8C03" } },
+    { id: "changan", en: "Chang\u2019an (Xi\u2019an)", zh: "\u957F\u5B89\uFF08\u897F\u5B89\uFF09", x: 47, y: 45, dx: -2.6, dy: -1.6, anchor: "end", motif: { en: "Imperial parting & autumn longing", zh: "\u5E1D\u4EAC\u9001\u522B \xB7 \u79CB\u601D\u6000\u8FDC" } },
+    { id: "luoyang", en: "Luoyang", zh: "\u6D1B\u9633", x: 58, y: 43, dx: 2.6, dy: 0.6, motif: { en: "Central Plains nostalgia & capital road", zh: "\u6D1B\u9633\u4EB2\u53CB \xB7 \u4E2D\u539F\u6545\u56ED" } },
+    { id: "chengdu", en: "Chengdu (Shu)", zh: "\u6210\u90FD\uFF08\u9526\u5B98\u57CE\uFF09", x: 35, y: 66, dx: -2.4, dy: 1.2, anchor: "end", motif: { en: "Thatched cottage refuge & spring rain", zh: "\u8349\u5802\u6625\u96E8 \xB7 \u5DF4\u8700\u6816\u5C45" } },
+    { id: "baidicheng", en: "Baidi (Three Gorges)", zh: "\u767D\u5E1D\u57CE\uFF08\u4E09\u5CE1\uFF09", x: 50, y: 64, dx: 0, dy: 4.8, motif: { en: "Swift river release & pardon joy", zh: "\u671D\u8F9E\u767D\u5E1D \xB7 \u8F7B\u821F\u5FEB\u610F" } },
+    { id: "jiangxia", en: "Jiangxia (Wuhan)", zh: "\u6C5F\u590F\uFF08\u9EC4\u9E64\u697C\uFF09", x: 62, y: 60, dx: -2.4, dy: -1.8, anchor: "end", motif: { en: "River gaze & misty homeland", zh: "\u9EC4\u9E64\u9001\u522B \xB7 \u70DF\u6CE2\u4E61\u6101" } },
+    { id: "xunyang", en: "Xunyang (Jiujiang)", zh: "\u6D54\u9633\uFF08\u4E5D\u6C5F\uFF09", x: 66, y: 70, dx: -2.4, dy: 1.2, anchor: "end", motif: { en: "Exile lament & pipa resonance", zh: "\u6D54\u9633\u8C2A\u5C45 \xB7 \u5929\u6DAF\u6CA6\u843D" } },
+    { id: "yangzhou", en: "Yangzhou", zh: "\u626C\u5DDE", x: 76, y: 48, dx: 2.6, dy: 0.6, motif: { en: "Canal prosperity & vernal farewell", zh: "\u70DF\u82B1\u4E09\u6708 \xB7 \u6DEE\u5DE6\u7E41\u534E" } },
+    { id: "jinling", en: "Jinling (Nanjing)", zh: "\u91D1\u9675\uFF08\u5357\u4EAC\uFF09", x: 74, y: 56, dx: -2.6, dy: -1.4, anchor: "end", motif: { en: "Six Dynasties historical elegy", zh: "\u516D\u671D\u6000\u53E4 \xB7 \u6C5F\u5C71\u5174\u66FF" } },
+    { id: "suzhou", en: "Gusu (Suzhou)", zh: "\u59D1\u82CF\uFF08\u82CF\u5DDE\uFF09", x: 83, y: 60, dx: 2.5, dy: 0.8, motif: { en: "Night mooring & Hanshan temple bell", zh: "\u67AB\u6865\u591C\u6CCA \xB7 \u6C34\u4E61\u7F81\u65C5" } },
+    { id: "hangzhou", en: "Qiantang (Hangzhou)", zh: "\u94B1\u5858\uFF08\u676D\u5DDE\uFF09", x: 81, y: 71, dx: 2.5, dy: 1.2, motif: { en: "Lake serenity & scenic lyricism", zh: "\u6E56\u5149\u5C71\u8272 \xB7 \u5C71\u6C34\u6E05\u97F3" } }
+  ];
+  function TangPoetryMapWidget() {
+    const { lang } = useLang();
+    const [selected, setSelected] = (0, import_react4.useState)(TANG_SITES[3]);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-widget", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-widget-title", children: lang === "en" ? "13 HISTORICAL LITERARY TOPONYMS \u2014 CLICK ANY NODE TO INSPECT AFFECTIVE MOTIF" : "13 \u5904\u5510\u5B8B\u6587\u5B66\u5730\u7406\u8282\u70B9 \u2014 \u70B9\u51FB\u5750\u6807\u67E5\u770B\u53E4\u5178\u610F\u8C61\u4E0E\u60C5\u611F\u8303\u5F0F" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-map-wrap", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("svg", { viewBox: "0 8 104 72", className: "rp-map-svg", role: "img", "aria-label": "13 Tang Poetry Historical Sites", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "14", y1: "20", x2: "18", y2: "31", stroke: "#cfcec9", strokeWidth: "0.5", strokeDasharray: "1.5 1.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "18", y1: "31", x2: "32", y2: "34", stroke: "#cfcec9", strokeWidth: "0.5", strokeDasharray: "1.5 1.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "32", y1: "34", x2: "47", y2: "45", stroke: "#cfcec9", strokeWidth: "0.5", strokeDasharray: "1.5 1.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "47", y1: "45", x2: "58", y2: "43", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "47", y1: "45", x2: "35", y2: "66", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "35", y1: "66", x2: "50", y2: "64", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "50", y1: "64", x2: "62", y2: "60", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "62", y1: "60", x2: "67", y2: "69", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "62", y1: "60", x2: "74", y2: "56", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "74", y1: "56", x2: "76", y2: "48", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "74", y1: "56", x2: "83", y2: "60", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "83", y1: "60", x2: "81", y2: "71", stroke: "#cfcec9", strokeWidth: "0.5" }),
+          TANG_SITES.map((s) => {
+            const active = s.id === selected.id;
+            return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+              "g",
+              {
+                className: "rp-map-node",
+                onClick: () => setSelected(s),
+                style: { cursor: "pointer" },
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                    "circle",
+                    {
+                      cx: s.x,
+                      cy: s.y,
+                      r: active ? 2.4 : 1.6,
+                      fill: active ? "#1f4fe0" : "#0b0b0b"
+                    }
+                  ),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                    "text",
+                    {
+                      x: s.x + (s.dx ?? 2.5),
+                      y: s.y + (s.dy ?? 1),
+                      textAnchor: s.anchor ?? "start",
+                      fontSize: "3.1",
+                      fill: active ? "#1f4fe0" : "#3a3a37",
+                      fontWeight: active ? "600" : "400",
+                      fontFamily: "Roboto Mono, monospace",
+                      children: lang === "en" ? s.en.split(" ")[0] : s.zh.split("\uFF08")[0]
+                    }
+                  )
+                ]
+              },
+              s.id
+            );
+          })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-map-info", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: lang === "en" ? selected.en : selected.zh }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: t(selected.motif, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-site-chips", children: TANG_SITES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            "button",
+            {
+              type: "button",
+              className: s.id === selected.id ? "on" : "",
+              onClick: () => setSelected(s),
+              children: lang === "en" ? s.en.split(" ")[0] : s.zh.split("\uFF08")[0]
+            },
+            s.id
+          )) })
+        ] })
+      ] })
+    ] });
+  }
+  function SmallerCardModal({ card, onClose }) {
+    const { lang } = useLang();
+    const [copied, setCopied] = (0, import_react4.useState)(false);
+    (0, import_react4.useEffect)(() => {
+      const onKey = (e) => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [onClose]);
+    const copyMd = async () => {
+      try {
+        await navigator.clipboard.writeText(formatSmallerCardMarkdown(card, lang));
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1800);
+      } catch {
+        setCopied(false);
+      }
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-modal-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+      "div",
+      {
+        className: "rp-modal",
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": t(card.title, lang),
+        onClick: (e) => e.stopPropagation(),
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-modal-top", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-modal-tag", children: t(card.tag, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-modal-btns", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", className: "rp-copy-btn", onClick: copyMd, children: copied ? lang === "en" ? "\u2713 Copied" : "\u2713 \u5DF2\u590D\u5236" : lang === "en" ? "Copy Markdown" : "\u590D\u5236 Markdown" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", className: "rp-close-btn", onClick: onClose, children: lang === "en" ? "Close [ESC]" : "\u5173\u95ED [ESC]" })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { className: "rp-modal-title", children: t(card.title, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "rp-modal-sum", children: t(card.summary, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-modal-metrics", children: card.metrics.map((m) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-metric", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: m.value }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: t(m.label, lang) })
+          ] }, m.value)) }),
+          card.id === "fencing-dj" && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(FencingChannelWidget, {}),
+          card.id === "technexus" && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(TechNexusClipsWidget, {}),
+          card.id === "tang-poetry" && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(TangPoetryMapWidget, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-modal-cols", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: lang === "en" ? "Context" : "\u80CC\u666F\u4E0E\u95EE\u9898" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: t(card.problem, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: lang === "en" ? "Method & Execution" : "\u65B9\u6CD5\u4E0E\u6267\u884C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: t(card.approach, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: lang === "en" ? "Verified Output" : "\u9A8C\u8BC1\u4EA7\u51FA" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: t(card.impact, lang) })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-modal-foot", children: card.links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("a", { href: l.url, target: l.url.startsWith("mailto:") ? void 0 : "_blank", rel: "noreferrer", children: [
+            t(l.label, lang),
+            " \u2192"
+          ] }, l.url)) })
+        ]
+      }
+    ) });
+  }
+  function Reporting() {
+    const { lang } = useLang();
+    const [openId, setOpenId] = (0, import_react4.useState)(null);
+    const activeCard = openId ? SMALLER_CARDS.find((c) => c.id === openId) ?? null : null;
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "rp", "aria-label": "Reporting, Editorial & Cultural Analytics", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-head", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-dot" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { className: "rp-title", children: lang === "en" ? "EDITORIAL REPORTING & CULTURAL ANALYTICS" : "\u6570\u636E\u65B0\u95FB\u4E13\u680F\u3001\u9A7B\u7AD9\u62A5\u9053\u4E0E\u6587\u5316\u7A7A\u95F4\u8BA1\u7B97" }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-note", children: lang === "en" ? "Click any card to inspect interactive breakdown" : "\u70B9\u51FB\u4EFB\u610F\u5361\u7247\u5C55\u5F00\u4EA4\u4E92\u56FE\u8868\u4E0E\u8BE6\u60C5" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-grid", children: SMALLER_CARDS.map((card) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+        "article",
+        {
+          className: "rp-card",
+          onClick: () => setOpenId(card.id),
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-top", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-tag", children: t(card.tag, lang) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "rp-badge", children: t(card.status, lang) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: t(card.title, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: t(card.summary, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-card-foot", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-mini-metrics", children: card.metrics.slice(0, 2).map((m) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("span", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: m.value }),
+                " ",
+                t(m.label, lang)
+              ] }, m.value)) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                "button",
+                {
+                  type: "button",
+                  className: "rp-inspect",
+                  onClick: (e) => {
+                    e.stopPropagation();
+                    setOpenId(card.id);
+                  },
+                  children: lang === "en" ? "Inspect \u2192" : "\u67E5\u770B\u8BE6\u60C5 \u2192"
+                }
+              )
+            ] })
+          ]
+        },
+        card.id
+      )) }),
+      activeCard && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(SmallerCardModal, { card: activeCard, onClose: () => setOpenId(null) })
+    ] });
+  }
+
+  // src/rikyu-icon.tsx
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  function Icon({ src, size = "1em", label, className, style }) {
+    const mono = src.includes("tone=mono");
+    const image = 'url("' + src + '")';
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      "span",
+      {
+        "data-rk-icon": "",
+        role: label ? "img" : void 0,
+        "aria-label": label,
+        "aria-hidden": label ? void 0 : true,
+        className,
+        style: {
+          display: "inline-block",
+          flexShrink: 0,
+          width: size,
+          height: size,
+          verticalAlign: "-0.125em",
+          backgroundColor: mono ? "currentColor" : "transparent",
+          backgroundImage: mono ? "none" : image,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          maskImage: mono ? image : "none",
+          WebkitMaskImage: mono ? image : "none",
+          maskPosition: "center",
+          WebkitMaskPosition: "center",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskSize: "contain",
+          WebkitMaskSize: "contain",
+          ...style
+        }
+      }
+    );
+  }
 
   // src/data.ts
   var SECTIONS = [
@@ -12769,40 +14437,6 @@
     { key: "reading", no: "05", title: "Reading", blurb: "Empirical synthesis & methodology" },
     { key: "interests", no: "06", title: "Interests", blurb: "Digital humanities, CSS, data journalism & fencing" },
     { key: "design", no: "07", title: "Design", blurb: "Interactive SVG, 3D modeling & visual systems" }
-  ];
-  var WORKING_ON = [
-    {
-      id: "w1",
-      tag: "Clinical NLP \xB7 Active Spec & Workbench",
-      title: "psychtool \u2014 Provenance-First Clinical Writing Workspace",
-      detail: "Designing an evidence-grounded background-writing studio for PsyD workflows. Preserves multi-informant conflicts (youth vs. caregiver vs. teacher), enforces strict case isolation, and flags stale claims when source records change.",
-      status: "Interactive Studio Live \u2193",
-      targetView: "projects"
-    },
-    {
-      id: "w2",
-      tag: "Target: CCR Research Note \xB7 Deployed on Modal",
-      title: "Intergenerational Trauma P4 \u2014 Leakage Audit & Multimodal RoBERTa API",
-      detail: "End-to-end audit of 4,094 narratives across 8 public corpora exposing circular labels and label-derived metadata confounds, paired with an audited RoBERTa-large inference endpoint on Modal.",
-      status: "Manuscript Packaged / API Live",
-      targetView: "publications"
-    },
-    {
-      id: "w3",
-      tag: "Preprint & Target: SNAM \xB7 ORCID 0009-0003-7124-5208",
-      title: "Social Network Extraction from Public Legal Archives",
-      detail: "Evaluating how entity/relation extraction errors propagate to network-level outcomes (PageRank perturbation, modularity fragmentation) across 505 nodes and 434 edges from public DOJ records.",
-      status: "Preprint Ready (Nov 2026)",
-      targetView: "publications"
-    },
-    {
-      id: "w4",
-      tag: "Digital Humanities \xB7 CLI + MCP + Obsidian + 3D",
-      title: "Archaeo-Tomb-Parser & Spatial 3D Reconstruction",
-      detail: "Transforming Chinese archaeological excavation reports and noisy PDF scans into schema-validated JSON/CSV and interactive 3D tomb morphology comparisons.",
-      status: "Shipped on GitHub",
-      targetView: "shop"
-    }
   ];
   var LEADERSHIP = {
     title: "Vice President \u2014 Diaspora Writers Society",
@@ -12824,8 +14458,8 @@
       authors: "Xiaohan Chen (Northwestern University)",
       orcid: "0009-0003-7124-5208",
       summary: "Reviews text-to-graph extraction pipelines (rules, classical sequence models, LLM prompting/fine-tuning) on docket-scale legal records and argues evaluation must measure network-level perturbation (PageRank, modularity, identity splits) rather than span-level F1 alone. Demonstrates error propagation on a 505-node, 434-edge public DOJ communication graph.",
-      artifacts: ["LaTeX Source & PDF (240 KB)", "505-Node Gephi / Interactive Web Graph", "Zenodo Archival Metadata"],
-      link: "https://orcid.org/0009-0003-7124-5208"
+      artifacts: ["LaTeX Source & PDF (240 KB)", "505-Node Gephi / Interactive Web Graph", "Zenodo DOI: 10.5281/zenodo.23962378"],
+      link: "https://doi.org/10.5281/zenodo.23962378"
     },
     {
       id: 1,
@@ -12860,7 +14494,7 @@
       orcid: "0009-0003-7124-5208",
       summary: "Synthesizes 9 close-read empirical studies (from 35 OpenAlex candidates) on child/adolescent multi-informant correlation and AI clinical documentation errors (omission under concision, sibling attribution bleed, missing-vs-negative conflation) into a testable software specification.",
       artifacts: ["Assessment & Documentation Evidence Matrices", "Synthetic Benchmark Fixtures (TRAIN-A / TRAIN-B)"],
-      link: "https://github.com/alexxhchen-nu/psych-tools"
+      link: "https://github.com/alexxhchen-nu/psychtool"
     }
   ];
   var SHOP_PACKS = [
@@ -12875,7 +14509,7 @@
       includes: "Interactive Web Studio + Agent Skill + Clinical Workflow Questionnaire",
       formats: "React/TSX, JSON Schema Fixtures, Markdown Spec",
       goodFor: "PsyD / PhD researchers, qualitative social scientists, literature synthesis",
-      link: "https://github.com/alexxhchen-nu/psych-tools",
+      link: "https://github.com/alexxhchen-nu/psychtool",
       cta: "View Spec & Repo \u2192",
       badge: "Interactive Studio Live"
     },
@@ -13071,29 +14705,18 @@
   ];
   var DESIGNS = ["Interactive Isometric SVG", "Three.js / WebGL 3D Modeling", "High-Contrast Editorial UI/UX", "Figma", "Gephi & Network Visualization", "Remotion & Programmatic Motion", "Adobe Premiere", "DaVinci Resolve"].map((label, id) => ({ id, label }));
 
-  // src/Header.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime());
-  function Header({ view, go }) {
-    const [open, setOpen] = (0, import_react.useState)(false);
-    const pick = (v) => {
-      setOpen(false);
-      go(v);
-    };
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", { className: "hd", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "hd-bar", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "hd-logo", onClick: () => pick("home"), "aria-label": "Home", children: "XC" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: "hd-nav", "aria-label": "Primary", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: view === s.key ? "on" : "", onClick: () => pick(s.key), children: s.title }, s.key)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className: "hd-toggle", "aria-expanded": open, onClick: () => setOpen(!open), children: open ? "Close" : "Menu" })
-      ] }),
-      open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { className: "hd-drawer", "aria-label": "Mobile", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: view === s.key ? "on" : "", onClick: () => pick(s.key), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: s.no }),
-        s.title
-      ] }, s.key)) })
-    ] });
+  // src/Index.tsx
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  function Index({ go }) {
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("nav", { className: "idx", "aria-label": "Sections", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("button", { className: "idx-row", onClick: () => go(s.key), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-no", children: s.no }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-title", children: s.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-desc", children: s.blurb }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-arrow", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Icon, { src: "./assets/icon-arrow.svg?tone=mono", size: 24 }) })
+    ] }, s.key)) });
   }
 
   // src/facts.ts
-  var PROFILE = "Data journalist at Northwestern University\u2019s Medill School of Journalism (B.S. in Journalism, Data Journalism specialization; HCI certificate in progress). I reported and published nine stories during a Medill newsroom residency, eight bylined, and founded a data-journalism publication with 13,900+ reads. My work pairs original reporting with computation: auditing the data pipelines behind published claims, building interactive explainers, and shipping tools that keep every source traceable.";
   var EDUCATION = {
     school: "Northwestern University, Medill School of Journalism \u2014 Evanston, Illinois",
     degree: "Bachelor of Science in Journalism \u2014 Specialization: Data Journalism \xB7 Certificate in Human\u2013Computer Interaction (in progress) | Expected June 2027 | GPA: 3.73/4.00",
@@ -13113,185 +14736,50 @@
     { name: "Fencing", note: "Three-year NCAA Division I student-athlete (retired); member of Canada\u2019s national fencing team and multiple-time Canadian national champion." }
   ];
 
-  // src/Hero.tsx
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
-  function Hero() {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "hero", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("h1", { className: "hero-name", children: [
-        "Xiaohan ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "(Alex)" }),
-        " Chen"
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { className: "hero-sub", children: [
-        "Evanston, Illinois, United States \xB7 224-474-8019 \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "mailto:alexchen2027@u.northwestern.edu", children: "Email" }),
-        " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "https://www.linkedin.com/in/xiaohan-chen-530631293/", target: "_blank", rel: "noreferrer", children: "LinkedIn" }),
-        " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "https://github.com/alexxhchen-nu", target: "_blank", rel: "noreferrer", children: "GitHub" }),
-        " \xB7 ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "ORCID" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "hero-bio", children: PROFILE })
-    ] });
-  }
-
-  // src/Reporting.tsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
-  var REPORTING = [
-    {
-      id: "r1",
-      tag: "Newsroom \xB7 Medill Journalism Residency",
-      title: "TechNexus \u2014 Nine Published Stories, Eight Bylined",
-      detail: "Reported and published nine stories during a Medill journalism residency at TechNexus (March\u2013June 2026); eight carry my byline. Reporting combined original interviews with public-record and data work. Clips available on request.",
-      status: "Mar\u2013Jun 2026"
-    },
-    {
-      id: "r2",
-      tag: "Founder \xB7 Data Journalism",
-      title: "Data Journalism in Fencing \u2014 13,900+ Reads",
-      detail: "Founded a data-journalism publication covering competition performance and sport trends; built the datasets, charts, and analyses behind each piece, and ran distribution across five channels.",
-      status: "May 2025\u2013Present"
-    },
-    {
-      id: "r3",
-      tag: "Knight Lab at Northwestern",
-      title: "AI Content & Research Member",
-      detail: "Experiments in AI visual content and dataset optimization inside a six-person interdisciplinary team; turns technical processes into documented, reproducible notes.",
-      status: "May 2025\u2013Present"
-    },
-    {
-      id: "r4",
-      tag: "Medill Coursework",
-      title: "Data Journalism \xB7 Investigative Reporting \xB7 News Research Methods",
-      detail: "Reported work combining public records, original interviews, and analysis; coursework also covers data-visualization storytelling, cultural analytics, and media law and ethics.",
-      status: "In progress"
-    }
-  ];
-  function Reporting() {
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "rp", "aria-label": "Reporting and published work", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "rp-head", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-dot" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: "rp-title", children: "REPORTING & PUBLISHED WORK" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-note", children: "Medill School of Journalism \xB7 Evanston" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "rp-grid", children: REPORTING.map((item) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: "rp-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "rp-top", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-tag", children: item.tag }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "rp-badge", children: item.status })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: item.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: item.detail })
-      ] }, item.id)) })
-    ] });
-  }
-
-  // src/WorkingOn.tsx
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
-  function WorkingOn({ go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "wo", "aria-label": "Currently Working On", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "wo-head", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-dot" }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { className: "wo-title", children: "NOW \xB7 ACTIVE RESEARCH & ENGINEERING LAB (NOV 2026)" }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("span", { className: "wo-orcid", children: [
-          "ORCID: ",
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: "https://orcid.org/0009-0003-7124-5208", target: "_blank", rel: "noreferrer", children: "0009-0003-7124-5208" })
-        ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "wo-grid", children: WORKING_ON.map((item) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
-        "div",
-        {
-          className: "wo-card",
-          onClick: () => item.targetView && go(item.targetView),
-          role: "button",
-          tabIndex: 0,
-          onKeyDown: (e) => e.key === "Enter" && item.targetView && go(item.targetView),
-          children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "wo-top", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-tag", children: item.tag }),
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "wo-badge", children: item.status })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: item.title }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: item.detail })
-          ]
-        },
-        item.id
-      )) })
-    ] });
-  }
-
-  // src/rikyu-icon.tsx
-  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
-  function Icon({ src, size = "1em", label, className, style }) {
-    const mono = src.includes("tone=mono");
-    const image = 'url("' + src + '")';
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-      "span",
-      {
-        "data-rk-icon": "",
-        role: label ? "img" : void 0,
-        "aria-label": label,
-        "aria-hidden": label ? void 0 : true,
-        className,
-        style: {
-          display: "inline-block",
-          flexShrink: 0,
-          width: size,
-          height: size,
-          verticalAlign: "-0.125em",
-          backgroundColor: mono ? "currentColor" : "transparent",
-          backgroundImage: mono ? "none" : image,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-          maskImage: mono ? image : "none",
-          WebkitMaskImage: mono ? image : "none",
-          maskPosition: "center",
-          WebkitMaskPosition: "center",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-          maskSize: "contain",
-          WebkitMaskSize: "contain",
-          ...style
-        }
-      }
-    );
-  }
-
-  // src/Index.tsx
-  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
-  function Index({ go }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("nav", { className: "idx", "aria-label": "Sections", children: SECTIONS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("button", { className: "idx-row", onClick: () => go(s.key), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-no", children: s.no }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-title", children: s.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-desc", children: s.blurb }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "idx-arrow", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Icon, { src: "./assets/icon-arrow.svg?tone=mono", size: 24 }) })
-    ] }, s.key)) });
-  }
-
   // src/About.tsx
   var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function About() {
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "ab", id: "about", children: [
+    const { lang } = useLang();
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "ab", id: "about", "aria-label": "Experience, Education, and Technical Skills", children: [
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: "Education" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "05 / Experience (Research & Industry)" : "05 / \u79D1\u7814\u4E0E\u884C\u4E1A\u5B9E\u4E60\u7ECF\u5386\uFF08\u4E25\u5B88\u4FDD\u5BC6\u8FB9\u754C\uFF09" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-exp-list", children: EXPERIENCE_ONE_LINERS.map((exp) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-exp-item", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-exp-head", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: t(exp.org, lang) }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "ab-exp-meta", children: [
+              t(exp.role, lang),
+              " \xB7 ",
+              t(exp.period, lang)
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-exp-line", children: t(exp.line, lang) })
+        ] }, exp.id)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h ab-l", children: lang === "en" ? "Education & Honors" : "\u6559\u80B2\u80CC\u666F\u4E0E\u8363\u8A89" }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: EDUCATION.school }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-m", children: EDUCATION.degree }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: EDUCATION.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: "Additional Leadership" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "Technical & Editorial Stack (4 Domains)" : "\u5168\u6808\u6280\u672F\u4E0E\u6570\u636E\u7814\u7A76\u80FD\u529B\u77E9\u9635\uFF08\u56DB\u5927\u6A21\u5757\uFF09" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-skill-groups", children: SKILL_CATEGORIES.map((cat) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-skill-cat", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: t(cat.title, lang) }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-skill-chips", children: cat.items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "ab-skill-chip", children: item }, item)) })
+        ] }, cat.id)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h ab-l", children: lang === "en" ? "Leadership & Languages" : "\u5B66\u751F\u9886\u5BFC\u529B\u4E0E\u8BED\u8A00" }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: LEADERSHIP.title }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-m", children: LEADERSHIP.meta }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: LEADERSHIP.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h ab-l", children: "Languages" }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: LANGUAGES })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { className: "ab-lang", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: lang === "en" ? "Languages:" : "\u8BED\u8A00\u80FD\u529B\uFF1A" }),
+          " ",
+          LANGUAGES
+        ] })
       ] })
     ] });
   }
 
   // src/PsychtoolLab.tsx
-  var import_react2 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   var INITIAL_CASES = {
     "TRAIN-A": {
@@ -13350,10 +14838,10 @@
     }
   };
   function PsychtoolLab() {
-    const [activeCase, setActiveCase] = (0, import_react2.useState)("TRAIN-A");
-    const [selectedPid, setSelectedPid] = (0, import_react2.useState)("A-Y1");
-    const [stalePids, setStalePids] = (0, import_react2.useState)({});
-    const [customTexts, setCustomTexts] = (0, import_react2.useState)({});
+    const [activeCase, setActiveCase] = (0, import_react5.useState)("TRAIN-A");
+    const [selectedPid, setSelectedPid] = (0, import_react5.useState)("A-Y1");
+    const [stalePids, setStalePids] = (0, import_react5.useState)({});
+    const [customTexts, setCustomTexts] = (0, import_react5.useState)({});
     const current = INITIAL_CASES[activeCase];
     const simulateSourceEdit = (pid) => {
       setStalePids((prev) => ({ ...prev, [pid]: !prev[pid] }));
@@ -13371,10 +14859,10 @@
       }
       setSelectedPid(pid);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "pt-lab", "aria-label": "Interactive Provenance Lab", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "pt-lab", id: "psychtool-workbench", "aria-label": "Interactive Provenance Lab", children: [
       /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "pt-header", children: [
         /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-kicker", children: "LIVE INTERACTIVE ARTIFACT #01 \xB7 PSYCHTOOL PROVENANCE WORKBENCH" }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "pt-kicker", children: "02 / LIVE INTERACTIVE ARTIFACT \xB7 PSYCHTOOL PROVENANCE WORKBENCH" }),
           /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { className: "pt-title", children: "Source-Tethered Clinical & Social Science Background Synthesizer" }),
           /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "pt-desc", children: 'Why standard LLM summaries fail in clinical psychology & social science: a meta-analysis of 341 studies shows youth, caregiver, and teacher reports correlate only weakly-to-moderately. Standard summaries silently erase informant conflicts or conflate "not mentioned" with "negative." Click any draft sentence on the right to trace its exact source paragraph, or mutate a source to trigger stale-verification guards.' })
         ] }),
@@ -13588,7 +15076,7 @@
   }
 
   // src/Projects.tsx
-  var import_react4 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // src/SectionHead.tsx
   var import_jsx_runtime9 = __toESM(require_jsx_runtime());
@@ -13605,10 +15093,10 @@
   }
 
   // src/Modal.tsx
-  var import_react3 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   function Modal({ onClose, label, children }) {
-    (0, import_react3.useEffect)(() => {
+    (0, import_react6.useEffect)(() => {
       const h = (e) => e.key === "Escape" && onClose();
       window.addEventListener("keydown", h);
       return () => window.removeEventListener("keydown", h);
@@ -13622,7 +15110,7 @@
   // src/Projects.tsx
   var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   function Projects({ full, go }) {
-    const [sel, setSel] = (0, import_react4.useState)(null);
+    const [sel, setSel] = (0, import_react7.useState)(null);
     const list = full ? PROJECTS : PROJECTS.slice(0, 6);
     const p = sel === null ? null : PROJECTS[sel];
     return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "pj", id: "projects", children: [
@@ -13755,7 +15243,7 @@
   }
 
   // src/Code.tsx
-  var import_react5 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // src/Rows.tsx
   var import_jsx_runtime14 = __toESM(require_jsx_runtime());
@@ -13771,7 +15259,7 @@
   // src/Code.tsx
   var import_jsx_runtime15 = __toESM(require_jsx_runtime());
   function Code({ full, go }) {
-    const [q, setQ] = (0, import_react5.useState)("");
+    const [q, setQ] = (0, import_react8.useState)("");
     const k = q.trim().toLowerCase();
     const rows = CODE_ITEMS.filter((r) => (r.name + " " + r.meta + " " + r.badge).toLowerCase().includes(k)).map((r) => ({ id: r.id, title: r.name, meta: r.meta, badge: r.badge }));
     const skills = DEV_SKILLS.filter((s) => s.toLowerCase().includes(k));
@@ -13788,29 +15276,29 @@
   }
 
   // src/Reading.tsx
-  var import_react6 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   var import_jsx_runtime16 = __toESM(require_jsx_runtime());
   var TABS = ["All", "Writing", "Synthesis", "Skills"];
   function Reading({ full, go }) {
-    const [tab, setTab] = (0, import_react6.useState)("All");
+    const [tab, setTab] = (0, import_react9.useState)("All");
     const base = full ? READING : READING.slice(0, 2);
     const rows = base.filter((r) => tab === "All" || r.kind === tab).map((r) => ({ id: r.id, title: r.title, meta: r.meta, badge: r.badge || (full ? r.kind : void 0) }));
     return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { id: "reading", children: [
       !full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(SectionHead, { k: "reading", go }),
-      full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "rd-tabs", role: "tablist", children: TABS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { role: "tab", "aria-selected": tab === t, className: tab === t ? "on" : "", onClick: () => setTab(t), children: t }, t)) }),
+      full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "rd-tabs", role: "tablist", children: TABS.map((t2) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { role: "tab", "aria-selected": tab === t2, className: tab === t2 ? "on" : "", onClick: () => setTab(t2), children: t2 }, t2)) }),
       /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Rows, { rows, empty: "Nothing in this category." })
     ] });
   }
 
   // src/Interests.tsx
-  var import_react7 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   var import_jsx_runtime17 = __toESM(require_jsx_runtime());
   function Interests({ full, go }) {
-    const [sel, setSel] = (0, import_react7.useState)(null);
+    const [sel, setSel] = (0, import_react10.useState)(null);
     const cur = INTERESTS.find((i) => i.name === sel);
     return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { id: "interests", children: [
       !full && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(SectionHead, { k: "interests", go }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "in-chips", children: INTERESTS.map((t) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { "aria-pressed": sel === t.name, className: sel === t.name ? "on" : "", onClick: () => setSel(sel === t.name ? null : t.name), children: t.name }, t.name)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "in-chips", children: INTERESTS.map((t2) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { "aria-pressed": sel === t2.name, className: sel === t2.name ? "on" : "", onClick: () => setSel(sel === t2.name ? null : t2.name), children: t2.name }, t2.name)) }),
       cur && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "in-note", children: [
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: "in-k", children: cur.name }),
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: cur.note })
@@ -13819,10 +15307,10 @@
   }
 
   // src/Design.tsx
-  var import_react8 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var import_jsx_runtime18 = __toESM(require_jsx_runtime());
   function Design({ full, go }) {
-    const [sel, setSel] = (0, import_react8.useState)(null);
+    const [sel, setSel] = (0, import_react11.useState)(null);
     const list = full ? DESIGNS : DESIGNS.slice(0, 4);
     const step = (d) => setSel((s) => s === null ? s : (s + d + DESIGNS.length) % DESIGNS.length);
     return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { id: "design", children: [
@@ -13870,9 +15358,38 @@
 
   // src/App.tsx
   var import_jsx_runtime20 = __toESM(require_jsx_runtime());
-  function Page({ k }) {
+  function ScrollProgressRail() {
+    const [pct, setPct] = (0, import_react12.useState)(0);
+    (0, import_react12.useEffect)(() => {
+      const update = () => {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - doc.clientHeight;
+        if (max <= 0) {
+          setPct(0);
+          return;
+        }
+        const next = Math.min(100, Math.max(0, Math.round(window.scrollY / max * 100)));
+        setPct(next);
+      };
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      return () => {
+        window.removeEventListener("scroll", update);
+        window.removeEventListener("resize", update);
+      };
+    }, []);
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("aside", { className: "sp-rail", "aria-hidden": "true", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "sp-rail-num", children: String(pct).padStart(2, "0") }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-track", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-bar", style: { height: `${pct}%` } }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "sp-rail-num", children: "100" })
+    ] });
+  }
+  function Page({ k, go }) {
+    const { lang } = useLang();
     const s = SECTIONS.find((x) => x.key === k);
     return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("main", { className: "page", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { type: "button", className: "page-back-btn", onClick: () => go("home"), children: lang === "en" ? "\u2190 Back to Portfolio Overview" : "\u2190 \u8FD4\u56DE\u4F5C\u54C1\u96C6\u603B\u89C8" }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("p", { className: "page-no", children: [
         s.no,
         " / ",
@@ -13882,7 +15399,8 @@
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "page-blurb", children: s.blurb }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "page-body", children: [
         k === "projects" && /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(FeaturedCaseStudies, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { style: { marginTop: "48px" }, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}) }),
           /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { style: { marginTop: "48px" }, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Projects, { full: true }) })
         ] }),
         k === "publications" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Publications, { full: true }),
@@ -13895,37 +15413,34 @@
     ] });
   }
   function App() {
-    const [view, setView] = (0, import_react9.useState)("home");
+    const [view, setView] = (0, import_react12.useState)("home");
+    const [lang, setLang] = (0, import_react12.useState)("en");
+    const [lens, setLens] = (0, import_react12.useState)("default");
     const go = (v) => {
       setView(v);
       window.scrollTo(0, 0);
     };
-    (0, import_react9.useEffect)(() => {
+    (0, import_react12.useEffect)(() => {
       window.scrollTo(0, 0);
     }, [view]);
-    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "app", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(LangContext.Provider, { value: { lang, setLang, lens, setLens }, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "app", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ScrollProgressRail, {}),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Header, { view, go }),
       view === "home" ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("main", { children: [
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Hero, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(FeaturedCaseStudies, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reporting, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(WorkingOn, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Index, { go }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(About, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Publications, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Shop, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Projects, { go }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(About, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", id: "code-tools", children: [
           /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Code, { go }),
           /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reading, { go })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Interests, { go }),
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Design, { go })
-        ] })
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Page, { k: view }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Index, { go })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Page, { k: view, go }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Footer, { go })
-    ] });
+    ] }) });
   }
 
   // entry.tsx

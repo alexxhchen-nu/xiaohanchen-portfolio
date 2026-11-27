@@ -95,8 +95,8 @@ export const PUBLICATIONS: Publication[] = [
     authors: 'Xiaohan Chen (Northwestern University)',
     orcid: '0009-0003-7124-5208',
     summary: 'Reviews text-to-graph extraction pipelines (rules, classical sequence models, LLM prompting/fine-tuning) on docket-scale legal records and argues evaluation must measure network-level perturbation (PageRank, modularity, identity splits) rather than span-level F1 alone. Demonstrates error propagation on a 505-node, 434-edge public DOJ communication graph.',
-    artifacts: ['LaTeX Source & PDF (240 KB)', '505-Node Gephi / Interactive Web Graph', 'Zenodo Archival Metadata'],
-    link: 'https://orcid.org/0009-0003-7124-5208',
+    artifacts: ['LaTeX Source & PDF (240 KB)', '505-Node Gephi / Interactive Web Graph', 'Zenodo DOI: 10.5281/zenodo.23962378'],
+    link: 'https://doi.org/10.5281/zenodo.23962378',
   },
   {
     id: 1,
@@ -131,7 +131,7 @@ export const PUBLICATIONS: Publication[] = [
     orcid: '0009-0003-7124-5208',
     summary: 'Synthesizes 9 close-read empirical studies (from 35 OpenAlex candidates) on child/adolescent multi-informant correlation and AI clinical documentation errors (omission under concision, sibling attribution bleed, missing-vs-negative conflation) into a testable software specification.',
     artifacts: ['Assessment & Documentation Evidence Matrices', 'Synthetic Benchmark Fixtures (TRAIN-A / TRAIN-B)'],
-    link: 'https://github.com/alexxhchen-nu/psych-tools',
+    link: 'https://github.com/alexxhchen-nu/psychtool',
   },
 ];
 
@@ -164,7 +164,7 @@ export const SHOP_PACKS: ShopPack[] = [
     includes: 'Interactive Web Studio + Agent Skill + Clinical Workflow Questionnaire',
     formats: 'React/TSX, JSON Schema Fixtures, Markdown Spec',
     goodFor: 'PsyD / PhD researchers, qualitative social scientists, literature synthesis',
-    link: 'https://github.com/alexxhchen-nu/psych-tools',
+    link: 'https://github.com/alexxhchen-nu/psychtool',
     cta: 'View Spec & Repo →',
     badge: 'Interactive Studio Live',
   },

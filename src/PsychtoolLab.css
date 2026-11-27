@@ -1,6 +1,7 @@
 .pt-lab {
   padding: 0 var(--pad);
   margin-top: clamp(48px, 7vw, 96px);
+  scroll-margin-top: 72px;
 }
 .pt-header {
   display: flex;
@@ -14,7 +15,8 @@
 }
 .pt-kicker {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 11.5px;
+  line-height: 1.45;
   color: var(--blue);
   letter-spacing: 0.05em;
   display: block;
@@ -22,12 +24,13 @@
 .pt-title {
   font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 500;
+  line-height: 1.4;
   margin-top: 6px;
   letter-spacing: -0.02em;
 }
 .pt-desc {
   font-size: 14px;
-  color: var(--mute);
+  color: #4f4f4c;
   max-width: 780px;
   line-height: 1.6;
   margin-top: 8px;
@@ -57,8 +60,8 @@
   font-family: var(--mono);
   font-size: 11.5px;
   padding: 7px 12px;
-  border: 1px solid #b45309;
-  color: #b45309;
+  border: 1px solid #92400e;
+  color: #78350f;
   background: #fef3c7;
 }
 .pt-mutate:hover {
@@ -68,21 +71,25 @@
   display: grid;
   grid-template-columns: 1.1fr 1fr 1.2fr;
   gap: 16px;
-  border: 1px solid var(--ink);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
   background: rgba(255, 255, 255, 0.55);
-  padding: 16px;
+  padding: 16px 0;
 }
 .pt-pane {
-  border: 1px solid var(--line);
+  border-left: 1px solid var(--line);
   background: var(--bg);
   padding: 14px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+.pt-pane:first-child {
+  border-left: none;
+}
 .pt-pane-head {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--blue);
   border-bottom: 1px solid var(--line);
@@ -97,8 +104,8 @@
 }
 .pt-doc-meta {
   font-family: var(--mono);
-  font-size: 11px;
-  color: var(--mute);
+  font-size: 11.5px;
+  color: #555552;
   margin-bottom: 6px;
 }
 .pt-para {
@@ -119,8 +126,8 @@
   background: rgba(31, 79, 224, 0.08);
 }
 .pt-para.injection {
-  border-left: 3px solid #dc2626;
-  background: rgba(220, 38, 38, 0.05);
+  border-left: 3px solid #b91c1c;
+  background: rgba(185, 28, 28, 0.06);
 }
 .pt-pid {
   font-family: var(--mono);
@@ -131,8 +138,9 @@
   display: block;
   margin-top: 4px;
   font-family: var(--mono);
-  font-size: 10px;
-  color: #dc2626;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #991b1b;
 }
 .pt-ledger {
   display: flex;
@@ -140,17 +148,17 @@
   gap: 10px;
 }
 .pt-card {
-  border: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   padding: 10px 12px;
   background: rgba(255, 255, 255, 0.65);
   cursor: pointer;
 }
 .pt-card.conflict {
-  border-left: 3px solid #d97706;
+  border-left: 3px solid #b45309;
 }
 .pt-card.conflict.stale {
   background: #fef3c7;
-  border-color: #d97706;
+  border-color: #b45309;
 }
 .pt-card.guard {
   border-left: 3px solid var(--blue);
@@ -159,12 +167,12 @@
   border-left: 3px solid #4b5563;
 }
 .pt-card.injection-card {
-  border-left: 3px solid #dc2626;
+  border-left: 3px solid #b91c1c;
 }
 .pt-card-tag {
   font-family: var(--mono);
-  font-size: 10px;
-  color: var(--mute);
+  font-size: 11px;
+  color: #555552;
 }
 .pt-card h4 {
   font-size: 13.5px;
@@ -180,8 +188,9 @@
   display: block;
   margin-top: 6px;
   font-family: var(--mono);
-  font-size: 10.5px;
-  color: #b45309;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #92400e;
 }
 .pt-draft {
   display: flex;
