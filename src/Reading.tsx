@@ -12,7 +12,7 @@ export default function Reading({ full, go }: { full?: boolean; go?: (v: View) =
   const rows = base.filter((r) => tab === 'All' || r.kind === tab).map((r) => ({ id: r.id, title: r.title, meta: r.meta, badge: r.badge || (full ? r.kind : undefined) }));
   return (
     <section id="reading">
-      {!full && <SectionHead k="reading" go={go} />}
+      {!full && <SectionHead k="reading" go={go} no="04" />}
       {full && (
         <div className="rd-tabs" role="tablist">
           {TABS.map((t) => (

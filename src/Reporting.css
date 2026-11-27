@@ -56,7 +56,7 @@
 
 .rp-card:hover {
   border-color: var(--blue);
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .rp-top {
@@ -84,7 +84,7 @@
 
 .rp-card h3 {
   font-size: 17px;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin-top: 10px;
   line-height: 1.42;

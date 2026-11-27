@@ -45,11 +45,6 @@ export default function Hero() {
 
       <p className="hero-bio">{t(HERO_COPY.bio, lang)}</p>
 
-      <div className="hero-roles">
-        <strong>{t(HERO_COPY.targetRolesLabel, lang)}</strong>{' '}
-        <span>{t(HERO_COPY.targetRoles, lang)}</span>
-      </div>
-
       <div className="hero-actions-bar">
         <div className="hero-lens">
           <span className="hero-lens-label">{t(HERO_COPY.lensHeading, lang)}</span>

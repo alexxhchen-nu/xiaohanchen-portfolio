@@ -102,17 +102,9 @@ export const HERO_COPY = {
     en: 'Data journalist & computational builder at Northwestern University (B.S. in Journalism, Data Journalism specialization; HCI certificate in progress; GPA 3.73). Former 3-year NCAA D1 student-athlete & Canadian national sabre fencing team member (multi-time national champion). I build provenance-first AI workbenches, automated archival & social-data pipelines, and leakage-audited research systems where every claim traces back to verifiable evidence.',
     zh: '西北大学 Medill 新闻学院数据新闻专业本科生（主修数据新闻，修读 HCI 人机交互证书，GPA 3.73），前 NCAA D1 校队三年成员、加拿大国家佩剑队队员及多届全加冠军。专注于构建溯源优先（Provenance-First）的 AI 工作台、自动化档案与社媒数据管线，以及经过严格数据泄露审计的计算社会科学系统。',
   },
-  targetRolesLabel: {
-    en: 'TARGET ROLES:',
-    zh: '目标方向：',
-  },
-  targetRoles: {
-    en: 'AI Product & Agent Engineering · Data / Computational Journalism · Computational Social Science & NLP Research · Full-Stack Research Engineering',
-    zh: 'AI 产品与智能体工程 · 数据与计算新闻 · 计算社会科学与 NLP 研究 · 全栈科研工程',
-  },
   lensHeading: {
-    en: 'TARGET ROLE LENS — CLICK TO RE-RANK CASE STUDIES BELOW',
-    zh: '岗位视角切换 — 点击按目标方向重排下方 6 篇核心案例',
+    en: 'TARGET ROLE LENS',
+    zh: '岗位视角',
   },
 };
 
@@ -242,7 +234,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Network Science · SNAM Preprint · Zenodo DOI',
       zh: '社会网络科学 · SNAM 预印本 · Zenodo DOI',
     },
-    status: { en: 'Preprint · DOI 10.5281/zenodo.23962378', zh: '预印本已发布 · Zenodo DOI' },
+    status: { en: 'Preprint · Zenodo DOI', zh: '预印本已发布 · Zenodo DOI' },
     title: {
       en: 'Public Legal Archive Network Extraction & Topological Error Audit',
       zh: '公共司法档案社会网络抽取与拓扑误差传播审计',
@@ -280,7 +272,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     metrics: [
       { value: '505 / 434', label: { en: 'Nodes / Edges Audited', zh: '审计节点 / 边数' } },
       { value: '65', label: { en: 'Raw Modularity Clusters', zh: '原始模块度簇数' } },
-      { value: 'Zenodo DOI', label: { en: '10.5281/zenodo.23962378', zh: '公开预印本 DOI' } },
+      { value: 'zenodo.23962378', label: { en: 'Open Preprint DOI', zh: '公开预印本 DOI' } },
     ],
     stack: ['Python', 'NetworkX', 'Gephi', 'PDF OCR / NER', 'LaTeX'],
     links: [
@@ -635,8 +627,8 @@ export const EXPERIENCE_ONE_LINERS: ExperienceOneLiner[] = [
     role: { en: 'Strategic Communications Intern', zh: '战略传播与声誉洞察实习生' },
     period: { en: 'Prior Internship', zh: '传播实习经历' },
     line: {
-      en: 'Conducted bilingual media monitoring, sentiment synthesis, and executive briefing preparation for multinational accounts (confidentiality-compliant summary).',
-      zh: '为跨国企业客户提供中英双语舆情监测、声誉洞察分析与高管简报撰写（按保密合规仅展示职能概述）。',
+      en: 'Conducted bilingual media monitoring, sentiment synthesis, and executive briefing preparation for multinational accounts.',
+      zh: '为跨国企业客户提供中英双语舆情监测、声誉洞察分析与高管简报撰写。',
     },
   },
   {
