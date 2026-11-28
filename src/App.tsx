@@ -66,18 +66,7 @@ function Page({ k, go }: { k: SectionKey; go: (v: View) => void }) {
       <h1 className="page-title">{s.title}</h1>
       <p className="page-blurb">{s.blurb}</p>
       <div className="page-body">
-        {k === 'projects' && (
-          <>
-            <FeaturedCaseStudies />
-            <div style={{ marginTop: '48px' }}>
-              <PsychtoolLab />
-            </div>
-            <div style={{ marginTop: '48px' }}>
-              <Projects full />
-            </div>
-          </>
-        )}
-        {k === 'publications' && <Publications full />}
+                {k === 'publications' && <Publications full />}
         {k === 'shop' && <Shop full />}
         {k === 'code' && <Code full />}
         {k === 'reading' && <Reading full />}

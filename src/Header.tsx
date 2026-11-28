@@ -25,6 +25,11 @@ export default function Header({ view, go }: { view: View; go: (v: View) => void
 
   const navigateItem = (item: NavItem) => {
     setOpen(false);
+    if (view === 'home' && window.location.hash.startsWith('#/work')) {
+      window.location.hash = '';
+      setTimeout(() => document.getElementById(item.anchor ?? '')?.scrollIntoView({ behavior: 'smooth' }), 80);
+      return;
+    }
     if (view !== 'home') {
       go('home');
       if (item.anchor) {

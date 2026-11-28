@@ -1,16 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Home.css';
 import { PUBLICATIONS, View } from './data';
+import { WORK } from './work';
+import CasePage from './CasePage';
 import {
-  CASE_STUDIES,
-  CaseStudyId,
   EXPERIENCE_ONE_LINERS,
   PERSONAL_LINKS,
   SKILL_CATEGORIES,
   t,
   useLang,
 } from './i18n';
-import { CaseStudyReaderModal } from './FeaturedCaseStudies';
 
 const EMAIL = 'alexchen2027@u.northwestern.edu';
 
@@ -31,8 +30,21 @@ const COPY = {
 
 export default function Home({ go }: { go: (v: View) => void }) {
   const { lang } = useLang();
-  const [activeId, setActiveId] = useState<CaseStudyId | null>(null);
-  const active = activeId ? CASE_STUDIES.find((c) => c.id === activeId) ?? null : null;
+  const readHash = () => {
+    const m = window.location.hash.match(/^#\/work\/(.+)$/);
+    return m && WORK.some((w) => w.id === m[1]) ? m[1] : null;
+  };
+  const [activeId, setActiveId] = useState<string | null>(readHash);
+  useEffect(() => {
+    const on = () => setActiveId(readHash());
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
+  const open = (id: string | null) => {
+    window.location.hash = id ? `/work/${id}` : '';
+    window.scrollTo(0, 0);
+  };
+  if (activeId) return <CasePage id={activeId} open={open} />;
   const en = lang === 'en';
 
   return (
@@ -66,29 +78,35 @@ export default function Home({ go }: { go: (v: View) => void }) {
         <header className="hm-sec-head">
           <span>01</span>
           <h2>{en ? 'Selected Work' : '精选作品'}</h2>
-          <button type="button" onClick={() => go('projects')}>
-            {en ? 'Interactive demos & live lab →' : '交互演示与实时工作台 →'}
-          </button>
         </header>
-        <ol className="hm-work">
-          {CASE_STUDIES.map((cs) => (
-            <li key={cs.id}>
-              <button type="button" className="hm-row" onClick={() => setActiveId(cs.id)}>
-                <span className="hm-row-no">{cs.no}</span>
-                <span className="hm-row-main">
-                  <strong>{t(cs.title, lang)}</strong>
-                  <em>{t(cs.subtitle, lang)}</em>
-                </span>
-                <span className="hm-row-tag">{t(cs.tag, lang)}</span>
-                <span className="hm-row-metric">
-                  <b>{cs.metrics[0]?.value}</b>
-                  <i>{cs.metrics[0] ? t(cs.metrics[0].label, lang) : ''}</i>
-                </span>
-                <span className="hm-row-arrow" aria-hidden="true">→</span>
-              </button>
-            </li>
-          ))}
-        </ol>
+        {(['systems', 'journalism'] as const).map((g) => (
+          <div key={g}>
+            <h3 className="hm-group">
+              {g === 'systems'
+                ? en ? 'AI systems & data engineering' : 'AI 系统与数据工程'
+                : en ? 'Data journalism & research' : '数据新闻与研究'}
+            </h3>
+            <ol className="hm-work">
+              {WORK.filter((w) => w.group === g).map((cs) => (
+                <li key={cs.id}>
+                  <button type="button" className="hm-row" onClick={() => open(cs.id)}>
+                    <span className="hm-row-no">{cs.no}</span>
+                    <span className="hm-row-main">
+                      <strong>{t(cs.title, lang)}</strong>
+                      <em>{t(cs.subtitle, lang)}</em>
+                    </span>
+                    <span className="hm-row-tag">{t(cs.tag, lang)}</span>
+                    <span className="hm-row-metric">
+                      <b>{cs.metrics[0]?.value}</b>
+                      <i>{cs.metrics[0] ? t(cs.metrics[0].label, lang) : ''}</i>
+                    </span>
+                    <span className="hm-row-arrow" aria-hidden="true">→</span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
       </section>
 
       <section className="hm-sec" id="experience">
@@ -163,15 +181,6 @@ export default function Home({ go }: { go: (v: View) => void }) {
         </a>
         <p>{en ? 'Open to internships and research collaborations. CV on request.' : '欢迎实习与科研合作，简历可邮件索取。'}</p>
       </section>
-
-      {active && (
-        <CaseStudyReaderModal
-          cs={active}
-          list={CASE_STUDIES}
-          onSelect={(id) => setActiveId(id)}
-          onClose={() => setActiveId(null)}
-        />
-      )}
     </main>
   );
 }
