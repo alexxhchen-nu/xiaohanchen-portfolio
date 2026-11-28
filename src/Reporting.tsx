@@ -110,7 +110,7 @@ const TANG_SITES: {
   { id: 'changan', en: 'Chang’an (Xi’an)', zh: '长安（西安）', x: 47, y: 45, dx: -2.6, dy: -1.6, anchor: 'end', motif: { en: 'Imperial parting & autumn longing', zh: '帝京送别 · 秋思怀远' } },
   { id: 'luoyang', en: 'Luoyang', zh: '洛阳', x: 58, y: 43, dx: 2.6, dy: 0.6, motif: { en: 'Central Plains nostalgia & capital road', zh: '洛阳亲友 · 中原故园' } },
   { id: 'chengdu', en: 'Chengdu (Shu)', zh: '成都（锦官城）', x: 35, y: 66, dx: -2.4, dy: 1.2, anchor: 'end', motif: { en: 'Thatched cottage refuge & spring rain', zh: '草堂春雨 · 巴蜀栖居' } },
-  { id: 'baidicheng', en: 'Baidi (Three Gorges)', zh: '白帝城（三峡）', x: 50, y: 64, dx: 0, dy: 4.8, motif: { en: 'Swift river release & pardon joy', zh: '朝辞白帝 · 轻舟快意' } },
+  { id: 'baidicheng', en: 'Baidi (Three Gorges)', zh: '白帝城（三峡）', x: 50, y: 64, dx: -2.4, dy: 5.2, anchor: 'end', motif: { en: 'Swift river release & pardon joy', zh: '朝辞白帝 · 轻舟快意' } },
   { id: 'jiangxia', en: 'Jiangxia (Wuhan)', zh: '江夏（黄鹤楼）', x: 62, y: 60, dx: -2.4, dy: -1.8, anchor: 'end', motif: { en: 'River gaze & misty homeland', zh: '黄鹤送别 · 烟波乡愁' } },
   { id: 'xunyang', en: 'Xunyang (Jiujiang)', zh: '浔阳（九江）', x: 66, y: 70, dx: -2.4, dy: 1.2, anchor: 'end', motif: { en: 'Exile lament & pipa resonance', zh: '浔阳谪居 · 天涯沦落' } },
   { id: 'yangzhou', en: 'Yangzhou', zh: '扬州', x: 76, y: 48, dx: 2.6, dy: 0.6, motif: { en: 'Canal prosperity & vernal farewell', zh: '烟花三月 · 淮左繁华' } },
@@ -127,8 +127,8 @@ function TangPoetryMapWidget() {
     <div className="rp-widget">
       <div className="rp-widget-title">
         {lang === 'en'
-          ? '13 HISTORICAL LITERARY TOPONYMS — CLICK ANY NODE TO INSPECT AFFECTIVE MOTIF'
-          : '13 处唐宋文学地理节点 — 点击坐标查看古典意象与情感范式'}
+          ? '13 HISTORICAL LITERARY TOPONYMS'
+          : '13 处唐宋文学地理节点'}
       </div>
       <div className="rp-map-wrap">
         <svg viewBox="0 8 104 72" className="rp-map-svg" role="img" aria-label="13 Tang Poetry Historical Sites">
@@ -165,7 +165,7 @@ function TangPoetryMapWidget() {
                   textAnchor={s.anchor ?? 'start'}
                   fontSize="3.1"
                   fill={active ? '#1f4fe0' : '#3a3a37'}
-                  fontWeight={active ? '600' : '400'}
+                  fontWeight={active ? '500' : '400'}
                   fontFamily="Roboto Mono, monospace"
                 >
                   {lang === 'en' ? s.en.split(' ')[0] : s.zh.split('（')[0]}

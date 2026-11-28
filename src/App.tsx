@@ -45,7 +45,7 @@ function ScrollProgressRail() {
     <aside className="sp-rail" aria-hidden="true">
       <span className="sp-rail-num">{String(pct).padStart(2, '0')}</span>
       <div className="sp-rail-track">
-        <div className="sp-rail-bar" style={{ height: `${pct}%` }} />
+        <div className="sp-rail-bar" style={{ transform: `scaleY(${pct / 100})` }} />
       </div>
       <span className="sp-rail-num">100</span>
     </aside>
@@ -112,13 +112,13 @@ export default function App() {
             <Hero />
             <FeaturedCaseStudies />
             <Reporting />
-            <About />
             <PsychtoolLab />
             <Publications go={go} />
             <div className="grid-2" id="code-tools">
               <Code go={go} />
               <Reading go={go} />
             </div>
+            <About />
             <Index go={go} />
           </main>
         ) : (

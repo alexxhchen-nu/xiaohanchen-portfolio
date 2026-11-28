@@ -110,7 +110,7 @@
 
 .fcs-card:hover {
   border-color: var(--blue);
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .fcs-spotlight {
@@ -166,7 +166,7 @@
 .fcs-card-title {
   position: relative;
   font-size: 17.5px;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.42;
   margin-top: 6px;

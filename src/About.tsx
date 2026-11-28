@@ -12,7 +12,7 @@ export default function About() {
         <h2 className="ab-h">
           {lang === 'en'
             ? '05 / Experience (Research & Industry)'
-            : '05 / 科研与行业实习经历（严守保密边界）'}
+            : '05 / 科研与行业实习经历'}
         </h2>
         <div className="ab-exp-list">
           {EXPERIENCE_ONE_LINERS.map((exp) => (
@@ -34,7 +34,7 @@ export default function About() {
         <h3>{EDUCATION.school}</h3>
         <p className="ab-m">{EDUCATION.degree}</p>
         <ul>
-          {EDUCATION.bullets.map((b) => (
+          {EDUCATION.bullets.slice(1).map((b) => (
             <li key={b}>{b}</li>
           ))}
         </ul>
@@ -43,8 +43,8 @@ export default function About() {
       <div>
         <h2 className="ab-h">
           {lang === 'en'
-            ? 'Technical & Editorial Stack (4 Domains)'
-            : '全栈技术与数据研究能力矩阵（四大模块）'}
+            ? 'Technical & Editorial Stack'
+            : '全栈技术与数据研究能力矩阵'}
         </h2>
         <div className="ab-skill-groups">
           {SKILL_CATEGORIES.map((cat) => (

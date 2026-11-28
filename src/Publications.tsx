@@ -6,7 +6,7 @@ export default function Publications({ full, go }: { full?: boolean; go?: (v: Vi
   const list = full ? PUBLICATIONS : PUBLICATIONS.slice(0, 4);
   return (
     <section className="pub" id="publications">
-      {!full && <SectionHead k="publications" go={go} />}
+      {!full && <SectionHead k="publications" go={go} no="03" />}
       <div className="pub-bar">
         <span>ORCID iD: <a href="https://orcid.org/0009-0003-7124-5208" target="_blank" rel="noreferrer">https://orcid.org/0009-0003-7124-5208</a></span>
         <span>Focus: Computational Social Science · Network Science · Clinical NLP · Digital Humanities</span>

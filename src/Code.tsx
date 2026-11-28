@@ -11,7 +11,7 @@ export default function Code({ full, go }: { full?: boolean; go?: (v: View) => v
   const skills = DEV_SKILLS.filter((s) => s.toLowerCase().includes(k));
   return (
     <section id="code">
-      {!full && <SectionHead k="code" go={go} />}
+      {!full && <SectionHead k="code" go={go} no="04" />}
       {full && (
         <label className="cd-search">
           <span>$ grep</span>

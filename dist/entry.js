@@ -12785,17 +12785,9 @@
       en: "Data journalist & computational builder at Northwestern University (B.S. in Journalism, Data Journalism specialization; HCI certificate in progress; GPA 3.73). Former 3-year NCAA D1 student-athlete & Canadian national sabre fencing team member (multi-time national champion). I build provenance-first AI workbenches, automated archival & social-data pipelines, and leakage-audited research systems where every claim traces back to verifiable evidence.",
       zh: "\u897F\u5317\u5927\u5B66 Medill \u65B0\u95FB\u5B66\u9662\u6570\u636E\u65B0\u95FB\u4E13\u4E1A\u672C\u79D1\u751F\uFF08\u4E3B\u4FEE\u6570\u636E\u65B0\u95FB\uFF0C\u4FEE\u8BFB HCI \u4EBA\u673A\u4EA4\u4E92\u8BC1\u4E66\uFF0CGPA 3.73\uFF09\uFF0C\u524D NCAA D1 \u6821\u961F\u4E09\u5E74\u6210\u5458\u3001\u52A0\u62FF\u5927\u56FD\u5BB6\u4F69\u5251\u961F\u961F\u5458\u53CA\u591A\u5C4A\u5168\u52A0\u51A0\u519B\u3002\u4E13\u6CE8\u4E8E\u6784\u5EFA\u6EAF\u6E90\u4F18\u5148\uFF08Provenance-First\uFF09\u7684 AI \u5DE5\u4F5C\u53F0\u3001\u81EA\u52A8\u5316\u6863\u6848\u4E0E\u793E\u5A92\u6570\u636E\u7BA1\u7EBF\uFF0C\u4EE5\u53CA\u7ECF\u8FC7\u4E25\u683C\u6570\u636E\u6CC4\u9732\u5BA1\u8BA1\u7684\u8BA1\u7B97\u793E\u4F1A\u79D1\u5B66\u7CFB\u7EDF\u3002"
     },
-    targetRolesLabel: {
-      en: "TARGET ROLES:",
-      zh: "\u76EE\u6807\u65B9\u5411\uFF1A"
-    },
-    targetRoles: {
-      en: "AI Product & Agent Engineering \xB7 Data / Computational Journalism \xB7 Computational Social Science & NLP Research \xB7 Full-Stack Research Engineering",
-      zh: "AI \u4EA7\u54C1\u4E0E\u667A\u80FD\u4F53\u5DE5\u7A0B \xB7 \u6570\u636E\u4E0E\u8BA1\u7B97\u65B0\u95FB \xB7 \u8BA1\u7B97\u793E\u4F1A\u79D1\u5B66\u4E0E NLP \u7814\u7A76 \xB7 \u5168\u6808\u79D1\u7814\u5DE5\u7A0B"
-    },
     lensHeading: {
-      en: "TARGET ROLE LENS \u2014 CLICK TO RE-RANK CASE STUDIES BELOW",
-      zh: "\u5C97\u4F4D\u89C6\u89D2\u5207\u6362 \u2014 \u70B9\u51FB\u6309\u76EE\u6807\u65B9\u5411\u91CD\u6392\u4E0B\u65B9 6 \u7BC7\u6838\u5FC3\u6848\u4F8B"
+      en: "TARGET ROLE LENS",
+      zh: "\u5C97\u4F4D\u89C6\u89D2"
     }
   };
   var PERSONAL_LINKS = [
@@ -12912,7 +12904,7 @@
         en: "Network Science \xB7 SNAM Preprint \xB7 Zenodo DOI",
         zh: "\u793E\u4F1A\u7F51\u7EDC\u79D1\u5B66 \xB7 SNAM \u9884\u5370\u672C \xB7 Zenodo DOI"
       },
-      status: { en: "Preprint \xB7 DOI 10.5281/zenodo.23962378", zh: "\u9884\u5370\u672C\u5DF2\u53D1\u5E03 \xB7 Zenodo DOI" },
+      status: { en: "Preprint \xB7 Zenodo DOI", zh: "\u9884\u5370\u672C\u5DF2\u53D1\u5E03 \xB7 Zenodo DOI" },
       title: {
         en: "Public Legal Archive Network Extraction & Topological Error Audit",
         zh: "\u516C\u5171\u53F8\u6CD5\u6863\u6848\u793E\u4F1A\u7F51\u7EDC\u62BD\u53D6\u4E0E\u62D3\u6251\u8BEF\u5DEE\u4F20\u64AD\u5BA1\u8BA1"
@@ -12950,7 +12942,7 @@
       metrics: [
         { value: "505 / 434", label: { en: "Nodes / Edges Audited", zh: "\u5BA1\u8BA1\u8282\u70B9 / \u8FB9\u6570" } },
         { value: "65", label: { en: "Raw Modularity Clusters", zh: "\u539F\u59CB\u6A21\u5757\u5EA6\u7C07\u6570" } },
-        { value: "Zenodo DOI", label: { en: "10.5281/zenodo.23962378", zh: "\u516C\u5F00\u9884\u5370\u672C DOI" } }
+        { value: "zenodo.23962378", label: { en: "Open Preprint DOI", zh: "\u516C\u5F00\u9884\u5370\u672C DOI" } }
       ],
       stack: ["Python", "NetworkX", "Gephi", "PDF OCR / NER", "LaTeX"],
       links: [
@@ -13302,8 +13294,8 @@
       role: { en: "Strategic Communications Intern", zh: "\u6218\u7565\u4F20\u64AD\u4E0E\u58F0\u8A89\u6D1E\u5BDF\u5B9E\u4E60\u751F" },
       period: { en: "Prior Internship", zh: "\u4F20\u64AD\u5B9E\u4E60\u7ECF\u5386" },
       line: {
-        en: "Conducted bilingual media monitoring, sentiment synthesis, and executive briefing preparation for multinational accounts (confidentiality-compliant summary).",
-        zh: "\u4E3A\u8DE8\u56FD\u4F01\u4E1A\u5BA2\u6237\u63D0\u4F9B\u4E2D\u82F1\u53CC\u8BED\u8206\u60C5\u76D1\u6D4B\u3001\u58F0\u8A89\u6D1E\u5BDF\u5206\u6790\u4E0E\u9AD8\u7BA1\u7B80\u62A5\u64B0\u5199\uFF08\u6309\u4FDD\u5BC6\u5408\u89C4\u4EC5\u5C55\u793A\u804C\u80FD\u6982\u8FF0\uFF09\u3002"
+        en: "Conducted bilingual media monitoring, sentiment synthesis, and executive briefing preparation for multinational accounts.",
+        zh: "\u4E3A\u8DE8\u56FD\u4F01\u4E1A\u5BA2\u6237\u63D0\u4F9B\u4E2D\u82F1\u53CC\u8BED\u8206\u60C5\u76D1\u6D4B\u3001\u58F0\u8A89\u6D1E\u5BDF\u5206\u6790\u4E0E\u9AD8\u7BA1\u7B80\u62A5\u64B0\u5199\u3002"
       }
     },
     {
@@ -13581,11 +13573,6 @@
         )) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "hero-bio", children: t(HERO_COPY.bio, lang) }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-roles", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: t(HERO_COPY.targetRolesLabel, lang) }),
-        " ",
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: t(HERO_COPY.targetRoles, lang) })
-      ] }),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-actions-bar", children: [
         /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-lens", children: [
           /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "hero-lens-label", children: t(HERO_COPY.lensHeading, lang) }),
@@ -14194,7 +14181,7 @@
     { id: "changan", en: "Chang\u2019an (Xi\u2019an)", zh: "\u957F\u5B89\uFF08\u897F\u5B89\uFF09", x: 47, y: 45, dx: -2.6, dy: -1.6, anchor: "end", motif: { en: "Imperial parting & autumn longing", zh: "\u5E1D\u4EAC\u9001\u522B \xB7 \u79CB\u601D\u6000\u8FDC" } },
     { id: "luoyang", en: "Luoyang", zh: "\u6D1B\u9633", x: 58, y: 43, dx: 2.6, dy: 0.6, motif: { en: "Central Plains nostalgia & capital road", zh: "\u6D1B\u9633\u4EB2\u53CB \xB7 \u4E2D\u539F\u6545\u56ED" } },
     { id: "chengdu", en: "Chengdu (Shu)", zh: "\u6210\u90FD\uFF08\u9526\u5B98\u57CE\uFF09", x: 35, y: 66, dx: -2.4, dy: 1.2, anchor: "end", motif: { en: "Thatched cottage refuge & spring rain", zh: "\u8349\u5802\u6625\u96E8 \xB7 \u5DF4\u8700\u6816\u5C45" } },
-    { id: "baidicheng", en: "Baidi (Three Gorges)", zh: "\u767D\u5E1D\u57CE\uFF08\u4E09\u5CE1\uFF09", x: 50, y: 64, dx: 0, dy: 4.8, motif: { en: "Swift river release & pardon joy", zh: "\u671D\u8F9E\u767D\u5E1D \xB7 \u8F7B\u821F\u5FEB\u610F" } },
+    { id: "baidicheng", en: "Baidi (Three Gorges)", zh: "\u767D\u5E1D\u57CE\uFF08\u4E09\u5CE1\uFF09", x: 50, y: 64, dx: -2.4, dy: 5.2, anchor: "end", motif: { en: "Swift river release & pardon joy", zh: "\u671D\u8F9E\u767D\u5E1D \xB7 \u8F7B\u821F\u5FEB\u610F" } },
     { id: "jiangxia", en: "Jiangxia (Wuhan)", zh: "\u6C5F\u590F\uFF08\u9EC4\u9E64\u697C\uFF09", x: 62, y: 60, dx: -2.4, dy: -1.8, anchor: "end", motif: { en: "River gaze & misty homeland", zh: "\u9EC4\u9E64\u9001\u522B \xB7 \u70DF\u6CE2\u4E61\u6101" } },
     { id: "xunyang", en: "Xunyang (Jiujiang)", zh: "\u6D54\u9633\uFF08\u4E5D\u6C5F\uFF09", x: 66, y: 70, dx: -2.4, dy: 1.2, anchor: "end", motif: { en: "Exile lament & pipa resonance", zh: "\u6D54\u9633\u8C2A\u5C45 \xB7 \u5929\u6DAF\u6CA6\u843D" } },
     { id: "yangzhou", en: "Yangzhou", zh: "\u626C\u5DDE", x: 76, y: 48, dx: 2.6, dy: 0.6, motif: { en: "Canal prosperity & vernal farewell", zh: "\u70DF\u82B1\u4E09\u6708 \xB7 \u6DEE\u5DE6\u7E41\u534E" } },
@@ -14206,7 +14193,7 @@
     const { lang } = useLang();
     const [selected, setSelected] = (0, import_react4.useState)(TANG_SITES[3]);
     return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-widget", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-widget-title", children: lang === "en" ? "13 HISTORICAL LITERARY TOPONYMS \u2014 CLICK ANY NODE TO INSPECT AFFECTIVE MOTIF" : "13 \u5904\u5510\u5B8B\u6587\u5B66\u5730\u7406\u8282\u70B9 \u2014 \u70B9\u51FB\u5750\u6807\u67E5\u770B\u53E4\u5178\u610F\u8C61\u4E0E\u60C5\u611F\u8303\u5F0F" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "rp-widget-title", children: lang === "en" ? "13 HISTORICAL LITERARY TOPONYMS" : "13 \u5904\u5510\u5B8B\u6587\u5B66\u5730\u7406\u8282\u70B9" }),
       /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "rp-map-wrap", children: [
         /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("svg", { viewBox: "0 8 104 72", className: "rp-map-svg", role: "img", "aria-label": "13 Tang Poetry Historical Sites", children: [
           /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("line", { x1: "14", y1: "20", x2: "18", y2: "31", stroke: "#cfcec9", strokeWidth: "0.5", strokeDasharray: "1.5 1.5" }),
@@ -14247,7 +14234,7 @@
                       textAnchor: s.anchor ?? "start",
                       fontSize: "3.1",
                       fill: active ? "#1f4fe0" : "#3a3a37",
-                      fontWeight: active ? "600" : "400",
+                      fontWeight: active ? "500" : "400",
                       fontFamily: "Roboto Mono, monospace",
                       children: lang === "en" ? s.en.split(" ")[0] : s.zh.split("\uFF08")[0]
                     }
@@ -14742,7 +14729,7 @@
     const { lang } = useLang();
     return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "ab", id: "about", "aria-label": "Experience, Education, and Technical Skills", children: [
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "05 / Experience (Research & Industry)" : "05 / \u79D1\u7814\u4E0E\u884C\u4E1A\u5B9E\u4E60\u7ECF\u5386\uFF08\u4E25\u5B88\u4FDD\u5BC6\u8FB9\u754C\uFF09" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "05 / Experience (Research & Industry)" : "05 / \u79D1\u7814\u4E0E\u884C\u4E1A\u5B9E\u4E60\u7ECF\u5386" }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-exp-list", children: EXPERIENCE_ONE_LINERS.map((exp) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-exp-item", children: [
           /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-exp-head", children: [
             /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: t(exp.org, lang) }),
@@ -14757,10 +14744,10 @@
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h ab-l", children: lang === "en" ? "Education & Honors" : "\u6559\u80B2\u80CC\u666F\u4E0E\u8363\u8A89" }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: EDUCATION.school }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "ab-m", children: EDUCATION.degree }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: EDUCATION.bullets.map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { children: EDUCATION.bullets.slice(1).map((b) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("li", { children: b }, b)) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "Technical & Editorial Stack (4 Domains)" : "\u5168\u6808\u6280\u672F\u4E0E\u6570\u636E\u7814\u7A76\u80FD\u529B\u77E9\u9635\uFF08\u56DB\u5927\u6A21\u5757\uFF09" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h2", { className: "ab-h", children: lang === "en" ? "Technical & Editorial Stack" : "\u5168\u6808\u6280\u672F\u4E0E\u6570\u636E\u7814\u7A76\u80FD\u529B\u77E9\u9635" }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-skill-groups", children: SKILL_CATEGORIES.map((cat) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "ab-skill-cat", children: [
           /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: t(cat.title, lang) }),
           /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "ab-skill-chips", children: cat.items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "ab-skill-chip", children: item }, item)) })
@@ -15080,11 +15067,11 @@
 
   // src/SectionHead.tsx
   var import_jsx_runtime9 = __toESM(require_jsx_runtime());
-  function SectionHead({ k, go }) {
+  function SectionHead({ k, go, no }) {
     const s = SECTIONS.find((x) => x.key === k);
     return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "sh", children: [
       /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("h2", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: s.no }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: no ?? s.no }),
         " / ",
         s.title
       ] }),
@@ -15095,16 +15082,37 @@
   // src/Modal.tsx
   var import_react6 = __toESM(require_react());
   var import_jsx_runtime10 = __toESM(require_jsx_runtime());
-  function Modal({ onClose, label, children }) {
+  function Modal({
+    onClose,
+    label,
+    wide,
+    topBar,
+    children
+  }) {
     (0, import_react6.useEffect)(() => {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
       const h = (e) => e.key === "Escape" && onClose();
       window.addEventListener("keydown", h);
-      return () => window.removeEventListener("keydown", h);
+      return () => {
+        document.body.style.overflow = prevOverflow;
+        window.removeEventListener("keydown", h);
+      };
     }, [onClose]);
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "md-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "md", role: "dialog", "aria-modal": "true", "aria-label": label, onClick: (e) => e.stopPropagation(), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("button", { className: "md-x", onClick: onClose, children: "Close [esc]" }),
-      children
-    ] }) });
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "md-back", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+      "div",
+      {
+        className: `md ${wide ? "md-wide" : ""} ${topBar ? "md-has-bar" : ""}`,
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": label,
+        onClick: (e) => e.stopPropagation(),
+        children: [
+          topBar ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "md-bar", children: topBar }) : /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("button", { type: "button", className: "md-x", onClick: onClose, children: "Close [esc]" }),
+          children
+        ]
+      }
+    ) });
   }
 
   // src/Projects.tsx
@@ -15144,7 +15152,7 @@
   function Publications({ full, go }) {
     const list = full ? PUBLICATIONS : PUBLICATIONS.slice(0, 4);
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("section", { className: "pub", id: "publications", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(SectionHead, { k: "publications", go }),
+      !full && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(SectionHead, { k: "publications", go, no: "03" }),
       /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "pub-bar", children: [
         /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("span", { children: [
           "ORCID iD: ",
@@ -15264,7 +15272,7 @@
     const rows = CODE_ITEMS.filter((r) => (r.name + " " + r.meta + " " + r.badge).toLowerCase().includes(k)).map((r) => ({ id: r.id, title: r.name, meta: r.meta, badge: r.badge }));
     const skills = DEV_SKILLS.filter((s) => s.toLowerCase().includes(k));
     return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("section", { id: "code", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(SectionHead, { k: "code", go }),
+      !full && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(SectionHead, { k: "code", go, no: "04" }),
       full && /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("label", { className: "cd-search", children: [
         /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { children: "$ grep" }),
         /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("input", { value: q, onChange: (e) => setQ(e.target.value), placeholder: "search skills and projects", "aria-label": "Search code" })
@@ -15284,7 +15292,7 @@
     const base = full ? READING : READING.slice(0, 2);
     const rows = base.filter((r) => tab === "All" || r.kind === tab).map((r) => ({ id: r.id, title: r.title, meta: r.meta, badge: r.badge || (full ? r.kind : void 0) }));
     return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { id: "reading", children: [
-      !full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(SectionHead, { k: "reading", go }),
+      !full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(SectionHead, { k: "reading", go, no: "04" }),
       full && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "rd-tabs", role: "tablist", children: TABS.map((t2) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { role: "tab", "aria-selected": tab === t2, className: tab === t2 ? "on" : "", onClick: () => setTab(t2), children: t2 }, t2)) }),
       /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Rows, { rows, empty: "Nothing in this category." })
     ] });
@@ -15381,7 +15389,7 @@
     }, []);
     return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("aside", { className: "sp-rail", "aria-hidden": "true", children: [
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "sp-rail-num", children: String(pct).padStart(2, "0") }),
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-track", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-bar", style: { height: `${pct}%` } }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-track", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sp-rail-bar", style: { transform: `scaleY(${pct / 100})` } }) }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "sp-rail-num", children: "100" })
     ] });
   }
@@ -15430,13 +15438,13 @@
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Hero, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(FeaturedCaseStudies, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reporting, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(About, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PsychtoolLab, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Publications, { go }),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "grid-2", id: "code-tools", children: [
           /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Code, { go }),
           /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Reading, { go })
         ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(About, {}),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Index, { go })
       ] }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Page, { k: view, go }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Footer, { go })

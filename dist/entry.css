@@ -174,10 +174,12 @@ p {
 }
 .sp-rail-bar {
   width: 100%;
+  height: 100%;
   background: var(--blue);
-  transition: height 0.12s linear;
+  transform-origin: top;
+  transition: transform 0.12s linear;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1279px) {
   .sp-rail {
     display: none;
   }
@@ -558,7 +560,7 @@ p {
 }
 .fcs-card:hover {
   border-color: var(--blue);
-  transform: translateY(-2px);
+  transform: none;
 }
 .fcs-spotlight {
   pointer-events: none;
@@ -607,7 +609,7 @@ p {
 .fcs-card-title {
   position: relative;
   font-size: 17.5px;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.42;
   margin-top: 6px;
@@ -1066,7 +1068,7 @@ p {
 }
 .rp-card:hover {
   border-color: var(--blue);
-  transform: translateY(-2px);
+  transform: none;
 }
 .rp-top {
   display: flex;
@@ -1090,7 +1092,7 @@ p {
 }
 .rp-card h3 {
   font-size: 17px;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin-top: 10px;
   line-height: 1.42;
@@ -1456,7 +1458,7 @@ p {
 }
 .ab-exp-head strong {
   font-size: 15.5px;
-  font-weight: 700;
+  font-weight: 500;
 }
 .ab-exp-meta {
   font-family: var(--mono);
@@ -1471,7 +1473,7 @@ p {
 }
 .ab h3 {
   font-size: 16.5px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
 }
 .ab-m {
@@ -1894,16 +1896,33 @@ p {
   backdrop-filter: blur(4px);
   display: grid;
   place-items: center;
-  padding: 16px;
+  padding: clamp(12px, 2.5vw, 28px);
 }
 .md {
   position: relative;
   width: min(760px, 100%);
-  max-height: 92vh;
-  overflow: auto;
+  max-height: 90vh;
+  overflow-y: auto;
   background: var(--bg);
   border: 1px solid var(--ink);
   padding: 48px clamp(16px, 3vw, 32px) 28px;
+}
+.md.md-wide {
+  width: min(920px, 100%);
+}
+.md.md-has-bar {
+  padding-top: clamp(18px, 2.6vw, 28px);
+}
+.md-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
 }
 .md-x {
   position: absolute;
