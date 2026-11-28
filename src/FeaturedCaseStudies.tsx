@@ -412,7 +412,7 @@ function renderMiniDemo(id: CaseStudyId) {
   }
 }
 
-function CaseStudyReaderModal({
+export function CaseStudyReaderModal({
   cs,
   list,
   onSelect,

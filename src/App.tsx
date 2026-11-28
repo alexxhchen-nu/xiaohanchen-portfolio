@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
-import Hero from './Hero';
+import Home from './Home';
 import FeaturedCaseStudies from './FeaturedCaseStudies';
 import Reporting from './Reporting';
 import Index from './Index';
@@ -105,22 +105,9 @@ export default function App() {
   return (
     <LangContext.Provider value={{ lang, setLang, lens, setLens }}>
       <div className="app">
-        <ScrollProgressRail />
         <Header view={view} go={go} />
         {view === 'home' ? (
-          <main>
-            <Hero />
-            <FeaturedCaseStudies />
-            <Reporting />
-            <PsychtoolLab />
-            <Publications go={go} />
-            <div className="grid-2" id="code-tools">
-              <Code go={go} />
-              <Reading go={go} />
-            </div>
-            <About />
-            <Index go={go} />
-          </main>
+          <Home go={go} />
         ) : (
           <Page k={view} go={go} />
         )}
