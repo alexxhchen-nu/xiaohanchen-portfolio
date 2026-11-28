@@ -12,38 +12,11 @@ type NavItem = {
 };
 
 const NAV_ITEMS: NavItem[] = [
-  {
-    id: 'cases',
-    no: '01',
-    label: { en: 'Case Studies', zh: '核心案例' },
-    anchor: 'case-studies',
-  },
-  {
-    id: 'lab',
-    no: '02',
-    label: { en: 'Live Lab', zh: '实时工作台' },
-    anchor: 'psychtool-workbench',
-  },
-  {
-    id: 'pubs',
-    no: '03',
-    label: { en: 'Publications', zh: '学术发表' },
-    anchor: 'publications',
-    targetView: 'publications',
-  },
-  {
-    id: 'code',
-    no: '04',
-    label: { en: 'Code & Tools', zh: '代码与工具包' },
-    anchor: 'code-tools',
-    targetView: 'shop',
-  },
-  {
-    id: 'exp',
-    no: '05',
-    label: { en: 'Experience & Skills', zh: '经历与技能' },
-    anchor: 'about',
-  },
+  { id: 'work', no: '01', label: { en: 'Work', zh: '作品' }, anchor: 'work' },
+  { id: 'exp', no: '02', label: { en: 'Experience', zh: '经历' }, anchor: 'experience' },
+  { id: 'pubs', no: '03', label: { en: 'Publications', zh: '发表' }, anchor: 'publications' },
+  { id: 'skills', no: '04', label: { en: 'Skills', zh: '技能' }, anchor: 'skills' },
+  { id: 'contact', no: '05', label: { en: 'Contact', zh: '联系' }, anchor: 'contact' },
 ];
 
 export default function Header({ view, go }: { view: View; go: (v: View) => void }) {
