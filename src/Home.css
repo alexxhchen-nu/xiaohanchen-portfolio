@@ -53,3 +53,5 @@
   .hm-row-arrow { display: none; }
   .hm-tr { grid-template-columns: 1fr; gap: 6px; }
 }
+
+.hm-group { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--mute); margin-top: 28px; padding-bottom: 4px; }

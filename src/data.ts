@@ -1,8 +1,7 @@
-export type SectionKey = 'projects' | 'publications' | 'shop' | 'code' | 'reading' | 'interests' | 'design';
+export type SectionKey = 'publications' | 'shop' | 'code' | 'reading' | 'interests' | 'design';
 export type View = 'home' | SectionKey;
 
 export const SECTIONS: { key: SectionKey; no: string; title: string; blurb: string }[] = [
-  { key: 'projects', no: '01', title: 'Projects', blurb: 'Research, tools & interactive systems' },
   { key: 'publications', no: '02', title: 'Publications', blurb: 'Preprints, manuscripts & ORCID works' },
   { key: 'shop', no: '03', title: 'Tools & Packs', blurb: 'Agent skills, interactive studios & templates' },
   { key: 'code', no: '04', title: 'Code', blurb: 'Open-source repos, MCP servers & pipelines' },
